@@ -1,4 +1,4 @@
-﻿export async function onRequestPost(context) {
+export async function onRequestPost(context) {
   try {
     const formData = await context.request.formData();
 
@@ -25,6 +25,46 @@
       });
     }
 
+    const turnstileSecret = context.env.TURNSTILE_SECRET_KEY;
+    const turnstileToken = String(
+      formData.get("cf-turnstile-response") || ""
+    ).trim();
+
+    if (!turnstileSecret) {
+      return new Response("Spam protection is not configured.", {
+        status: 500
+      });
+    }
+
+    if (!turnstileToken) {
+      return new Response("Please complete the security check.", {
+        status: 400
+      });
+    }
+
+    const verification = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams({
+          secret: turnstileSecret,
+          response: turnstileToken,
+          remoteip: context.request.headers.get("CF-Connecting-IP") || ""
+        })
+      }
+    );
+
+    const verificationResult = await verification.json();
+
+    if (!verificationResult.success) {
+      return new Response("Security verification failed.", {
+        status: 403
+      });
+    }
+
     const webhookUrl = context.env.MAKE_WEBHOOK_URL;
 
     if (!webhookUrl) {
@@ -47,9 +87,9 @@
       });
     }
 
-    const redirectUrl = new URL("/?trial=success#trial", context.request.url);
-
-    return Response.redirect(redirectUrl.toString(), 303);
+    return new Response("OK", {
+      status: 200
+    });
 
   } catch (error) {
     return new Response("Unable to submit trial enquiry.", {

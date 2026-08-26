@@ -1,4 +1,4 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form01");
 
   if (!form) return;
@@ -54,6 +54,10 @@
       if (button) {
         button.disabled = false;
         button.textContent = originalLabel;
+      }
+
+      if (window.turnstile) {
+        window.turnstile.reset();
       }
 
     }
