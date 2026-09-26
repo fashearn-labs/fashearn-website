@@ -214,6 +214,22 @@
 									line-height:1.72
 									}
 									
+									.fl-intro strong{
+									display:block;
+									margin-bottom:10px;
+									color:var(--text);
+									font-size:21px;
+									line-height:1.48
+									}
+									
+									.fl-commercial{
+									margin-top:20px;
+									color:var(--green2);
+									font-size:13px;
+									font-weight:800;
+									letter-spacing:.04em
+									}
+									
 									.fl-actions{
 									display:flex;
 									flex-wrap:wrap;
@@ -325,7 +341,16 @@
 									box-shadow:0 0 9px var(--green)
 									}
 									
-									.fl-data-content{padding:23px}
+									.fl-data-content{padding:14px}
+									
+									.fl-product-shot{
+									display:block;
+									width:100%;
+									height:auto;
+									border:1px solid rgba(255,255,255,.07);
+									border-radius:11px;
+									box-shadow:0 18px 45px rgba(0,0,0,.28)
+									}
 									
 									.fl-data-heading{
 									display:flex;
@@ -519,9 +544,8 @@
 									
 									<div class="fl-nav-links">
 									<a href="#routeops" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('routeops').scrollIntoView({behavior:'smooth',block:'start'});">RouteOps</a>
-									<a href="#projects" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('projects').scrollIntoView({behavior:'smooth',block:'start'});">Systems</a>
-									<a href="#research" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('research').scrollIntoView({behavior:'smooth',block:'start'});">Research</a>
-									<a class="fl-nav-cta" href="#contact" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});">Connect</a>
+									<a href="#routeops-proof" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('routeops-proof').scrollIntoView({behavior:'smooth',block:'start'});">See It Working</a>
+									<a class="fl-nav-cta" href="#trial" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('trial').scrollIntoView({behavior:'smooth',block:'start'});">Start Trial</a>
 									</div>
 									</nav>
 									
@@ -531,38 +555,39 @@
 									
 									<div class="fl-eyebrow">
 									<span class="fl-live-dot"></span>
-									Independent Technology Studio
+									Fashearn Labs
 									</div>
 									
 									<h1 class="fl-title">
-									Operational software
-									<span class="fl-title-gradient">built around real work.</span>
+									RouteOps
+									<span class="fl-title-gradient">Core v1.1</span>
 									</h1>
 									
 									<p class="fl-intro">
-									Fashearn Labs builds practical management systems for businesses
-									working with operational data, spreadsheets and repetitive administration.
-									RouteOps is our first live product for delivery and logistics operations.
+									<strong>Control driver pay, carrier reconciliation, exceptions and profitability in one operational system.</strong>
+									Built for delivery contractors and multi-carrier operators that have outgrown spreadsheets and disconnected admin.
 									</p>
+									
+									<div class="fl-commercial">£99/month · 14-day free trial · No minimum term</div>
 									
 									<div class="fl-actions">
 									
-									<a class="fl-button fl-button-primary" href="#routeops"
-									onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('routeops').scrollIntoView({behavior:'smooth',block:'start'});">
-									Explore RouteOps
+									<a class="fl-button fl-button-primary" href="#trial"
+									onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('trial').scrollIntoView({behavior:'smooth',block:'start'});">
+									Start 14-Day Trial
 									<span>→</span>
 									</a>
 									
-									<a class="fl-button fl-button-secondary" href="#projects"
-									onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('projects').scrollIntoView({behavior:'smooth',block:'start'});">
-									Explore Fashearn Labs
+									<a class="fl-button fl-button-secondary" href="#routeops-proof"
+									onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('routeops-proof').scrollIntoView({behavior:'smooth',block:'start'});">
+									See RouteOps in Action
 									</a>
 									
 									</div>
 									
 									<div class="fl-principle">
 									<span class="fl-principle-line"></span>
-									Data → Control → Intelligence → Action
+									Driver Pay → Reconciliation → Exceptions → Profitability
 									</div>
 									
 									</div>
@@ -575,84 +600,15 @@
 									<span></span><span></span><span></span>
 									</div>
 									
-									<div class="fl-window-title">Fashearn Systems</div>
+									<div class="fl-window-title">RouteOps Core v1.1</div>
 									<div class="fl-status">PRODUCT LIVE</div>
 									</div>
 									
 									<div class="fl-data-content">
-									
-									<div class="fl-data-heading">
-									<div>
-									<div class="fl-data-label">Management Systems</div>
-									<div class="fl-data-number">RouteOps v1.1</div>
-									</div>
-									
-									<div class="fl-data-change">● WORKING RELEASE</div>
-									</div>
-									
-									<div class="fl-chart">
-									<svg viewBox="0 0 500 180" preserveAspectRatio="none" aria-hidden="true">
-									
-									<defs>
-									
-									<linearGradient id="flArea" x1="0" y1="0" x2="0" y2="1">
-									<stop offset="0%" stop-color="#5bf0b4" stop-opacity=".25"></stop>
-									<stop offset="100%" stop-color="#5bf0b4" stop-opacity="0"></stop>
-									</linearGradient>
-									
-									<linearGradient id="flLine" x1="0" y1="0" x2="1" y2="0">
-									<stop offset="0%" stop-color="#61a8ff"></stop>
-									<stop offset="55%" stop-color="#5bf0b4"></stop>
-									<stop offset="100%" stop-color="#8bffd1"></stop>
-									</linearGradient>
-									
-									</defs>
-									
-									<path
-									d="M0 150 C35 145 54 121 82 129 C111 138 124 104 154 108 C187 112 197 78 228 86 C258 94 274 52 305 66 C337 80 347 39 380 50 C414 61 438 21 500 29 L500 180 L0 180 Z"
-									fill="url(#flArea)">
-									</path>
-									
-									<path
-									d="M0 150 C35 145 54 121 82 129 C111 138 124 104 154 108 C187 112 197 78 228 86 C258 94 274 52 305 66 C337 80 347 39 380 50 C414 61 438 21 500 29"
-									fill="none"
-									stroke="url(#flLine)"
-									stroke-width="3"
-									stroke-linecap="round">
-									</path>
-									
-									<circle cx="500" cy="29" r="5" fill="#8bffd1"></circle>
-									<circle cx="500" cy="29" r="11" fill="#8bffd1" opacity=".13"></circle>
-									
-									</svg>
-									
-									<div class="fl-scan-line"></div>
-									</div>
-									
-									<div class="fl-metrics">
-									
-									<div class="fl-metric">
-									<div class="fl-metric-name">Operate</div>
-									<div class="fl-metric-value">Daily workflows</div>
-									</div>
-									
-									<div class="fl-metric">
-									<div class="fl-metric-name">Control</div>
-									<div class="fl-metric-value">Pay & reconciliation</div>
-									</div>
-									
-									<div class="fl-metric">
-									<div class="fl-metric-name">Analyse</div>
-									<div class="fl-metric-value">Decision support</div>
-									</div>
-									
-									</div>
-									
-									<div class="fl-code-line">
-									<span>&gt;</span>
-									operate → reconcile → review → improve
-									</div>
-									
+									<img
+									class="fl-product-shot"
+									src="https://raw.githubusercontent.com/fashearn-labs/fashearn-website/main/assets/routeops-dashboard-v1.1.png"
+									alt="RouteOps Core v1.1 Operations Dashboard">
 									</div>
 									</div>
 									</div>
@@ -662,658 +618,39 @@
 									<div class="fl-bottom-strip">
 									
 									<div class="fl-strip-item">
-									<div class="fl-strip-icon">▦</div>
+									<div class="fl-strip-icon">£</div>
 									<div>
-									<div class="fl-strip-title">Management Systems</div>
-									<div class="fl-strip-text">Practical operational software</div>
+									<div class="fl-strip-title">Driver Pay</div>
+									<div class="fl-strip-text">Configured rules and controlled pay runs</div>
 									</div>
 									</div>
 									
 									<div class="fl-strip-item">
-									<div class="fl-strip-icon">⌁</div>
+									<div class="fl-strip-icon">⇄</div>
 									<div>
-									<div class="fl-strip-title">Operational Intelligence</div>
-									<div class="fl-strip-text">Turning business data into decisions</div>
+									<div class="fl-strip-title">Carrier Reconciliation</div>
+									<div class="fl-strip-text">Compare operational and carrier information</div>
 									</div>
 									</div>
 									
 									<div class="fl-strip-item">
-									<div class="fl-strip-icon">↻</div>
+									<div class="fl-strip-icon">!</div>
 									<div>
-									<div class="fl-strip-title">Automation</div>
-									<div class="fl-strip-text">Reducing repetitive work</div>
+									<div class="fl-strip-title">Exception Control</div>
+									<div class="fl-strip-text">Review, resolve and retain an audit trail</div>
 									</div>
 									</div>
 									
 									<div class="fl-strip-item">
-									<div class="fl-strip-icon">&lt;/&gt;</div>
+									<div class="fl-strip-icon">↗</div>
 									<div>
-									<div class="fl-strip-title">Applied AI</div>
-									<div class="fl-strip-text">Focused tools and research</div>
+									<div class="fl-strip-title">Profitability</div>
+									<div class="fl-strip-text">Turn route data into commercial visibility</div>
 									</div>
 									</div>
 									
 									</div>
 									
-									</div>
-									</section><!-- mnbnbxmbzxmncbzxc -->
-								</div>
-								<div id="embed03" class="embed-component instance-3">
-									<!-- qweoqwupeoiqwuewqe --><style>
-									#fl-projects,#fl-projects *{box-sizing:border-box}
-									
-									#fl-projects{
-									--green:#5bf0b4;
-									--green2:#8bffd1;
-									--blue:#61a8ff;
-									--text:#f3f7f8;
-									--muted:#91a1ac;
-									position:relative;
-									width:100vw;
-									margin-left:calc(50% - 50vw);
-									overflow:hidden;
-									color:var(--text);
-									background:
-									radial-gradient(circle at 12% 35%,rgba(91,240,180,.07),transparent 25%),
-									radial-gradient(circle at 88% 55%,rgba(97,168,255,.08),transparent 28%),
-									linear-gradient(180deg,#06090d 0%,#081019 52%,#06090d 100%);
-									font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
-									}
-									
-									#fl-projects:before{
-									content:"";
-									position:absolute;
-									inset:0;
-									pointer-events:none;
-									opacity:.23;
-									background-image:
-									linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-									linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-									background-size:56px 56px
-									}
-									
-									.fl-projects-shell{
-									position:relative;
-									z-index:2;
-									width:min(1180px,calc(100% - 48px));
-									margin:0 auto;
-									padding:118px 0 124px
-									}
-									
-									.fl-projects-heading{
-									display:grid;
-									grid-template-columns:.95fr 1.05fr;
-									gap:90px;
-									align-items:end;
-									margin-bottom:58px
-									}
-									
-									.fl-projects-label{
-									display:inline-flex;
-									align-items:center;
-									gap:11px;
-									margin-bottom:20px;
-									color:var(--green);
-									font-size:11px;
-									font-weight:800;
-									letter-spacing:.18em;
-									text-transform:uppercase
-									}
-									
-									.fl-projects-label:before{
-									content:"";
-									width:28px;
-									height:1px;
-									background:linear-gradient(90deg,var(--green),transparent)
-									}
-									
-									.fl-projects-title{
-									max-width:650px;
-									margin:0;
-									font-size:clamp(40px,5vw,66px);
-									line-height:1.04;
-									letter-spacing:-.047em;
-									font-weight:780
-									}
-									
-									.fl-projects-title span{
-									color:transparent;
-									background:linear-gradient(90deg,var(--green2),#81ccff);
-									-webkit-background-clip:text;
-									background-clip:text
-									}
-									
-									.fl-projects-intro{
-									max-width:590px;
-									margin:0;
-									color:var(--muted);
-									font-size:17px;
-									line-height:1.75
-									}
-									
-									.fl-projects-grid{
-									display:grid;
-									grid-template-columns:repeat(2,1fr);
-									gap:18px
-									}
-									
-									.fl-project-card{
-									position:relative;
-									min-height:340px;
-									display:flex;
-									flex-direction:column;
-									overflow:hidden;
-									padding:28px;
-									border:1px solid rgba(255,255,255,.08);
-									border-radius:18px;
-									background:linear-gradient(145deg,rgba(17,27,36,.9),rgba(8,14,20,.94));
-									box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 24px 65px rgba(0,0,0,.24);
-									transition:.25s ease
-									}
-									
-									.fl-project-card:hover{
-									transform:translateY(-5px);
-									border-color:rgba(91,240,180,.25);
-									box-shadow:0 32px 80px rgba(0,0,0,.34)
-									}
-									
-									.fl-project-card:before{
-									content:"";
-									position:absolute;
-									width:230px;
-									height:230px;
-									right:-120px;
-									top:-110px;
-									border-radius:50%;
-									background:rgba(91,240,180,.07);
-									filter:blur(20px)
-									}
-									
-									.fl-project-card:nth-child(3):before{background:rgba(97,168,255,.08)}
-									
-									.fl-project-featured{
-									grid-column:1/-1;
-									min-height:470px;
-									display:grid;
-									grid-template-columns:1.08fr .92fr;
-									gap:44px;
-									padding:34px
-									}
-									
-									.fl-project-featured:hover{transform:translateY(-4px)}
-									
-									.fl-project-featured-copy{
-									position:relative;
-									z-index:2;
-									display:flex;
-									flex-direction:column
-									}
-									
-									.fl-project-top{
-									display:flex;
-									align-items:center;
-									justify-content:space-between
-									}
-									
-									.fl-project-icon{
-									width:48px;
-									height:48px;
-									display:grid;
-									place-items:center;
-									border:1px solid rgba(91,240,180,.2);
-									border-radius:13px;
-									background:linear-gradient(145deg,rgba(91,240,180,.12),rgba(97,168,255,.04));
-									color:var(--green);
-									font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-									font-size:20px
-									}
-									
-									.fl-project-number{
-									color:#53646f;
-									font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-									font-size:10px;
-									font-weight:700;
-									letter-spacing:.14em
-									}
-									
-									.fl-project-card h3{
-									position:relative;
-									z-index:2;
-									margin:38px 0 0;
-									font-size:28px;
-									line-height:1.14;
-									letter-spacing:-.035em;
-									font-weight:760
-									}
-									
-									.fl-project-featured h3{
-									font-size:36px;
-									margin-top:40px
-									}
-									
-									.fl-version-pill{
-									display:inline-flex;
-									vertical-align:middle;
-									margin-left:10px;
-									padding:5px 8px;
-									border:1px solid rgba(91,240,180,.22);
-									border-radius:7px;
-									color:var(--green);
-									background:rgba(91,240,180,.055);
-									font-size:10px;
-									font-weight:800;
-									letter-spacing:.1em
-									}
-									
-									.fl-project-card p{
-									position:relative;
-									z-index:2;
-									margin:18px 0 0;
-									color:var(--muted);
-									font-size:14px;
-									line-height:1.72
-									}
-									
-									.fl-project-featured p{
-									max-width:610px;
-									font-size:15px;
-									line-height:1.78
-									}
-									
-									.fl-project-tags{
-									position:relative;
-									z-index:2;
-									display:flex;
-									flex-wrap:wrap;
-									gap:7px;
-									margin-top:24px
-									}
-									
-									.fl-project-tag{
-									padding:7px 9px;
-									border:1px solid rgba(255,255,255,.07);
-									border-radius:7px;
-									color:#7f919d;
-									background:rgba(255,255,255,.018);
-									font-size:8px;
-									font-weight:800;
-									letter-spacing:.1em;
-									text-transform:uppercase
-									}
-									
-									.fl-project-footer{
-									position:relative;
-									z-index:2;
-									display:flex;
-									align-items:center;
-									gap:10px;
-									margin-top:auto;
-									padding-top:31px;
-									color:var(--green);
-									font-size:10px;
-									font-weight:800;
-									letter-spacing:.1em;
-									text-transform:uppercase
-									}
-									
-									.fl-project-footer:before{
-									content:"";
-									width:7px;
-									height:7px;
-									border-radius:50%;
-									background:var(--green);
-									box-shadow:0 0 12px rgba(91,240,180,.7)
-									}
-									
-									.fl-project-footer a{
-									display:inline-flex;
-									align-items:center;
-									gap:8px;
-									padding:10px 13px;
-									border:1px solid rgba(91,240,180,.22);
-									border-radius:8px;
-									background:rgba(91,240,180,.06);
-									color:var(--green);
-									text-decoration:none;
-									transition:.2s ease
-									}
-									
-									.fl-project-footer a:hover{
-									background:rgba(91,240,180,.12);
-									border-color:rgba(91,240,180,.42);
-									transform:translateY(-1px)
-									}
-									
-									.fl-system-panel{
-									position:relative;
-									z-index:2;
-									align-self:stretch;
-									padding:24px;
-									border:1px solid rgba(255,255,255,.07);
-									border-radius:15px;
-									background:
-									radial-gradient(circle at 85% 15%,rgba(97,168,255,.07),transparent 28%),
-									rgba(255,255,255,.018)
-									}
-									
-									.fl-system-panel-head{
-									display:flex;
-									align-items:center;
-									justify-content:space-between;
-									gap:15px;
-									padding-bottom:18px;
-									border-bottom:1px solid rgba(255,255,255,.06)
-									}
-									
-									.fl-system-panel-title{
-									color:#dce5e9;
-									font-size:12px;
-									font-weight:800;
-									letter-spacing:.08em;
-									text-transform:uppercase
-									}
-									
-									.fl-system-release{
-									display:inline-flex;
-									align-items:center;
-									gap:7px;
-									color:var(--green);
-									font-size:9px;
-									font-weight:800;
-									letter-spacing:.08em
-									}
-									
-									.fl-system-release:before{
-									content:"";
-									width:6px;
-									height:6px;
-									border-radius:50%;
-									background:var(--green);
-									box-shadow:0 0 10px rgba(91,240,180,.75)
-									}
-									
-									.fl-system-list{
-									display:grid;
-									gap:1px;
-									margin-top:10px;
-									background:rgba(255,255,255,.045)
-									}
-									
-									.fl-system-row{
-									display:grid;
-									grid-template-columns:34px 1fr;
-									gap:12px;
-									align-items:start;
-									padding:16px 13px;
-									background:rgba(8,14,20,.88)
-									}
-									
-									.fl-system-row-num{
-									color:var(--green);
-									font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-									font-size:9px;
-									font-weight:800
-									}
-									
-									.fl-system-row strong{
-									display:block;
-									color:#d5dfe3;
-									font-size:11px
-									}
-									
-									.fl-system-row span{
-									display:block;
-									margin-top:4px;
-									color:#697b86;
-									font-size:9px;
-									line-height:1.5
-									}
-									
-									.fl-process-bar{
-									display:grid;
-									grid-template-columns:auto 1fr auto 1fr auto 1fr auto;
-									align-items:center;
-									gap:14px;
-									margin-top:68px;
-									padding:27px 30px;
-									border:1px solid rgba(255,255,255,.065);
-									border-radius:15px;
-									background:rgba(255,255,255,.018)
-									}
-									
-									.fl-process-step{
-									color:#c6d0d5;
-									font-size:10px;
-									font-weight:800;
-									letter-spacing:.13em;
-									text-transform:uppercase;
-									white-space:nowrap
-									}
-									
-									.fl-process-step:last-child{color:var(--green)}
-									
-									.fl-process-line{
-									height:1px;
-									background:linear-gradient(90deg,rgba(91,240,180,.48),rgba(97,168,255,.1))
-									}
-									
-									@media(max-width:980px){
-									.fl-projects-heading{grid-template-columns:1fr;gap:28px}
-									.fl-projects-grid{grid-template-columns:1fr}
-									.fl-project-featured{grid-column:auto;grid-template-columns:1fr;min-height:0}
-									.fl-project-card{min-height:320px}
-									}
-									
-									@media(max-width:700px){
-									.fl-projects-shell{
-									width:min(100% - 28px,1180px);
-									padding:88px 0 92px
-									}
-									.fl-projects-title{font-size:clamp(39px,12vw,54px)}
-									.fl-projects-intro{font-size:16px}
-									.fl-project-featured{padding:27px}
-									.fl-project-featured h3{font-size:31px}
-									.fl-system-panel{padding:18px}
-									.fl-process-bar{
-									grid-template-columns:1fr;
-									gap:12px;
-									text-align:center
-									}
-									.fl-process-line{
-									width:1px;
-									height:17px;
-									margin:0 auto;
-									background:linear-gradient(180deg,rgba(91,240,180,.48),rgba(97,168,255,.1))
-									}
-									}
-									</style><!-- mnbnbxmbzxmncbzxc -->
-								</div>
-								<div id="embed04" class="embed-component instance-4">
-									<!-- qweoqwupeoiqwuewqe --><section id="projects">
-									<div id="fl-projects">
-									<div class="fl-projects-shell">
-									
-									<div class="fl-projects-heading">
-									
-									<div>
-									<div class="fl-projects-label">Fashearn Labs Management Systems</div>
-									
-									<h2 class="fl-projects-title">
-									Systems designed to turn
-									<span>operational data into control.</span>
-									</h2>
-									</div>
-									
-									<p class="fl-projects-intro">
-									Fashearn Labs develops configurable management software for businesses
-									that need clearer control over operational data, workflows, pay,
-									reporting and decision-making. RouteOps v1.1 is the first completed release.
-									</p>
-									
-									</div>
-									
-									<div class="fl-projects-grid">
-									
-									<article class="fl-project-card fl-project-featured">
-									
-									<div class="fl-project-featured-copy">
-									
-									<div class="fl-project-top">
-									<div class="fl-project-icon">▦</div>
-									<div class="fl-project-number">01 / RELEASED SYSTEM</div>
-									</div>
-									
-									<h3>
-									Fashearn RouteOps
-									<span class="fl-version-pill">v1.1</span>
-									</h3>
-									
-									<p>
-									A configurable operations management system for delivery and route-based
-									businesses. RouteOps brings driver records, daily work, pay rules, revenue
-									checks, imports, exception review, reporting and commercial analysis into
-									one controlled workflow.
-									</p>
-									
-									<div class="fl-project-tags">
-									<span class="fl-project-tag">Daily operations</span>
-									<span class="fl-project-tag">Driver pay</span>
-									<span class="fl-project-tag">Import &amp; validation</span>
-									<span class="fl-project-tag">Reports</span>
-									<span class="fl-project-tag">Scenario analysis</span>
-									</div>
-									
-									<div class="fl-project-footer">
-									<a href="https://fashearn-routeops-demo.streamlit.app/"
-									target="_blank"
-									rel="noopener noreferrer">
-									Launch RouteOps v1.1 demo →
-									</a>
-									</div>
-									
-									</div>
-									
-									<div class="fl-system-panel">
-									
-									<div class="fl-system-panel-head">
-									<div class="fl-system-panel-title">RouteOps core</div>
-									<div class="fl-system-release">WORKING RELEASE</div>
-									</div>
-									
-									<div class="fl-system-list">
-									
-									<div class="fl-system-row">
-									<div class="fl-system-row-num">01</div>
-									<div>
-									<strong>Operate</strong>
-									<span>Manage drivers, route-days and daily operational inputs.</span>
-									</div>
-									</div>
-									
-									<div class="fl-system-row">
-									<div class="fl-system-row-num">02</div>
-									<div>
-									<strong>Calculate</strong>
-									<span>Apply configurable pay, revenue and operating-cost rules.</span>
-									</div>
-									</div>
-									
-									<div class="fl-system-row">
-									<div class="fl-system-row-num">03</div>
-									<div>
-									<strong>Validate</strong>
-									<span>Import business files, flag exceptions and retain an audit trail.</span>
-									</div>
-									</div>
-									
-									<div class="fl-system-row">
-									<div class="fl-system-row-num">04</div>
-									<div>
-									<strong>Report</strong>
-									<span>Produce operational summaries, driver totals and management exports.</span>
-									</div>
-									</div>
-									
-									<div class="fl-system-row">
-									<div class="fl-system-row-num">05</div>
-									<div>
-									<strong>Analyse</strong>
-									<span>Compare contracts, carriers and commercial scenarios before decisions are made.</span>
-									</div>
-									</div>
-									
-									</div>
-									</div>
-									
-									</article>
-									
-									<article class="fl-project-card">
-									
-									<div class="fl-project-top">
-									<div class="fl-project-icon">◇</div>
-									<div class="fl-project-number">02 / SYSTEM FOUNDATION</div>
-									</div>
-									
-									<h3>Management Systems Framework</h3>
-									
-									<p>
-									RouteOps establishes the foundation for a wider Fashearn Labs management
-									systems line: configurable profiles, controlled imports, auditability,
-									reporting and decision-support tools built around real operational needs.
-									</p>
-									
-									<div class="fl-project-tags">
-									<span class="fl-project-tag">Configurable</span>
-									<span class="fl-project-tag">Auditable</span>
-									<span class="fl-project-tag">Data-led</span>
-									</div>
-									
-									<div class="fl-project-footer">
-									Foundation established
-									</div>
-									
-									</article>
-									
-									<article class="fl-project-card">
-									
-									<div class="fl-project-top">
-									<div class="fl-project-icon">+</div>
-									<div class="fl-project-number">03 / EXTENSIONS</div>
-									</div>
-									
-									<h3>Extensions &amp; Integrations</h3>
-									
-									<p>
-									The core system is designed so advanced capabilities can be added when
-									they are genuinely needed — including external integrations, tracking,
-									vehicle workflows and other customer-specific operational modules.
-									</p>
-									
-									<div class="fl-project-tags">
-									<span class="fl-project-tag">APIs</span>
-									<span class="fl-project-tag">Tracking</span>
-									<span class="fl-project-tag">Optional modules</span>
-									</div>
-									
-									<div class="fl-project-footer">
-									Customer-led roadmap
-									</div>
-									
-									</article>
-									
-									</div>
-									
-									<div class="fl-process-bar">
-									<span class="fl-process-step">Research</span>
-									<span class="fl-process-line"></span>
-									<span class="fl-process-step">Build</span>
-									<span class="fl-process-line"></span>
-									<span class="fl-process-step">Validate</span>
-									<span class="fl-process-line"></span>
-									<span class="fl-process-step">Release</span>
-									</div>
-									
-									</div>
 									</div>
 									</section><!-- mnbnbxmbzxmncbzxc -->
 								</div>
@@ -1424,7 +761,7 @@
 									
 									#routeops .ro-grid {
 									display: grid;
-									grid-template-columns: repeat(3, 1fr);
+									grid-template-columns: repeat(4, 1fr);
 									gap: 14px;
 									}
 									
@@ -1541,127 +878,53 @@
 									<!-- qweoqwupeoiqwuewqe --><section id="routeops">
 									<div class="ro-wrap">
 									
-									<div class="ro-badge">Fashearn Labs · Production Release</div>
+									<div class="ro-badge">RouteOps Core v1.1</div>
 									
 									<h2>
-									RouteOps <span>Core v1.1</span>
+									What RouteOps <span>controls.</span>
 									</h2>
 									
 									<p class="ro-lead">
-									Keep your carrier systems. RouteOps turns the spreadsheets and operational
-									data around them into controlled driver pay, reconciliation, exception
-									management and useful management information.
+									Bring the operational and financial checks that usually sit across carrier
+									portals, spreadsheets and manual admin into one controlled workflow.
 									</p>
-									
-									<div class="ro-actions">
-									
-									<a
-									class="ro-btn ro-btn-primary"
-									href="#trial">
-									Request 14-Day Free Trial
-									</a>
-									
-									<span class="ro-btn ro-btn-secondary">
-									£79 / month · Core
-									</span>
-									
-									</div>
 									
 									<div class="ro-grid">
 									
 									<div class="ro-card">
-									
-									<div class="ro-card-num">
-									01 · OPERATIONS
-									</div>
-									
-									<h3>
-									Driver & Route Control
-									</h3>
-									
+									<div class="ro-card-num">01 · DRIVER PAY</div>
+									<h3>Controlled Pay Runs</h3>
 									<p>
-									Manage driver records, daily work, route activity and imported operational
-									data from one controlled system instead of disconnected spreadsheets.
+									Apply configured driver-pay rules, review deductions and exceptions,
+									then approve and lock completed pay runs.
 									</p>
-									
 									</div>
 									
 									<div class="ro-card">
-									
-									<div class="ro-card-num">
-									02 · PAY
-									</div>
-									
-									<h3>
-									Pay Run & Settlement Close
-									</h3>
-									
+									<div class="ro-card-num">02 · RECONCILIATION</div>
+									<h3>Carrier Checks</h3>
 									<p>
-									Use your configured driver-pay rules, review exceptions, approve and lock
-									pay runs, then produce controlled settlement exports and driver statements.
+									Compare carrier, route and contract information so discrepancies
+									can be found and reviewed before they become hidden losses.
 									</p>
-									
 									</div>
 									
 									<div class="ro-card">
-									
-									<div class="ro-card-num">
-									03 · RECONCILIATION
-									</div>
-									
-									<h3>
-									Exceptions & Commercial Reporting
-									</h3>
-									
+									<div class="ro-card-num">03 · EXCEPTIONS</div>
+									<h3>Exception Control</h3>
 									<p>
-									Identify operational issues, compare carrier and contract information,
-									retain an audit trail and turn route data into clearer management decisions.
+									Surface operational issues, record decisions and keep a clear review
+									history until each exception is resolved.
 									</p>
-									
 									</div>
 									
-									</div>
-									
-									<div class="ro-proof">
-									
-									<div class="ro-stat">
-									<strong>Private</strong>
-									<span>Dedicated customer instance</span>
-									</div>
-									
-									<div class="ro-stat">
-									<strong>Persistent</strong>
-									<span>Dedicated operational database</span>
-									</div>
-									
-									<div class="ro-stat">
-									<strong>Auditable</strong>
-									<span>Controlled changes and review history</span>
-									</div>
-									
-									<div class="ro-stat">
-									<strong>Protected</strong>
-									<span>Automatic database backup and restore</span>
-									</div>
-									
-									</div>
-									
-									<div class="ro-footer">
-									
-									<div class="ro-price">
-									
-									RouteOps Core
-									<strong>£79/month</strong>
-									
-									<div class="ro-small">
-									14-day free trial · Controlled onboarding
-									</div>
-									
-									</div>
-									
-									<div class="ro-small">
-									Built by Fashearn Labs<br>
-									Delivery operations software · Core v1.1
+									<div class="ro-card">
+									<div class="ro-card-num">04 · PROFITABILITY</div>
+									<h3>Commercial Visibility</h3>
+									<p>
+									Turn route, pay, revenue and operating data into clearer information
+									for understanding performance and profitability.
+									</p>
 									</div>
 									
 									</div>
@@ -1965,22 +1228,20 @@
 									<div class="rp-wrap">
 									
 									<div class="rp-label">
-									RouteOps Core v1.1
+									Working RouteOps Core v1.1
 									</div>
 									
 									<div class="rp-head">
 									
 									<div>
 									<h2>
-									From daily data to
-									<span>controlled settlement.</span>
+									See RouteOps
+									<span>in action.</span>
 									</h2>
 									</div>
 									
 									<p class="rp-intro">
-									RouteOps brings operational records, driver pay, exception review
-									and management reporting into one controlled workflow. The screens
-									below are from the working RouteOps Core v1.1 application.
+									Real screens from the working RouteOps Core v1.1 application.
 									</p>
 									
 									</div>
@@ -2005,9 +1266,8 @@
 									<h3>Pay Run & Settlement Close</h3>
 									
 									<p>
-									Review calculated driver pay, deductions and unresolved exceptions
-									before creating a controlled pay run. Approved settlements are
-									locked to preserve the reviewed figures and provide a clear audit trail.
+									Review driver pay, deductions and unresolved exceptions before
+									approving and locking a controlled pay run.
 									</p>
 									</div>
 									
@@ -2036,9 +1296,8 @@
 									<h3>Exception Centre</h3>
 									
 									<p>
-									Operational issues can be reviewed, classified and resolved in a
-									dedicated workspace, with status, reviewer and notes retained as
-									part of the operational record.
+									Review, classify and resolve operational issues while retaining
+									status, reviewer and notes in the operational record.
 									</p>
 									
 									</div>
@@ -2064,9 +1323,8 @@
 									<h3>Reports & Exports</h3>
 									
 									<p>
-									Convert operational data into practical management information,
-									including driver totals, pay summaries and downloadable CSV,
-									Excel and PDF outputs.
+									View driver totals and pay summaries, then export practical
+									CSV, Excel and PDF reports.
 									</p>
 									
 									</div>
@@ -2075,605 +1333,12 @@
 									
 									</div>
 									
-									<div class="rp-bottom">
-									
-									<p>
-									RouteOps is designed to sit around existing carrier systems and replace
-									repetitive spreadsheet administration with a clearer, controlled
-									management workflow.
-									</p>
-									
-									<div class="rp-status">
-									Working RouteOps v1.1 release
-									</div>
-									
-									</div>
-									
 									</div>
 									
 									</section><!-- mnbnbxmbzxmncbzxc -->
 								</div>
-								<div id="embed05" class="embed-component instance-5">
-									<!-- qweoqwupeoiqwuewqe --><style>
-									#fl-research,
-									#fl-research * {
-									box-sizing: border-box;
-									}
-									
-									#fl-research {
-									--green: #5bf0b4;
-									--green2: #8bffd1;
-									--blue: #61a8ff;
-									--text: #f3f7f8;
-									--muted: #91a1ac;
-									
-									position: relative;
-									width: 100vw;
-									margin-left: calc(50% - 50vw);
-									overflow: hidden;
-									color: var(--text);
-									background:
-									radial-gradient(circle at 82% 38%, rgba(97,168,255,.07), transparent 27%),
-									radial-gradient(circle at 15% 75%, rgba(91,240,180,.05), transparent 25%),
-									linear-gradient(180deg, #06090d 0%, #081019 55%, #06090d 100%);
-									font-family:
-									Inter, ui-sans-serif, system-ui, -apple-system,
-									BlinkMacSystemFont, "Segoe UI", sans-serif;
-									}
-									
-									#fl-research:before {
-									content: "";
-									position: absolute;
-									inset: 0;
-									pointer-events: none;
-									opacity: .18;
-									background-image:
-									linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-									linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-									background-size: 58px 58px;
-									}
-									
-									.fl-research-shell {
-									position: relative;
-									z-index: 2;
-									width: min(1180px, calc(100% - 48px));
-									margin: 0 auto;
-									padding: 84px 0 88px;
-									}
-									
-									.fl-research-head {
-									display: grid;
-									grid-template-columns: .9fr 1.1fr;
-									gap: 80px;
-									align-items: end;
-									margin-bottom: 38px;
-									}
-									
-									.fl-research-label {
-									display: inline-flex;
-									align-items: center;
-									gap: 11px;
-									margin-bottom: 17px;
-									color: var(--green);
-									font-size: 10px;
-									font-weight: 800;
-									letter-spacing: .18em;
-									text-transform: uppercase;
-									}
-									
-									.fl-research-label:before {
-									content: "";
-									width: 28px;
-									height: 1px;
-									background: linear-gradient(90deg, var(--green), transparent);
-									}
-									
-									.fl-research-title {
-									max-width: 610px;
-									margin: 0;
-									font-size: clamp(34px, 4.2vw, 54px);
-									line-height: 1.04;
-									letter-spacing: -.045em;
-									font-weight: 780;
-									}
-									
-									.fl-research-title span {
-									color: transparent;
-									background: linear-gradient(90deg, var(--green2), #81ccff);
-									-webkit-background-clip: text;
-									background-clip: text;
-									}
-									
-									.fl-research-intro {
-									max-width: 590px;
-									margin: 0;
-									color: var(--muted);
-									font-size: 15px;
-									line-height: 1.75;
-									}
-									
-									.fl-research-panel {
-									display: grid;
-									grid-template-columns: 1.12fr .88fr;
-									overflow: hidden;
-									border: 1px solid rgba(255,255,255,.075);
-									border-radius: 18px;
-									background:
-									linear-gradient(145deg, rgba(15,24,33,.94), rgba(7,13,19,.96));
-									box-shadow:
-									inset 0 1px 0 rgba(255,255,255,.025),
-									0 24px 65px rgba(0,0,0,.22);
-									}
-									
-									.fl-research-copy {
-									padding: 34px;
-									}
-									
-									.fl-research-status {
-									display: inline-flex;
-									align-items: center;
-									gap: 8px;
-									padding: 7px 10px;
-									border: 1px solid rgba(91,240,180,.17);
-									border-radius: 8px;
-									color: var(--green);
-									background: rgba(91,240,180,.04);
-									font-size: 8px;
-									font-weight: 800;
-									letter-spacing: .12em;
-									text-transform: uppercase;
-									}
-									
-									.fl-research-status:before {
-									content: "";
-									width: 6px;
-									height: 6px;
-									border-radius: 50%;
-									background: var(--green);
-									box-shadow: 0 0 10px rgba(91,240,180,.68);
-									}
-									
-									.fl-research-name {
-									margin: 23px 0 0;
-									font-size: 29px;
-									line-height: 1.08;
-									letter-spacing: -.038em;
-									font-weight: 770;
-									}
-									
-									.fl-research-description {
-									margin: 16px 0 0;
-									max-width: 620px;
-									color: var(--muted);
-									font-size: 13px;
-									line-height: 1.72;
-									}
-									
-									.fl-research-points {
-									display: grid;
-									grid-template-columns: repeat(3, 1fr);
-									gap: 12px;
-									margin-top: 26px;
-									}
-									
-									.fl-research-point {
-									padding: 15px;
-									border: 1px solid rgba(255,255,255,.055);
-									border-radius: 11px;
-									background: rgba(255,255,255,.016);
-									}
-									
-									.fl-research-point-icon {
-									width: 29px;
-									height: 29px;
-									display: grid;
-									place-items: center;
-									margin-bottom: 11px;
-									border: 1px solid rgba(91,240,180,.16);
-									border-radius: 8px;
-									color: var(--green);
-									background: rgba(91,240,180,.035);
-									font-size: 9px;
-									font-weight: 800;
-									}
-									
-									.fl-research-point-title {
-									color: #dbe4e8;
-									font-size: 11px;
-									font-weight: 760;
-									}
-									
-									.fl-research-point-text {
-									margin-top: 4px;
-									color: #71828d;
-									font-size: 9px;
-									line-height: 1.5;
-									}
-									
-									.fl-research-note {
-									margin-top: 23px;
-									padding-top: 18px;
-									border-top: 1px solid rgba(255,255,255,.06);
-									color: #667782;
-									font-size: 9px;
-									line-height: 1.6;
-									}
-									
-									.fl-research-visual {
-									position: relative;
-									min-height: 390px;
-									display: flex;
-									align-items: center;
-									justify-content: center;
-									padding: 34px;
-									border-left: 1px solid rgba(255,255,255,.06);
-									background:
-									radial-gradient(circle at 50% 48%, rgba(91,240,180,.065), transparent 36%),
-									linear-gradient(180deg, rgba(255,255,255,.012), transparent);
-									}
-									
-									.fl-system-map {
-									position: relative;
-									width: min(290px, 100%);
-									aspect-ratio: 1 / 1;
-									}
-									
-									.fl-system-ring {
-									position: absolute;
-									inset: 8%;
-									border: 1px solid rgba(91,240,180,.12);
-									border-radius: 50%;
-									}
-									
-									.fl-system-ring:nth-child(2) {
-									inset: 22%;
-									border-color: rgba(97,168,255,.13);
-									}
-									
-									.fl-system-ring:nth-child(3) {
-									inset: 36%;
-									border-color: rgba(91,240,180,.17);
-									}
-									
-									.fl-system-core {
-									position: absolute;
-									inset: 40%;
-									display: grid;
-									place-items: center;
-									border: 1px solid rgba(91,240,180,.28);
-									border-radius: 50%;
-									color: var(--green);
-									background:
-									radial-gradient(circle, rgba(91,240,180,.14), rgba(7,13,19,.96));
-									box-shadow:
-									0 0 35px rgba(91,240,180,.08),
-									inset 0 0 24px rgba(91,240,180,.06);
-									font-size: 9px;
-									font-weight: 800;
-									letter-spacing: .12em;
-									}
-									
-									.fl-node {
-									position: absolute;
-									min-width: 92px;
-									padding: 10px;
-									border: 1px solid rgba(255,255,255,.07);
-									border-radius: 9px;
-									background: rgba(9,16,22,.92);
-									box-shadow: 0 12px 32px rgba(0,0,0,.2);
-									}
-									
-									.fl-node strong {
-									display: block;
-									color: #d8e2e6;
-									font-size: 9px;
-									}
-									
-									.fl-node span {
-									display: block;
-									margin-top: 3px;
-									color: #687984;
-									font-size: 7px;
-									letter-spacing: .07em;
-									text-transform: uppercase;
-									}
-									
-									.fl-node-1 { top: 2%; left: 34%; }
-									.fl-node-2 { top: 39%; right: 0; }
-									.fl-node-3 { bottom: 3%; left: 35%; }
-									.fl-node-4 { top: 39%; left: 0; }
-									
-									.fl-connection {
-									position: absolute;
-									height: 1px;
-									transform-origin: left center;
-									background:
-									linear-gradient(90deg, rgba(91,240,180,.45), rgba(97,168,255,.07));
-									}
-									
-									.fl-line-1 {
-									width: 60px;
-									top: 31%;
-									left: 45%;
-									transform: rotate(90deg);
-									}
-									
-									.fl-line-2 {
-									width: 61px;
-									top: 50%;
-									left: 58%;
-									}
-									
-									.fl-line-3 {
-									width: 61px;
-									top: 69%;
-									left: 45%;
-									transform: rotate(90deg);
-									}
-									
-									.fl-line-4 {
-									width: 61px;
-									top: 50%;
-									left: 21%;
-									}
-									
-									.fl-research-foot {
-									display: flex;
-									justify-content: space-between;
-									gap: 20px;
-									margin-top: 20px;
-									padding: 18px 22px;
-									border: 1px solid rgba(255,255,255,.055);
-									border-radius: 12px;
-									background: rgba(255,255,255,.015);
-									}
-									
-									.fl-research-foot-item {
-									color: #6f808b;
-									font-size: 8px;
-									font-weight: 750;
-									letter-spacing: .1em;
-									text-transform: uppercase;
-									}
-									
-									.fl-research-foot-item strong {
-									color: #c8d2d7;
-									margin-left: 6px;
-									}
-									
-									@media(max-width:980px) {
-									
-									.fl-research-head {
-									grid-template-columns: 1fr;
-									gap: 24px;
-									}
-									
-									.fl-research-panel {
-									grid-template-columns: 1fr;
-									}
-									
-									.fl-research-visual {
-									min-height: 360px;
-									border-left: 0;
-									border-top: 1px solid rgba(255,255,255,.06);
-									}
-									
-									}
-									
-									@media(max-width:700px) {
-									
-									.fl-research-shell {
-									width: min(100% - 28px, 1180px);
-									padding: 70px 0 74px;
-									}
-									
-									.fl-research-title {
-									font-size: clamp(36px, 11vw, 48px);
-									}
-									
-									.fl-research-intro {
-									font-size: 14px;
-									}
-									
-									.fl-research-copy {
-									padding: 25px;
-									}
-									
-									.fl-research-points {
-									grid-template-columns: 1fr;
-									}
-									
-									.fl-research-visual {
-									min-height: 330px;
-									padding: 22px;
-									}
-									
-									.fl-node {
-									min-width: 82px;
-									padding: 9px;
-									}
-									
-									.fl-research-foot {
-									flex-direction: column;
-									}
-									
-									}
-									</style><!-- mnbnbxmbzxmncbzxc -->
-								</div>
-								<div id="embed06" class="embed-component instance-6">
-									<!-- qweoqwupeoiqwuewqe --><section id="research">
-									<div id="fl-research">
-									<div class="fl-research-shell">
-									
-									<div class="fl-research-head">
-									
-									<div>
-									
-									<div class="fl-research-label">
-									Fashearn Labs Research &amp; Development
-									</div>
-									
-									<h2 class="fl-research-title">
-									Private research that
-									<span>strengthens what we build.</span>
-									</h2>
-									
-									</div>
-									
-									<p class="fl-research-intro">
-									Alongside released products, Fashearn Labs maintains private research
-									across data systems, market intelligence, automation and applied AI.
-									This work is exploratory, evidence-led and separate from our commercial
-									software products.
-									</p>
-									
-									</div>
-									
-									<div class="fl-research-panel">
-									
-									<div class="fl-research-copy">
-									
-									<div class="fl-research-status">
-									Active Private R&amp;D
-									</div>
-									
-									<h3 class="fl-research-name">
-									Market &amp; Data Research Engine
-									</h3>
-									
-									<p class="fl-research-description">
-									An internal research system designed to collect, organise and compare
-									structured market data across multiple instruments and timeframes.
-									The work focuses on identifying repeatable evidence, relationships and
-									useful data methods through long-term observation and testing.
-									</p>
-									
-									<div class="fl-research-points">
-									
-									<div class="fl-research-point">
-									
-									<div class="fl-research-point-icon">
-									01
-									</div>
-									
-									<div class="fl-research-point-title">
-									Collect
-									</div>
-									
-									<div class="fl-research-point-text">
-									Record consistent structured information for later analysis.
-									</div>
-									
-									</div>
-									
-									<div class="fl-research-point">
-									
-									<div class="fl-research-point-icon">
-									02
-									</div>
-									
-									<div class="fl-research-point-title">
-									Compare
-									</div>
-									
-									<div class="fl-research-point-text">
-									Study behaviour, context and relationships across datasets.
-									</div>
-									
-									</div>
-									
-									<div class="fl-research-point">
-									
-									<div class="fl-research-point-icon">
-									03
-									</div>
-									
-									<div class="fl-research-point-title">
-									Validate
-									</div>
-									
-									<div class="fl-research-point-text">
-									Separate repeatable evidence from coincidence before development.
-									</div>
-									
-									</div>
-									
-									</div>
-									
-									<div class="fl-research-note">
-									This remains private research and is not a RouteOps feature or public
-									trading product. Fashearn Labs does not publish trading signals,
-									profit claims or unverified performance results.
-									</div>
-									
-									</div>
-									
-									<div class="fl-research-visual">
-									
-									<div class="fl-system-map">
-									
-									<div class="fl-system-ring"></div>
-									<div class="fl-system-ring"></div>
-									<div class="fl-system-ring"></div>
-									
-									<div class="fl-system-core">
-									R&amp;D
-									</div>
-									
-									<div class="fl-connection fl-line-1"></div>
-									<div class="fl-connection fl-line-2"></div>
-									<div class="fl-connection fl-line-3"></div>
-									<div class="fl-connection fl-line-4"></div>
-									
-									<div class="fl-node fl-node-1">
-									<strong>Collect</strong>
-									<span>Structured data</span>
-									</div>
-									
-									<div class="fl-node fl-node-2">
-									<strong>Compare</strong>
-									<span>Relationships</span>
-									</div>
-									
-									<div class="fl-node fl-node-3">
-									<strong>Validate</strong>
-									<span>Evidence</span>
-									</div>
-									
-									<div class="fl-node fl-node-4">
-									<strong>Analyse</strong>
-									<span>Behaviour</span>
-									</div>
-									
-									</div>
-									
-									</div>
-									
-									</div>
-									
-									<div class="fl-research-foot">
-									
-									<div class="fl-research-foot-item">
-									Status
-									<strong>Private R&amp;D</strong>
-									</div>
-									
-									<div class="fl-research-foot-item">
-									Approach
-									<strong>Evidence first</strong>
-									</div>
-									
-									<div class="fl-research-foot-item">
-									Commercial status
-									<strong>Not for sale</strong>
-									</div>
-									
-									</div>
-									
-									</div>
-									</div>
-									</section><!-- mnbnbxmbzxmncbzxc -->
-								</div>
+								
+								
 								<div id="embed07" class="embed-component instance-7">
 									<!-- qweoqwupeoiqwuewqe --><style>
 									#fl-about,
@@ -3049,206 +1714,7 @@
 									}
 									</style><!-- mnbnbxmbzxmncbzxc -->
 								</div>
-								<div id="embed08" class="embed-component instance-8">
-									<!-- qweoqwupeoiqwuewqe --><section id="about">
-									<div id="fl-about">
-									<div class="fl-about-shell">
-									
-									<div class="fl-about-grid">
-									
-									<div>
-									
-									<div class="fl-about-label">
-									About Fashearn Labs
-									</div>
-									
-									<h2 class="fl-about-title">
-									Built to solve
-									<span>useful problems.</span>
-									</h2>
-									
-									<p class="fl-about-intro">
-									Fashearn Labs is an independent technology studio developing practical
-									management systems, operational software and focused data-driven tools.
-									Our work combines software development, automation, applied AI and
-									independent research where they can create genuine operational value.
-									</p>
-									
-									<div class="fl-about-history">
-									Fashearn began by exploring emerging technologies, digital systems and
-									online communities. That experience developed into a broader focus on
-									building practical software around real-world problems. Today the emphasis
-									is simple: understand the work, build a useful core, validate it honestly
-									and only add complexity when it earns its place.
-									</div>
-									
-									</div>
-									
-									<div class="fl-about-panel">
-									
-									<div class="fl-about-panel-head">
-									
-									<div class="fl-about-panel-title">
-									How Fashearn Labs works
-									</div>
-									
-									<div class="fl-about-panel-status">
-									Independent development
-									</div>
-									
-									</div>
-									
-									<div class="fl-about-values">
-									
-									<div class="fl-about-value">
-									
-									<div class="fl-about-value-number">
-									01
-									</div>
-									
-									<div>
-									
-									<h3>
-									Start with the real problem
-									</h3>
-									
-									<p>
-									Understand the workflow, friction and operational need before deciding
-									what technology should be built.
-									</p>
-									
-									</div>
-									
-									</div>
-									
-									<div class="fl-about-value">
-									
-									<div class="fl-about-value-number">
-									02
-									</div>
-									
-									<div>
-									
-									<h3>
-									Build a controlled core
-									</h3>
-									
-									<p>
-									Create a focused working system that solves the important problem without
-									unnecessary complexity.
-									</p>
-									
-									</div>
-									
-									</div>
-									
-									<div class="fl-about-value">
-									
-									<div class="fl-about-value-number">
-									03
-									</div>
-									
-									<div>
-									
-									<h3>
-									Validate in real use
-									</h3>
-									
-									<p>
-									Test the workflow, data and outputs carefully before treating a system
-									as a finished release.
-									</p>
-									
-									</div>
-									
-									</div>
-									
-									<div class="fl-about-value">
-									
-									<div class="fl-about-value-number">
-									04
-									</div>
-									
-									<div>
-									
-									<h3>
-									Extend when it adds value
-									</h3>
-									
-									<p>
-									Add integrations, automation and advanced capabilities only when there
-									is a genuine customer or operational reason.
-									</p>
-									
-									</div>
-									
-									</div>
-									
-									</div>
-									</div>
-									
-									</div>
-									
-									<section id="contact" class="fl-connect">
-									
-									<div class="fl-connect-grid">
-									
-									<div>
-									
-									<div class="fl-connect-kicker">
-									Connect with Fashearn Labs
-									</div>
-									
-									<h2 class="fl-connect-title">
-									Practical software.
-									Focused technology.
-									</h2>
-									
-									<p class="fl-connect-text">
-									RouteOps Core v1.1 is the first completed Fashearn Labs management-system
-									release. We are also interested in operational problems where better data,
-									automation or focused software could remove unnecessary manual work.
-									</p>
-									
-									</div>
-									
-									<div class="fl-connect-actions">
-									
-									<a
-									class="fl-connect-button fl-connect-primary"
-									href="mailto:info@fashearn.io">
-									Contact
-									<span>→</span>
-									</a>
-									
-									<a
-									class="fl-connect-button fl-connect-secondary"
-									href="https://github.com/fashearn-labs"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="Fashearn Labs GitHub">
-									GitHub
-									</a>
-									
-									<a
-									class="fl-connect-button fl-connect-secondary"
-									href="https://x.com/FashearnLabs"
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label="Fashearn Labs on X">
-									X / Twitter
-									</a>
-									
-									</div>
-									
-									</div>
-									
-									</section>
-									
-									</div>
-									</div>
-									</section><!-- mnbnbxmbzxmncbzxc -->
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -3340,7 +1806,7 @@
 						</div>
 						
 						<div class="fl-footer-note">
-						Data → Control → Intelligence → Action
+						RouteOps Core v1.1
 						</div>
 						
 						</div>
@@ -3352,24 +1818,14 @@
 						RouteOps
 						</a>
 						
-						<a href="#projects"
-						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('projects').scrollIntoView({behavior:'smooth',block:'start'});">
-						Systems
+						<a href="#routeops-proof"
+						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('routeops-proof').scrollIntoView({behavior:'smooth',block:'start'});">
+						See It Working
 						</a>
 						
-						<a href="#research"
-						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('research').scrollIntoView({behavior:'smooth',block:'start'});">
-						Research
-						</a>
-						
-						<a href="#about"
-						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('about').scrollIntoView({behavior:'smooth',block:'start'});">
-						About
-						</a>
-						
-						<a href="#contact"
-						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('contact').scrollIntoView({behavior:'smooth',block:'start'});">
-						Contact
+						<a href="#trial"
+						onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('trial').scrollIntoView({behavior:'smooth',block:'start'});">
+						Start Trial
 						</a>
 						
 						</div>
