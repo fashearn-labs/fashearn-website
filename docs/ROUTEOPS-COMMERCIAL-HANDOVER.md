@@ -266,3 +266,12 @@ Maintenance rule: when RouteOps UI or workflow changes materially, update the af
 - Fresh indexing request submitted successfully; URL added to Google's priority crawl queue.
 - No repeated resubmission required. Next step is to monitor indexing/search performance after Google recrawls the page.
 
+
+
+### User Guide promotion — 27 September 2026
+
+- Published a Fashearn Labs LinkedIn company post announcing the complete 26-page RouteOps Core v1.1 User Guide.
+- Shared the company post from the founder's personal LinkedIn profile.
+- Published a matching RouteOps User Guide post on X via @FashearnLabs.
+- All social posts point users back to fashearn.io rather than distributing the internal ZIP pack.
+- Public positioning remains product-led: £99/month, 14-day free trial, no minimum term.
