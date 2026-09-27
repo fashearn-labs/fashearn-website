@@ -189,7 +189,7 @@ Documentation should be:
 - suitable for website/help-page use later
 - maintained in GitHub alongside product changes
 
-Status: **To do — priority before wider customer onboarding.**
+Status: **In progress.** Page 1 (Welcome / Getting Started) design approved on 27 September 2026. Use the sharper PDF style as the standard for the full guide: crisp vector text/graphics, native-aspect screenshots, simple step/check/stop callouts.
 
 ## Current commercial workflow
 
