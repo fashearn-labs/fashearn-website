@@ -189,7 +189,7 @@ Documentation should be:
 - suitable for website/help-page use later
 - maintained in GitHub alongside product changes
 
-Status: **In progress.** Page 1 (Welcome / Getting Started) design approved on 27 September 2026. Use the sharper PDF style as the standard for the full guide: crisp vector text/graphics, native-aspect screenshots, simple step/check/stop callouts.
+Status: **In progress.** Documentation has now progressed through Dashboard, Drivers and Daily Operations, with further Import Data / Issues & Review material being captured. A 9-page Reports & Analysis walkthrough draft was created on 27 September 2026 from the live public-demo screens (Reports & Exports, Carrier Performance, Scenario Analysis and Contract Comparison) and is awaiting user review. Page 1 (Welcome / Getting Started) design approved on 27 September 2026. Use the sharper PDF style as the standard for the full guide: crisp vector text/graphics, native-aspect screenshots, simple step/check/stop callouts.
 
 ## Current commercial workflow
 
