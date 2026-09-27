@@ -4,7 +4,7 @@
 **Website:** https://fashearn.io  
 **Current product:** RouteOps Core v1.1  
 **Commercial model:** £99/month, 14-day free trial, no minimum term  
-**Status:** Live product / commercial setup in progress  
+**Status:** Live product / LinkedIn Product Page submitted for review  
 **Updated:** 27 September 2026
 
 ## Product direction
@@ -99,6 +99,13 @@ Source assets:
 - `routeops-reports-exports-v1.1.webp` — website-assets repository
 
 The media should show real RouteOps screens rather than marketing mock-ups wherever possible.
+
+### LinkedIn review status
+
+- Submitted to LinkedIn for review on 27 September 2026
+- Current status shown by LinkedIn: **Product in review**
+- LinkedIn notes that review times are currently longer than normal
+- No further Product Page edits should be made unless necessary while review is pending
 
 ### LinkedIn category submission data
 
