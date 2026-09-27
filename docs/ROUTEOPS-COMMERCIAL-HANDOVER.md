@@ -215,3 +215,20 @@ As RouteOps commercialisation continues, significant changes should be recorded 
 - long-term direction changes
 
 This file is the commercial continuation record and should be updated alongside the live project.
+
+
+## RouteOps user guide pack — 27 September 2026
+
+The first full beginner-friendly RouteOps documentation pack has now been assembled and visually checked.
+
+- **26-page RouteOps Core v1.1 Easy User Guide**
+- Built from the actual public-demo RouteOps screens using fictional example data
+- Browser / desktop edges cleaned from screenshots
+- Consistent PDF page design with vector headings/instructions and crisp embedded screenshots
+- Workflow order: Getting Started / Dashboard -> Drivers -> Daily Operations -> Import Data -> Issues & Review -> Reports & Analysis -> Quick Workflow
+- Smaller section PDFs are also produced for easier customer use
+- Public-demo warning is included: do not upload real customer or personal data to the public website demo
+- Advanced functions are clearly separated from the normal daily workflow
+- Earlier mixed draft downloads are superseded by the final guide pack
+
+Maintenance rule: when RouteOps UI or workflow changes materially, update the affected user-guide section rather than rewriting unrelated pages.
