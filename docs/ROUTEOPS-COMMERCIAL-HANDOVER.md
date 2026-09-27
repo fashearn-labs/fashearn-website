@@ -116,6 +116,30 @@ Completed for Product Page review:
 
 These entries are for LinkedIn categorisation and are not presented as claims that RouteOps is identical to those products.
 
+## LinkedIn network growth strategy
+
+The company page follower pool is currently limited by the founder's personal LinkedIn network, so growth will be built in two stages:
+
+1. Grow the founder's personal network with relevant logistics, fleet, delivery and operations people.
+2. Use LinkedIn's Company Page **Invite to follow** feature to invite the most relevant connections to Fashearn Labs.
+
+Target connection profiles:
+- Operations Managers
+- Fleet Managers / Fleet Operations Managers
+- Logistics Managers
+- Delivery contractor owners/directors
+- Transport / last-mile operations managers
+- Payroll / commercial operations roles where relevant
+
+Approach:
+- targeted rather than mass connection requests
+- slow, steady growth to protect account health
+- no unnecessary cold messaging
+- prioritise UK delivery contractors and multi-carrier operators
+- use company-page invites only for relevant connections
+
+This supports the wider low-contact commercial model: build visibility and inbound interest rather than relying on bespoke outreach.
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
