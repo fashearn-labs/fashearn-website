@@ -162,6 +162,35 @@ Current setup:
 
 Future X activity should stay product-led and concise, supporting discovery and credibility rather than high-touch sales.
 
+## RouteOps user instructions / documentation
+
+A proper user guide is required before wider customer rollout.
+
+Planned guide structure:
+1. Getting started / first login
+2. Dashboard overview
+3. Driver setup
+4. Importing operational data
+5. Daily Operations workflow
+6. Driver pay / Pay Run
+7. Carrier reconciliation
+8. Exception Centre
+9. Reports & Exports
+10. Administration / settings
+11. Trial workflow and what happens at the end of the 14-day trial
+12. Common errors / troubleshooting
+13. Quick-start checklist
+
+Documentation should be:
+- written for non-technical delivery operators
+- screenshot-led where useful
+- short and task-based rather than a long technical manual
+- aligned with RouteOps Core v1.1
+- suitable for website/help-page use later
+- maintained in GitHub alongside product changes
+
+Status: **To do — priority before wider customer onboarding.**
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
