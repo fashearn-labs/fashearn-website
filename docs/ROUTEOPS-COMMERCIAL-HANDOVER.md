@@ -90,7 +90,7 @@ Preferred order:
 1. Operations Dashboard — added to LinkedIn Product Page and set as primary media
 2. Pay Run / Settlement Close — added to LinkedIn Product Page
 3. Exception Centre — added to LinkedIn Product Page
-4. Reports & Exports
+4. Reports & Exports — added to LinkedIn Product Page
 
 Source assets:
 - `routeops-dashboard-v1.1.png` — main website repository
