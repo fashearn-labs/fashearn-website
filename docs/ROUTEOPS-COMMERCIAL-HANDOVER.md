@@ -100,6 +100,15 @@ Source assets:
 
 The media should show real RouteOps screens rather than marketing mock-ups wherever possible.
 
+### LinkedIn category submission data
+
+Completed for Product Page review:
+- Keywords: Fleet Management, Delivery Operations, Driver Management
+- Competitor companies: Samsara, Fleetio, Verizon Connect
+- Similar products: Fleetio, Samsara, Ramco Logistics
+
+These entries are for LinkedIn categorisation and are not presented as claims that RouteOps is identical to those products.
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
