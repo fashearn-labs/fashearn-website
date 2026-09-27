@@ -140,6 +140,13 @@ Approach:
 
 This supports the wider low-contact commercial model: build visibility and inbound interest rather than relying on bespoke outreach.
 
+### Network growth activity
+
+- 27 September 2026: targeted personal-network growth started
+- 2 relevant connection requests sent
+- approach remains selective, low-volume and no-note by default
+- individual contact names are not logged in GitHub; only progress and strategy are recorded
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
