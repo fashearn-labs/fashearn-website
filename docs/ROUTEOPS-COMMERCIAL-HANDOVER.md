@@ -242,3 +242,17 @@ The first full beginner-friendly RouteOps documentation pack has now been assemb
 - Earlier mixed draft downloads are superseded by the final guide pack
 
 Maintenance rule: when RouteOps UI or workflow changes materially, update the affected user-guide section rather than rewriting unrelated pages.
+
+
+### SEO + social footer refresh — 27 September 2026
+
+- Homepage SEO title changed to: `RouteOps Core | Delivery Operations & Driver Pay Software`.
+- Meta description refocused on delivery operations software, driver pay, carrier reconciliation, exception control, reporting and profitability.
+- Added canonical URL for `https://fashearn.io/`.
+- Added Open Graph and X/Twitter social preview metadata.
+- Added JSON-LD structured data for Fashearn Labs (Organization) and RouteOps Core (SoftwareApplication), including the £99/month offer and 14-day free trial.
+- Added `robots.txt` with sitemap reference.
+- Added `sitemap.xml` for the live homepage.
+- Added a subtle footer link to the Fashearn Labs LinkedIn company page.
+- Next step: verify the deployed metadata/robots/sitemap, then use Google Search Console URL Inspection to request re-indexing and submit/refresh the sitemap.
+
