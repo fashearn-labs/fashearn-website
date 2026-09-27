@@ -256,3 +256,13 @@ Maintenance rule: when RouteOps UI or workflow changes materially, update the af
 - Added a subtle footer link to the Fashearn Labs LinkedIn company page.
 - Next step: verify the deployed metadata/robots/sitemap, then use Google Search Console URL Inspection to request re-indexing and submit/refresh the sitemap.
 
+
+
+### Google Search Console re-index request — 27 September 2026
+
+- New sitemap `https://fashearn.io/sitemap.xml` submitted successfully.
+- Search Console read the sitemap successfully on 27 September 2026 and discovered the homepage.
+- Live URL test for `https://fashearn.io/` passed: crawl allowed, page fetch successful, indexing allowed, canonical declared as `https://fashearn.io/`.
+- Fresh indexing request submitted successfully; URL added to Google's priority crawl queue.
+- No repeated resubmission required. Next step is to monitor indexing/search performance after Google recrawls the page.
+
