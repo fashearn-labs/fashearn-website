@@ -87,7 +87,7 @@ Current LinkedIn targeting:
 Media is being added to the LinkedIn Product Page as a simple visual product tour.
 
 Preferred order:
-1. Operations Dashboard
+1. Operations Dashboard — added to LinkedIn Product Page and set as primary media
 2. Pay Run / Settlement Close
 3. Exception Centre
 4. Reports & Exports
