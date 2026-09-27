@@ -191,6 +191,16 @@ Documentation should be:
 
 Status: **In progress.** Documentation has now progressed through Dashboard, Drivers and Daily Operations, with further Import Data / Issues & Review material being captured. A 9-page Reports & Analysis walkthrough draft was created on 27 September 2026 from the live public-demo screens (Reports & Exports, Carrier Performance, Scenario Analysis and Contract Comparison) and is awaiting user review. Page 1 (Welcome / Getting Started) design approved on 27 September 2026. Use the sharper PDF style as the standard for the full guide: crisp vector text/graphics, native-aspect screenshots, simple step/check/stop callouts.
 
+
+### Website user guide publication — 27 September 2026
+
+- Final customer-facing PDF: `assets/RouteOps-Core-v1.1-User-Guide.pdf`
+- Complete guide: 26 pages, screenshot-led, beginner-friendly RouteOps Core v1.1 walkthrough.
+- Public website now links to the guide from the **See RouteOps in action** section via **View User Guide**.
+- Footer also includes a **User Guide** link.
+- The public site exposes the single PDF only; the ZIP/master section pack remains an internal working asset.
+- Future RouteOps UI changes should trigger a check of the affected guide page(s) before publication.
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
