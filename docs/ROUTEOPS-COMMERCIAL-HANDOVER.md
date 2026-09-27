@@ -147,6 +147,20 @@ This supports the wider low-contact commercial model: build visibility and inbou
 - approach remains selective, low-volume and no-note by default
 - individual contact names are not logged in GitHub; only progress and strategy are recorded
 
+## X / Twitter profile
+
+Profile refreshed on 27 September 2026 to match the RouteOps-first commercial direction.
+
+Current setup:
+- Account: @FashearnLabs
+- Name: Fashearn Labs
+- Bio: RouteOps Core — operations software for delivery contractors. Driver pay, reconciliation, exceptions & profitability. 14-day trial at fashearn.io
+- RouteOps Core banner in use
+- Fashearn Labs icon retained
+- RouteOps Core v1.1 launch post remains pinned
+
+Future X activity should stay product-led and concise, supporting discovery and credibility rather than high-touch sales.
+
 ## Current commercial workflow
 
 1. Prospect discovers RouteOps through fashearn.io, LinkedIn or future search/outreach channels.
