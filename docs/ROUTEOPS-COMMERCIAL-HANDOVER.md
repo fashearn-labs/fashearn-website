@@ -88,7 +88,7 @@ Media is being added to the LinkedIn Product Page as a simple visual product tou
 
 Preferred order:
 1. Operations Dashboard — added to LinkedIn Product Page and set as primary media
-2. Pay Run / Settlement Close
+2. Pay Run / Settlement Close — added to LinkedIn Product Page
 3. Exception Centre
 4. Reports & Exports
 
