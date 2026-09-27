@@ -157,7 +157,8 @@ Current setup:
 - Bio: RouteOps Core — operations software for delivery contractors. Driver pay, reconciliation, exceptions & profitability. 14-day trial at fashearn.io
 - RouteOps Core banner in use
 - Fashearn Labs icon retained
-- RouteOps Core v1.1 launch post remains pinned
+- RouteOps Core v1.1 commercial post refreshed and pinned
+- Pinned post states: £99/month, 14-day free trial, no minimum term, with fashearn.io CTA
 
 Future X activity should stay product-led and concise, supporting discovery and credibility rather than high-touch sales.
 
