@@ -1079,6 +1079,37 @@
 									line-height:1.75;
 									}
 									
+									#routeops-proof .rp-video{
+									margin-bottom:28px;
+									border:1px solid var(--line);
+									border-radius:22px;
+									overflow:hidden;
+									background:#05090d;
+									box-shadow:0 28px 80px rgba(0,0,0,.24);
+									}
+
+									#routeops-proof .rp-video video{
+									display:block;
+									width:100%;
+									height:auto;
+									background:#05090d;
+									}
+
+									#routeops-proof .rp-video-copy{
+									padding:20px 26px 22px;
+									}
+
+									#routeops-proof .rp-video-copy strong{
+									display:block;
+									margin-bottom:5px;
+									font-size:18px;
+									}
+
+									#routeops-proof .rp-video-copy span{
+									color:var(--muted);
+									font-size:14px;
+									}
+
 									#routeops-proof .rp-feature{
 									margin-bottom:28px;
 									border:1px solid var(--line);
@@ -1311,9 +1342,20 @@
 									</div>
 									
 									<p class="rp-intro">
-									Real screens from the working RouteOps Core v1.1 application.
+									Watch the 42-second overview, then explore real screens from the working RouteOps Core v1.1 application.
 									</p>
 									
+									</div>
+
+									<div class="rp-video">
+									<video controls preload="metadata" playsinline poster="assets/routeops-dashboard-v1.1.png">
+									<source src="assets/RouteOps-Core-v1.1-Overview.mp4" type="video/mp4">
+									Your browser does not support HTML5 video.
+									</video>
+									<div class="rp-video-copy">
+									<strong>RouteOps Core v1.1 — 42-second overview</strong>
+									<span>A quick look at the workflow before exploring the live product screens below.</span>
+									</div>
 									</div>
 									
 									<article class="rp-feature">
@@ -1861,12 +1903,6 @@
 							</div>
 							<div class="field" data-type="text">
 								<input type="text" name="carriers" id="form01-carriers" placeholder="Carrier(s) used" maxlength="256" required />
-							</div>
-							<div class="field" data-type="textarea">
-								<textarea data-gramm_editor="false" name="pay_method" id="form01-pay_method" placeholder="How is driver pay currently calculated?" required></textarea>
-							</div>
-							<div class="field" data-type="textarea">
-								<textarea data-gramm_editor="false" name="message" id="form01-message" placeholder="Anything else we should know? (optional)"></textarea>
 							</div>
 							<div class="cf-turnstile" data-sitekey="0x4AAAAAAEcsh7F8DpfNOXen" data-theme="dark"></div>
 <div class="actions">

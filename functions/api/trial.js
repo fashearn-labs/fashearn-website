@@ -7,9 +7,7 @@ export async function onRequestPost(context) {
       company: String(formData.get("company") || "").trim(),
       email: String(formData.get("email") || "").trim(),
       drivers: String(formData.get("drivers") || "").trim(),
-      carriers: String(formData.get("carriers") || "").trim(),
-      pay_method: String(formData.get("pay_method") || "").trim(),
-      message: String(formData.get("message") || "").trim()
+      carriers: String(formData.get("carriers") || "").trim()
     };
 
     if (
@@ -17,8 +15,7 @@ export async function onRequestPost(context) {
       !payload.company ||
       !payload.email ||
       !payload.drivers ||
-      !payload.carriers ||
-      !payload.pay_method
+      !payload.carriers
     ) {
       return new Response("Please complete all required fields.", {
         status: 400
