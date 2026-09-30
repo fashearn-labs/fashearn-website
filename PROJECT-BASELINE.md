@@ -91,3 +91,15 @@ For major milestones, a handover summary is still useful, but routine continuati
 - Brand reference asset added under assets as **Fashearn_Labs_Brand_Board_v1.0.png** and first company-introduction social artwork was saved for reuse.
 
 This LinkedIn product publication and refreshed social identity are part of the approved public-presentation baseline. Do not regress to public-facing RouteOps/RouteOps Core branding.
+
+## Commercial / publishing milestone — 30 September 2026
+
+- New 44-second **Fashearn Labs Route Operations Dashboard v1.1 | Operations Overview** video completed using the approved 10-scene campaign sequence.
+- Final Canva motion sequence: Zoom, Flow, Flow, Zoom, then Breathe across the remaining scenes, with 0.3-second dissolve transitions and soft background music.
+- Video published publicly on YouTube and embedded on the website using the privacy-enhanced YouTube embed. Website duration copy was corrected from 42 seconds to 44 seconds.
+- The same MP4 was published natively on the Fashearn Labs LinkedIn page and X profile.
+- LinkedIn Product Page for **Route Operations Dashboard** remains published and approved.
+- Public commercial offer remains **14-day free trial · £99/month · no minimum term**.
+- ICO registration application has been submitted. An ICO contact security number has now been received by email; the number itself is deliberately **not stored in this public repository**. Final registration/reference confirmation remains pending.
+- Current website trial CTA still leads to the legacy manual `/api/trial` enquiry form. The next commercial website task is to replace that manual request flow with the approved Stripe card-upfront 14-day trial flow, after verifying the legal-page/Stripe production prerequisites and preserving the existing website design.
+
