@@ -1,6 +1,6 @@
 # Fashearn Labs — Project Baseline
 
-**Updated:** 29 September 2026  
+**Updated:** 30 September 2026  
 **Status:** Approved working baseline for continuation in future chats/sessions.
 
 ## Mandatory continuation rule
@@ -78,3 +78,16 @@ Future guide revisions must begin from this approved detailed guide. Do not repl
 > Baseline first. Preserve proven work. Review before modifying. Improve; do not accidentally regress.
 
 For major milestones, a handover summary is still useful, but routine continuation should be possible from the repository baseline and current source without requiring a complete reconstruction of previous chats.
+
+## Social and LinkedIn milestone — 30 September 2026
+
+- LinkedIn approved and the Fashearn Labs **Route Operations Dashboard** product page was published successfully.
+- Published product positioning: operations software for delivery contractors and multi-carrier operators, with driver pay, carrier reconciliation, exception control, reporting, profitability, controlled pay runs, carrier/contract checks, **Audit Trail**, operational reporting and commercial visibility.
+- Public offer shown on LinkedIn: **14-day free trial · £99/month · no minimum term**.
+- Intended roles shown: Operations Manager, Payroll Manager, Logistics Manager, Fleet Manager and Fleet Operations Manager.
+- Product gallery uses current Route Operations Dashboard screenshots.
+- Fashearn Labs X profile was refreshed to remove old public-facing RouteOps Core wording and use the current company positioning.
+- New Fashearn Labs brand direction approved: retain the square upward-arrow mark; use a darker, more restrained teal/navy visual system and cleaner company wordmark.
+- Brand reference asset added under assets as **Fashearn_Labs_Brand_Board_v1.0.png** and first company-introduction social artwork was saved for reuse.
+
+This LinkedIn product publication and refreshed social identity are part of the approved public-presentation baseline. Do not regress to public-facing RouteOps/RouteOps Core branding.
