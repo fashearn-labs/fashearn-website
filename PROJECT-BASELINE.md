@@ -103,3 +103,21 @@ This LinkedIn product publication and refreshed social identity are part of the 
 - ICO registration application has been submitted. An ICO contact security number has now been received by email; the number itself is deliberately **not stored in this public repository**. Final registration/reference confirmation remains pending.
 - Current website trial CTA still leads to the legacy manual `/api/trial` enquiry form. The next commercial website task is to replace that manual request flow with the approved Stripe card-upfront 14-day trial flow, after verifying the legal-page/Stripe production prerequisites and preserving the existing website design.
 
+
+
+## Card-first trial policy — 1 October 2026
+
+The previous hold on developing the website trial journey has been deliberately superseded for sandbox/test development by the approved card-first commercial model.
+
+Approved customer journey:
+- 14-day free trial
+- a valid payment method/card is required through Stripe Checkout before the trial starts
+- £0 is charged at trial start
+- after 14 days the subscription becomes £99 GBP/month unless cancelled
+- the local trial clock starts only after a verified completed Stripe subscription Checkout
+- email verification alone does not start the trial
+- anonymous/unsecured persistent trials are not the approved commercial model
+
+A controlled Stripe sandbox end-to-end test has verified this boundary. Website signup, Checkout-return and trial-success integration may therefore be built and tested in Stripe sandbox without waiting for final ICO confirmation.
+
+This does NOT authorize live customer charging or production Stripe activation. Live activation still requires the remaining production/legal readiness checks and an explicit controlled decision. Preserve the existing public website design while integrating the new self-service journey.
