@@ -141,3 +141,19 @@ A Cloudflare Workers runtime incompatibility was isolated during testing: outbou
 Safe diagnostic logging added in commit `a80f6f6b7f09d1edf294f5ccda63f1e222209a9c` records only bounded failure category/upstream status information and does not deliberately log verification tokens, email addresses or secrets.
 
 No live Stripe activation or paid-customer provisioning is authorized by this milestone. The next controlled boundary is sandbox Stripe Checkout after verified email. The existing homepage trial form remains the legacy Make/manual flow until the self-service chain is separately built and verified.
+
+
+## Sandbox Checkout return wording correction — 2 October 2026
+
+Controlled hosted sandbox Checkout returned to `trial/success.html`, but a read-only check of the exact hosted trial showed pending status, verified email and null trial dates. The prior static page incorrectly declared activation without server confirmation.
+
+Source correction: `c7c0fb9f2a2395dc28eedacc68e675d0f0705918`.
+- page title now says Trial confirmation pending;
+- heading says Trial activation is awaiting confirmation;
+- body states that return from Stripe Checkout does not confirm an active account;
+- existing CSS/design, sandbox notice, subscription terms and home link preserved;
+- no backend activation, manual database change or webhook shortcut added.
+
+Source comparison confirmed the style block was unchanged. **Cloudflare Pages deployment and visible owner confirmation are pending**; do not call this a verified deployed milestone yet. This repository has no GitHub Actions workflow at this checkpoint.
+
+Next checkpoint: Cloudflare Pages production deployment success, then visible page refresh/owner confirmation. Afterwards, separately review and test the existing Provisioner signature-verified Checkout webhook integration before connecting hosted sandbox event delivery. Keep the public signup form and live Stripe/Render boundaries unchanged.
