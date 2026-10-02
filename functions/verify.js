@@ -64,7 +64,7 @@ export async function onRequestGet(context) {
     const response = await fetch(target.toString(), {
       method: "GET",
       headers: { "Accept": "application/json" },
-      redirect: "error"
+      redirect: "manual"
     });
 
     let result = null;
