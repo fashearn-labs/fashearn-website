@@ -121,3 +121,23 @@ Approved customer journey:
 A controlled Stripe sandbox end-to-end test has verified this boundary. Website signup, Checkout-return and trial-success integration may therefore be built and tested in Stripe sandbox without waiting for final ICO confirmation.
 
 This does NOT authorize live customer charging or production Stripe activation. Live activation still requires the remaining production/legal readiness checks and an explicit controlled decision. Preserve the existing public website design while integrating the new self-service journey.
+
+
+## Public email-verification bridge verified — 2 October 2026
+
+The sandbox email-verification bridge is now verified end to end on the public Fashearn Labs domain.
+
+Verified controlled flow:
+- hosted sandbox signup returned `verification_email_sent` with `trial_started=false`;
+- verification email was received in a user-controlled test mailbox (mailbox address deliberately not recorded here);
+- the email verification link entered `https://fashearn.io/verify?token=...`;
+- Cloudflare Pages routed `GET /verify` to `functions/verify.js:onRequestGet`;
+- the Pages Function handed the one-time token to the hosted Render sandbox verification endpoint;
+- the Render sandbox accepted the token and returned the expected `email_verified` / `sandbox` / `stripe_checkout` / `checkout_started=false` contract;
+- the public browser displayed the branded **Email verified** page stating that secure card setup is next and the 14-day trial has not started.
+
+A Cloudflare Workers runtime incompatibility was isolated during testing: outbound `fetch()` with `redirect: "error"` raised a `TypeError` before the request reached Render. Commit `e61b23ee1a01984e463c86dbfa543e6697f73f39` changed this narrowly to `redirect: "manual"`. The commit deployed successfully to Cloudflare production and the subsequent public verification test passed.
+
+Safe diagnostic logging added in commit `a80f6f6b7f09d1edf294f5ccda63f1e222209a9c` records only bounded failure category/upstream status information and does not deliberately log verification tokens, email addresses or secrets.
+
+No live Stripe activation or paid-customer provisioning is authorized by this milestone. The next controlled boundary is sandbox Stripe Checkout after verified email. The existing homepage trial form remains the legacy Make/manual flow until the self-service chain is separately built and verified.
