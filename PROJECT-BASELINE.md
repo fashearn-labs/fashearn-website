@@ -157,3 +157,14 @@ Source correction: `c7c0fb9f2a2395dc28eedacc68e675d0f0705918`.
 Source comparison confirmed the style block was unchanged. **Cloudflare Pages deployment and visible owner confirmation are pending**; do not call this a verified deployed milestone yet. This repository has no GitHub Actions workflow at this checkpoint.
 
 Next checkpoint: Cloudflare Pages production deployment success, then visible page refresh/owner confirmation. Afterwards, separately review and test the existing Provisioner signature-verified Checkout webhook integration before connecting hosted sandbox event delivery. Keep the public signup form and live Stripe/Render boundaries unchanged.
+
+
+## Checkout return wording deployment verified — 2 October 2026
+
+The wording correction in `c7c0fb9` is now verified deployed:
+- owner confirmed latest Cloudflare Pages deployment **Success**;
+- after a hard refresh, owner confirmed the visible heading **Trial activation is awaiting confirmation.**
+
+This supersedes the pending deployment status above. The page no longer claims backend activation from a redirect. The controlled hosted trial remains pending based on the last read-only registry check; activation has not been proved.
+
+Next controlled stage remains review and local/CI testing of a sandbox hosted webhook adapter that reuses the Provisioner's existing signature verification and exact Checkout linkage/activation chain. No live Stripe, public signup migration or Render provisioning is authorized.
