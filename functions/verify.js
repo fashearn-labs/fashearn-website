@@ -96,12 +96,24 @@ export async function onRequestGet(context) {
       );
     }
 
+    console.error("verify_bridge_failure", {
+      stage: "upstream_response",
+      upstream_status: response.status,
+      upstream_content_type: response.headers.get("content-type") || "unknown",
+      json_received: result !== null
+    });
+
     return page(
       "Verification temporarily unavailable",
       "We could not complete email verification right now. Please try again shortly.",
       502
     );
-  } catch (_) {
+  } catch (error) {
+    console.error("verify_bridge_failure", {
+      stage: "fetch_exception",
+      error_name: error && error.name ? String(error.name) : "unknown"
+    });
+
     return page(
       "Verification temporarily unavailable",
       "We could not complete email verification right now. Please try again shortly.",
