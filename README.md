@@ -16,6 +16,16 @@ Public naming is **Fashearn Labs Route Operations Dashboard v1.1**. Do not intro
 
 The current guide preserves the detailed product baseline and includes the Audit Trail. Future guide revisions should start from this version and improve it rather than replacing it with a reduced document.
 
+## Company-level operating authority
+
+Daily Fashearn Labs priority is coordinated in the private repository:
+
+`fashearn-labs/fashearn-labs-operating-plan`
+
+Read its `README.md`, `CURRENT-PRIORITIES.md` and `WEBSITE-ROADMAP.md` before
+substantial website redevelopment. This website repository remains authoritative for
+the actual live site baseline/source.
+
 ## Project records
 
 - [RouteOps Commercialisation & Continuation Log](docs/ROUTEOPS-COMMERCIAL-HANDOVER.md)
