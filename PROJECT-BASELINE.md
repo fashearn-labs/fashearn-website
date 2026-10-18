@@ -1,5 +1,10 @@
 # Fashearn Labs — Project Baseline
 
+## 18 October — parallel marketing: staged useful resource, protected public website
+
+Fashearn Labs will prepare content and engage organically during the ongoing safety/debug phase, rather than leaving marketing dormant. [Website resource draft staged for review](docs/MARKETING-CONTENT-STAGING-2026-10-18.md) focuses on proven operations/driver-pay controls, **not unimplemented remittance/POD/invoicing/VAT features**. The page is NOT published; no live website `index.html`, CSS/JS, forms, trial redirect, guide/video, Cloudflare Pages provider config, payment link or customer data changed. Current live source and approved public presentation remain authoritative. Daily marketing work/actions tracked privately in `fashearn-labs/fashearn-labs-operating-plan` (new `DAILY-MARKETING-RHYTHM.md` and actual post log). No website conversion into a generic agency absent buyer demand/owner approval. Keep **£99/month recurring Stripe**, 14-day card-required trial plan, **LIVE CHECKOUT OFF until G05–G12 accepted and owner specifically authorises**.
+
+
 **Updated:** 30 September 2026  
 **Status:** Approved working baseline for continuation in future chats/sessions.
 
