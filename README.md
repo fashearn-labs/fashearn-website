@@ -1,5 +1,10 @@
 # Fashearn Labs Website
 
+## 18 October 2026 — content preparation resumed during technical debugging
+
+The existing live website/product assets remain unchanged. **One publication-ready factual website resource draft** is now staged at [docs/MARKETING-CONTENT-STAGING-2026-10-18.md](docs/MARKETING-CONTENT-STAGING-2026-10-18.md): “Five checks before approving a courier driver pay run.” It is **NOT a live/indexable article** and no `index.html`, site navigation, trial enquiry function, Cloudflare settings, Checkout, price, DNS or SEO files were altered. Public redesign remains subject to real demand and explicit owner approval. Daily marketing tasks/posts are in the private company operating plan `DAILY-MARKETING-RHYTHM.md`, not verified social publications. Preserve product name, 27-page guide, video and Audit Trail. G05–G12 HOLD; live £99 recurring Stripe Checkout/public paid CTA OFF.
+
+
 Official Fashearn Labs website for the **Route Operations Dashboard v1.1**.
 
 - Live site: https://fashearn.io
