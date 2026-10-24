@@ -1,4 +1,17 @@
 # Staged company site — 24 October 2026
+## Current checkpoint — agreed company and Dashboard wording applied (24 October 2026)
+Owner approved the revised direction and corrected their earlier feedback: the concern was repeated CARD emphasis, not £0. The previous proposal to reduce £0 repetition is superseded; £0 copy was retained.
+
+- Home/About and their metadata now position Fashearn Labs as building software to improve businesses' everyday workflows. Dashboard introductions identify Fashearn Labs Route Operations Dashboard v1.1 as the current courier-focused flagship. No additional service catalogue or invented company claims.
+- Generic identifying “product” labels/CTAs now name Route Operations Dashboard; compact navigation/review selector says Dashboard.
+- Card-required wording removed from general Home/Dashboard/About summaries and kept explicitly in Pricing and Trial information. Browsing screenshots, video, guide and resources remains unrestricted; no trial/Checkout activated.
+- All £0 occurrences retained (source before/after count equal). Approved article body unchanged.
+- OBSERVED node rebuild/review rebuild and python link/heading checker: ten pages, 194 internal links/anchors PASS, staging robots/no forms/no canonical preserved.
+- OBSERVED CUA review checks: ten pages at 320/768/1440, 30 observations, zero document/element horizontal-overflow failures. Updated About screenshot visually inspected.
+- Updated standalone outputs/Fashearn-Website-Review.html. Existing open copies need refresh/reopen. Only staged website/scripts/docs changed; production, app repos, provider/customer/Audit/Pay Run/session/backups unchanged. No merge/deploy/paid CI.
+Next: consolidated owner review of updated draft. Legal/contact/enquiry migration and all release prerequisites in WEBSITE-RELEASE-INVENTORY remain outstanding. N2 FAIL_HOLD, G05–G12 HOLD and live paid Checkout/public CTA OFF remain.
+
+## Earlier checkpoint — technical polish and feedback review
 ## Current checkpoint — technical polish and owner editorial feedback (24 October 2026)
 Supersedes earlier next-step wording where applicable.
 - OBSERVED before correction: standalone review Skip to content left keyboard focus on the link. Corrected review wrapper to focus the anchor target after scrolling. Actual Enter readback now MAIN#main-content.

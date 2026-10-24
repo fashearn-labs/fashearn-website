@@ -2,7 +2,7 @@
 const fs=require('node:fs'),path=require('node:path');
 const base=path.join(__dirname,'..'),root=path.join(base,'staging/company-site');
 const css=fs.readFileSync(path.join(root,'assets/site.css'),'utf8');
-const routes={'/':'Home','/route-operations-dashboard/':'Product','/features/':'Features','/pricing/':'Pricing','/courier-delivery-operations/':'Courier & Delivery','/resources/':'Resources','/about/':'About','/contact/':'Contact','/trial/':'Trial information','/resources/courier-driver-pay-run-checklist/':'Pay-run checklist'};
+const routes={'/':'Home','/route-operations-dashboard/':'Dashboard','/features/':'Features','/pricing/':'Pricing','/courier-delivery-operations/':'Courier & Delivery','/resources/':'Resources','/about/':'About','/contact/':'Contact','/trial/':'Trial information','/resources/courier-driver-pay-run-checklist/':'Pay-run checklist'};
 const pages=Object.fromEntries(Object.keys(routes).map(route=>[route,fs.readFileSync(path.join(root,route.slice(1),'index.html'),'utf8').replace(/<link rel="stylesheet" href="[^"]+">/,'<style>'+css+'</style>')]));
 const payload=JSON.stringify(pages).replace(/</g,'\\u003c');
 const options=Object.entries(routes).map(([value,label])=>'<option value="'+value+'">'+label+'</option>').join('');
