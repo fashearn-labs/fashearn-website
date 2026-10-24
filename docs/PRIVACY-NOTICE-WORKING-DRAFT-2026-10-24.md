@@ -41,7 +41,9 @@ For enquiries that do not become customers, our retention policy is **12 months 
 **[BEFORE PUBLICATION: apply this policy to the existing inbox and relevant copies; document the review/deletion process. Customer records, any justified legal holds, automation history and provider backup/security-log retention need separate treatment. No automatic deletion has been configured.]**
 
 ### Cookies and embedded content
-**[COMPLETE AFTER CHECKING ACTUAL COOKIES/STORAGE AND EMBED BEHAVIOUR. DO NOT CLAIM NO COOKIES OR THAT PRIVACY-ENHANCED YOUTUBE AUTOMATICALLY REMOVES CONSENT REQUIREMENTS.]**
+For the revised staged website, the YouTube player is not created until you choose **Load YouTube video**. The choice is not saved in a preference cookie or browser storage. You can remove the player from the page; this does not erase information already received by YouTube.
+
+**[THE LIVE WEBSITE HAS NOT BEEN UPDATED. Complete the remaining cookie/storage inventory and final consent/legal wording before publication. This targeted control is not a whole-site cookie-compliance certification.]**
 
 ### Your information rights
 Depending on the circumstances and our lawful basis, you may have rights to access your personal information, ask for correction or deletion, restrict or object to its use, and obtain certain information in a portable form. Where we rely on consent, you can withdraw it.
@@ -58,10 +60,10 @@ Contact **info@fashearn.io** to ask about your information or exercise your righ
 | --- | --- |
 | Website form payload | functions/api/trial.js blob 15790e097ffb92f97c4461cae412186ec4b85297: name/company/email/drivers/carriers |
 | Security | Same source verifies cf-turnstile-response and explicitly supplies CF-Connecting-IP as remoteip. Secret values were not read. |
-| Forwarding | Same source posts payload to MAKE_WEBHOOK_URL. Environment value, actual Make scenario and onward destinations not read. |
+| Forwarding | Same source posts payload to MAKE_WEBHOOK_URL. Make documentation says execution logs may retain payloads unless Keep data confidential is enabled; incomplete runs may also retain data. Owner does not know actual settings. Environment value, scenario settings, active data and logs were not accessed or changed. |
 | Existing contact candidate | assets/trial-form.js blob b21737c3f7127de941cb95050fd173fefdce9744 displays info@fashearn.io on failure. Owner has confirmed info@fashearn.io as the privacy contact and enquiry inbox. |
 | Existing form UI | Root index form01; /api/trial; external Turnstile script; no submission performed. |
-| Video/images | Existing YouTube privacy-enhanced embed; GitHub-hosted screenshots. Cookies, storage, provider retention and transfer safeguards not audited. |
+| Video/images | Revised staging uses explicit load/remove controls for the same approved privacy-enhanced YouTube video. Actual DOM 0 -> 1 -> 0 iframe checks passed in direct and standalone review. No full network/cookie audit or playback acceptance claimed. GitHub images retained. |
 | Legal identity | Owner confirmed Harminder Singh Sekhon, sole trader trading as Fashearn Labs, on 24 October 2026. No limited-company or company-number claim. |
 | Enquiry destination | Owner confirmed Microsoft 365 stores emails in info@fashearn.io. Additional forwarding, automation copies/history and access are not independently audited. |
 | Retention | Owner initially had no period, then expressly adopted 12 months after last contact for enquiries that do not become customers. This is an approved policy decision; no mailbox deletion/retention configuration has been implemented. |
@@ -74,6 +76,9 @@ Contact **info@fashearn.io** to ask about your information or exercise your righ
 - ICO, How to write a privacy notice: https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/how-to-write-a-privacy-notice-and-what-goes-in-it/
 - ICO, Create your own privacy notice (sector tools updated July 2026): https://ico.org.uk/create-your-own-privacy-notice
 - ICO, Cookies: https://ico.org.uk/Global/cookies
+- Make scenario settings (payload confidentiality and incomplete executions): https://help.make.com/scenario-settings
+- Make scenario history (retention depends on plan): https://help.make.com/scenario-history
+- YouTube privacy-enhanced embedding: https://support.google.com/youtube/answer/171780?hl=en
 - Microsoft DPA (current index lists May 2026; actual tenant geography/settings not inspected): https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA
 - Cloudflare Turnstile privacy notice: https://www.cloudflare.com/turnstile-privacy-policy/
 - ICO, Storage limitation (periods depend on purpose and require actual review/deletion): https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/

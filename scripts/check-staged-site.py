@@ -45,4 +45,9 @@ for path, page in pages.items():
             assert url.fragment in pages[target].ids, (path, href)
         links += 1
 assert len(pages) == 10
+dashboard = (ROOT / 'route-operations-dashboard/index.html').read_text(encoding='utf-8')
+assert '<iframe' not in dashboard, 'YouTube iframe must not load in initial HTML'
+assert 'data-load-video' in dashboard and 'data-remove-video' in dashboard
+assert 'data-video-src="https://www.youtube-nocookie.com/embed/4FONAL7q9os?rel=0"' in dashboard
+assert (ROOT / 'assets/site.js').is_file()
 print(f'PASS: {len(pages)} pages, {links} internal links/anchors resolve; unique ids, one h1, staging robots, no forms/canonical on each.')

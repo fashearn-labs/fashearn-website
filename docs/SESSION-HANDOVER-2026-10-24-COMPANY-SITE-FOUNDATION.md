@@ -1,4 +1,19 @@
 # Staged company site — 24 October 2026
+## Current checkpoint — staged video privacy control (24 October 2026)
+- Same approved 44-second YouTube video retained. Staged Dashboard now presents an explanation and Load YouTube video button before creating the external player; Watch on YouTube fallback remains.
+- Added staged assets/site.js: no video iframe on initial page, visitor-triggered creation only, no autoplay request, no stored consent preference. Remove control destroys the player and restores the choice with keyboard focus. It does not erase already received third-party data.
+- Standalone review builder now embeds the staged JS as well as CSS so its controls work in the review file.
+- OBSERVED direct local staged page and standalone review each: iframe count 0 before choice -> 1 after keyboard Enter (same approved URL) -> 0 after Remove. Focus moved to iframe and returned to Load button.
+- OBSERVED 320/768/1440 layouts: no horizontal overflow after correcting an initially observed 320px aspect-ratio/min-height width issue. Loaded mobile iframe width 271px, no overflow.
+- OBSERVED node JS syntax check, ten-page rebuild/review rebuild and python static checker PASS (194 internal links, headings/staging protections; added assertion against initial iframe).
+- This proves scoped DOM/interaction behaviour, not a full network/cookie capture, actual playback acceptance, legal compliance or hosted deployment.
+
+### Remaining privacy source finding
+Official Make documentation confirms payloads can be retained in execution history depending on Keep data confidential, incomplete-execution settings and plan. Owner replied “no idea” about actual scenario settings. Do not infer defaults or claim 12-month email policy covers automation history. No Make account/settings/logs/customer records were accessed or changed.
+Privacy draft updated with confirmed facts and this limitation. Identity, Microsoft 365 and 12-month non-customer enquiry policy remain confirmed; provider/transfer/cookie details and lawful-basis assessment remain to finalise.
+Next: scoped read-only confirmation of Make settings and remaining data-handling facts, then finish the privacy notice before page/form integration. No public policy, mail deletion, provider configuration, production/app change, merge or deployment. N2 FAIL_HOLD, G05–G12 HOLD and live paid Checkout/public CTA OFF unchanged.
+
+## Earlier privacy facts checkpoint
 ## Current privacy facts — owner confirmed 24 October 2026
 - Legal identity: Harminder Singh Sekhon, sole trader trading as Fashearn Labs.
 - Privacy contact and destination for website enquiries: info@fashearn.io.
