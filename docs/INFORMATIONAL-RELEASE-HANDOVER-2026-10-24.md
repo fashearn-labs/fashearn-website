@@ -22,9 +22,9 @@ Output directory: `dist-release`. Keep project-root `functions/` as existing Clo
 
 Checks: `python scripts/check-informational-release.py` and `node scripts/check-protected-handlers.cjs`.
 
-Owner confirmed a business address for the local review and that the business is not VAT registered. The home address is kept ONLY in ignored `release/business-details.local.json` and local review artifacts until final publication approval. The committed template intentionally has no address; unattended deployment fails the required-details gate until approved details are supplied. Do not publish the local package or fill the public template without that approval.
+Owner explicitly approved publication on 24 October 2026, including the displayed business address, while keeping trial enrolment and payments closed. The approved business details are now in `release/business-details.json`; the business is not VAT registered. No app release approval is implied.
 
-Next action is owner review and explicit approval of this candidate, its public address and deployment settings. Only then merge/deploy the informational website and perform a hosted smoke check of pages, PDF, privacy and one authorized enquiry delivery. No subscriptions or trial enrolment are enabled by this candidate.
+Publication is authorized. Next action is to confirm the existing Cloudflare Pages build settings, merge/deploy the informational website and perform a hosted smoke check of pages, PDF and privacy. Real enquiry delivery has not yet been tested. No subscriptions or trial enrolment are enabled by this candidate.
 
 ## Separate app position
 
