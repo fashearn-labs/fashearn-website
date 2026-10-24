@@ -1,4 +1,15 @@
 # Staged company site — 24 October 2026
+## Current checkpoint — privacy draft, owner facts pending (24 October 2026)
+Owner agreed to prepare a notice after asking whether one is needed. This is an internal draft only: docs/PRIVACY-NOTICE-WORKING-DRAFT-2026-10-24.md.
+
+- Re-read exact website API/form JS source: payload name/company/email/drivers/carriers; Turnstile token and visitor IP verification; payload forwarding via MAKE_WEBHOOK_URL. No actual environment/webhook destination or secrets accessed; no enquiry submitted.
+- Newly found public contact candidate: assets/trial-form.js blob b21737c3f7127de941cb95050fd173fefdce9744 names info@fashearn.io in failure text. This is not confirmation of legal/controller identity or privacy mailbox ownership.
+- Current ICO privacy-notice guidance and current generator index consulted. Draft maps required sections and marks unconfirmed identity, privacy contact, lawful bases, retention, actual onward recipients, transfers and cookie/technical data facts. No unsupported retention/security/no-cookies promises.
+- Asked owner asynchronously for legal name/privacy email and actual enquiry destination/retention practice. Await answer; no default inferred from elapsed time.
+- No website policy page/footer/form/consent integration yet. Draft explicitly NOT APPROVED FOR PUBLICATION; existing ten-page review unchanged. No tests for docs-only work; no CI, merge, deployment, provider/account/customer/app/data changes.
+Next: incorporate owner's confirmed facts, resolve remaining data-handling evidence, then produce the finished notice for staged website integration. Keep notice separate from customer-app processing arrangements. All app HOLD and live Checkout/public CTA OFF restrictions remain.
+
+## Earlier checkpoint — agreed website wording
 ## Current checkpoint — agreed company and Dashboard wording applied (24 October 2026)
 Owner approved the revised direction and corrected their earlier feedback: the concern was repeated CARD emphasis, not £0. The previous proposal to reduce £0 repetition is superseded; £0 copy was retained.
 
@@ -121,4 +132,3 @@ Commit retains [CI Skip] convention. No provider deployment or CI requested; pro
 ## Next meaningful step
 Owner review of the staged homepage/product/resource direction, then build dedicated Features, Pricing and About pages from established content. Keep manual enquiry/security migration and future launch/SEO release as separate protected work.
 N2 FAIL_HOLD, G05–G12 HOLD, live £99 Checkout/public paid CTA OFF unchanged. No app repository, data, Audit, Pay Run, session, backup, provider or customer state touched.
-
