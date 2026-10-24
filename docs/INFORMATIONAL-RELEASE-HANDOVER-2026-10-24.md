@@ -29,3 +29,5 @@ Next action is owner review and explicit approval of this candidate, its public 
 ## Separate app position
 
 Latest operating-plan main reviewed: `e7c5e731058377bc4f8192d7b831fc6abf9a7698`; current handover protocol and roadmap read. App remains N2 FAIL_HOLD / G05–G12 HOLD. G05 concerns storage-owner/all-writer isolation on the existing Render service, rather than website rendering. A written platform feasibility response or a separately approved alternative architecture is needed; another website checklist cannot resolve it. No app HOLD overridden, migration purchased, support message sent or customer data changed. Owner requests website completion first and a practical app decision by the end of next week; no reminder automation has been created.
+
+Owner-requested visual adjustment: Privacy now uses a modest heading, narrower reading column and tighter spacing, with no promotional eyebrow. Footer and enquiry privacy links remain. Copy unchanged. Rebuilt review and release package; 13-page/364-link check passed; desktop and 320px browser check passed.
