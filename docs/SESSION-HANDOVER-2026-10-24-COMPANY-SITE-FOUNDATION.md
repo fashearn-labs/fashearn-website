@@ -1,4 +1,14 @@
 # Staged company site — 24 October 2026
+## Current privacy facts — owner confirmed 24 October 2026
+- Legal identity: Harminder Singh Sekhon, sole trader trading as Fashearn Labs.
+- Privacy contact and destination for website enquiries: info@fashearn.io.
+- Owner initially reported no retention period, then expressly adopted 12 months after last contact for enquiries that do not become customers. No emails deleted and no automatic retention/deletion settings configured.
+- Updated internal privacy draft and release inventory with these facts; no public page/integration.
+- Owner confirmed Microsoft 365 as the inbox storage provider. Updated draft and release inventory. Full Make scenario/onward copies, provider arrangements, transfer/cookie facts and lawful bases remain to finalise.
+- ICO storage-limitation guidance consulted: retention depends on purpose, not a legally fixed generic period, and actual review/deletion needs to follow it.
+Next: finish source-based provider/cookie review and appropriate lawful-basis assessment; complete privacy draft and document practical retention handling before staged page integration. No runtime/provider/customer/data/merge/deploy actions. Existing site preview remains unchanged.
+
+## Earlier privacy draft checkpoint
 ## Current checkpoint — privacy draft, owner facts pending (24 October 2026)
 Owner agreed to prepare a notice after asking whether one is needed. This is an internal draft only: docs/PRIVACY-NOTICE-WORKING-DRAFT-2026-10-24.md.
 
@@ -132,3 +142,4 @@ Commit retains [CI Skip] convention. No provider deployment or CI requested; pro
 ## Next meaningful step
 Owner review of the staged homepage/product/resource direction, then build dedicated Features, Pricing and About pages from established content. Keep manual enquiry/security migration and future launch/SEO release as separate protected work.
 N2 FAIL_HOLD, G05–G12 HOLD, live £99 Checkout/public paid CTA OFF unchanged. No app repository, data, Audit, Pay Run, session, backup, provider or customer state touched.
+

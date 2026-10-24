@@ -17,9 +17,9 @@ This is an internal evidence record, not website legal copy or release approval.
 Source inspection confirms implementation text and existing public links, not fresh successful submissions or provider acceptance. No enquiry submitted; no email, social message, signup or payment sent.
 
 ## Evidence still needed before publication
-- Approved business/legal identity, required public company details, public contact address/email where intended and appropriate registration details. No address, registration number, ICO reference or inbox invented.
+- Owner has confirmed Harminder Singh Sekhon, sole trader trading as Fashearn Labs; privacy/enquiry inbox info@fashearn.io. Any further required business disclosure details still need verification. No address, registration number or ICO reference invented.
 - Approved current privacy notice and terms. Reviewed website tree/root source did not provide policy pages; bounded two-repository searches returned no results, which alone is not proof no policy exists elsewhere.
-- Verified enquiry/data handling facts for any privacy copy: responsible entity, actual retention, recipients/processors and contact for rights/questions. Source shows payload and forwarding, not these business facts.
+- Owner confirmed Microsoft 365 stores enquiries in info@fashearn.io and adopted 12 months after last contact for enquiries that do not become customers. Implement the inbox/copy review/deletion practice; confirm actual forwarding/recipients, processor arrangements and automation history. This records a policy decision, not completed mailbox configuration.
 - Review actual third-party resource/consent behavior: YouTube embed, external GitHub screenshots/favicon/guide and existing form's Turnstile/Make path. No assertion of compliance or “no cookies” made.
 - Approved cancellation/support terms and working account/billing controls. Planned pricing copy is not acceptance of hosted billing/release.
 - A migration decision for the existing enquiry form and anchor: staged Contact currently links to the OLD live https://fashearn.io/#trial. Replacing the root homepage without preserving/remapping that form/anchor would break that contact route. Resolve before any deployment.

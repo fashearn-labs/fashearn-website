@@ -6,14 +6,14 @@ Bracketed items are unresolved facts or decisions. Do not publish them or turn t
 
 ## Draft notice
 ### Who we are
-Fashearn Labs is the trading name of **[CONFIRM LEGAL PERSON / ENTITY]**.
-**[CONFIRM CONTACT DETAILS TO PUBLISH]**.
-For questions about how we use personal information, contact **[CONFIRM PRIVACY EMAIL]**.
+Fashearn Labs is the trading name of **Harminder Singh Sekhon**, a sole trader responsible for the personal information described in this notice.
+
+For questions about how Fashearn Labs uses personal information, contact **info@fashearn.io**.
 
 ### Information you provide
 When you use our website enquiry form, we ask for your name, company, email address, approximate number of drivers and the carriers your operation uses.
 
-If you contact us directly, we receive the information you include in that communication.
+Website enquiries arrive in the **info@fashearn.io** email inbox. If you contact us directly, we receive the information you include in that communication.
 
 ### Why we use your information
 We use enquiry information to understand your request and respond to you about Fashearn Labs Route Operations Dashboard v1.1.
@@ -24,15 +24,21 @@ Our lawful basis for each use is **[CONFIRM BASIS AND EXPLANATION BEFORE PUBLICA
 ### Website operation and service providers
 The website uses external services for hosting, enquiry security and content. Some pages include an embedded YouTube video and images hosted through GitHub.
 
-**[FINALISE ACTIVE RECIPIENTS/PROCESSOR ROLES: source identifies Cloudflare Pages/Turnstile and a Make webhook setting. Confirm actual onward integrations, mailboxes, spreadsheets and access before describing this as the complete recipient list.]**
+We use **Microsoft 365** to store enquiry emails in the **info@fashearn.io** inbox. The website source also identifies **Cloudflare Pages** for hosting, **Cloudflare Turnstile** for spam protection, and a **Make webhook** for enquiry routing.
 
-**[CONFIRM WHAT TECHNICAL/SECURITY INFORMATION IS HANDLED, BY WHOM, AND FOR WHAT PURPOSE; SOURCE EXPLICITLY PASSES THE VISITOR IP ADDRESS TO TURNSTILE VERIFICATION.]**
+**[FINALISE THE RECIPIENT LIST AGAINST THE ACTIVE MAKE SCENARIO AND SERVICE ARRANGEMENTS; do not assume there are no additional automation copies, forwarding destinations or other recipients.]**
+
+Spam protection can process technical signals such as IP address and browser information to distinguish legitimate visitors from automated traffic.
+
+**[CONFIRM OTHER ACTUAL HOSTING/SECURITY LOG HANDLING. The API explicitly sends the visitor IP address for Turnstile verification; the provider's Turnstile notice describes additional technical signals.]**
 
 ### International handling
 **[CONFIRM RELEVANT DATA LOCATIONS, ANY INTERNATIONAL TRANSFERS AND APPLICABLE SAFEGUARDS. DO NOT CLAIM UK-ONLY STORAGE.]**
 
 ### How long we keep information
-**[CONFIRM ACTUAL RETENTION PERIODS OR MEANINGFUL RETENTION CRITERIA FOR ENQUIRIES/CORRESPONDENCE, AUTOMATION HISTORY, EMAIL/SPREADSHEETS AND RELEVANT LOGS.]**
+For enquiries that do not become customers, our retention policy is **12 months after the last contact**.
+
+**[BEFORE PUBLICATION: apply this policy to the existing inbox and relevant copies; document the review/deletion process. Customer records, any justified legal holds, automation history and provider backup/security-log retention need separate treatment. No automatic deletion has been configured.]**
 
 ### Cookies and embedded content
 **[COMPLETE AFTER CHECKING ACTUAL COOKIES/STORAGE AND EMBED BEHAVIOUR. DO NOT CLAIM NO COOKIES OR THAT PRIVACY-ENHANCED YOUTUBE AUTOMATICALLY REMOVES CONSENT REQUIREMENTS.]**
@@ -40,7 +46,7 @@ The website uses external services for hosting, enquiry security and content. So
 ### Your information rights
 Depending on the circumstances and our lawful basis, you may have rights to access your personal information, ask for correction or deletion, restrict or object to its use, and obtain certain information in a portable form. Where we rely on consent, you can withdraw it.
 
-Contact **[CONFIRM PRIVACY EMAIL]** to ask about your information or exercise your rights. You can also raise a concern with the Information Commissioner's Office at https://ico.org.uk/make-a-complaint/ .
+Contact **info@fashearn.io** to ask about your information or exercise your rights. You can also raise a concern with the Information Commissioner's Office at https://ico.org.uk/make-a-complaint/ .
 
 **[RECHECK FINAL RIGHTS/COMPLAINT WORDING AGAINST THE SELECTED BASES AND CURRENT GUIDANCE.]**
 
@@ -53,10 +59,12 @@ Contact **[CONFIRM PRIVACY EMAIL]** to ask about your information or exercise yo
 | Website form payload | functions/api/trial.js blob 15790e097ffb92f97c4461cae412186ec4b85297: name/company/email/drivers/carriers |
 | Security | Same source verifies cf-turnstile-response and explicitly supplies CF-Connecting-IP as remoteip. Secret values were not read. |
 | Forwarding | Same source posts payload to MAKE_WEBHOOK_URL. Environment value, actual Make scenario and onward destinations not read. |
-| Existing contact candidate | assets/trial-form.js blob b21737c3f7127de941cb95050fd173fefdce9744 displays info@fashearn.io on failure. Owner must confirm privacy inbox responsibility. |
+| Existing contact candidate | assets/trial-form.js blob b21737c3f7127de941cb95050fd173fefdce9744 displays info@fashearn.io on failure. Owner has confirmed info@fashearn.io as the privacy contact and enquiry inbox. |
 | Existing form UI | Root index form01; /api/trial; external Turnstile script; no submission performed. |
 | Video/images | Existing YouTube privacy-enhanced embed; GitHub-hosted screenshots. Cookies, storage, provider retention and transfer safeguards not audited. |
-| Legal identity/retention | Owner questions pending. No period, company registration, address or legal entity invented. |
+| Legal identity | Owner confirmed Harminder Singh Sekhon, sole trader trading as Fashearn Labs, on 24 October 2026. No limited-company or company-number claim. |
+| Enquiry destination | Owner confirmed Microsoft 365 stores emails in info@fashearn.io. Additional forwarding, automation copies/history and access are not independently audited. |
+| Retention | Owner initially had no period, then expressly adopted 12 months after last contact for enquiries that do not become customers. This is an approved policy decision; no mailbox deletion/retention configuration has been implemented. |
 | Lawful basis | Must be selected from the actual purposes and relationships; draft does not declare consent/contract/legitimate interests as an established fact. |
 | Marketing | No unsupported promise of opt-in, no marketing, no sharing/sale or no analytics added. Confirm actual practice. |
 | Customer app data | Outside this website-only draft. No app source/runtime/data changed. |
@@ -66,8 +74,12 @@ Contact **[CONFIRM PRIVACY EMAIL]** to ask about your information or exercise yo
 - ICO, How to write a privacy notice: https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/how-to-write-a-privacy-notice-and-what-goes-in-it/
 - ICO, Create your own privacy notice (sector tools updated July 2026): https://ico.org.uk/create-your-own-privacy-notice
 - ICO, Cookies: https://ico.org.uk/Global/cookies
+- Microsoft DPA (current index lists May 2026; actual tenant geography/settings not inspected): https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA
+- Cloudflare Turnstile privacy notice: https://www.cloudflare.com/turnstile-privacy-policy/
+- ICO, Storage limitation (periods depend on purpose and require actual review/deletion): https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/
 
 The ICO flags some guidance as under review following the Data (Use and Access) Act. Recheck the final notice against current guidance after the actual facts are confirmed.
 
 ## Integration when finalised
 Create /privacy/ in the isolated staged build only after factual gaps are resolved; add footer and a short enquiry-form notice/link. A footer link alone does not replace making privacy information available when data is collected. Review actual cookie/embedded-content behaviour separately. No public policy page, consent mechanism or production enquiry change is authorized by this internal draft.
+
