@@ -1,4 +1,31 @@
-# Staged company site foundation — 24 October 2026
+# Staged company site — 24 October 2026
+## Current milestone — Features, Pricing and About (24 October 2026)
+This section supersedes the foundation's earlier next-step paragraph below. Owner accepted the foundation and replied “okay” to the proposed next three pages.
+
+### Implemented
+- Added features/, pricing/ and about/ within the isolated staging/company-site/ tree.
+- Shared navigation/footer now links Product, Features, Pricing, Resources, About and the existing approved User Guide. Brand link returns Home.
+- Features groups established workflows into daily records/imports, driver pay/exceptions/pay-run review, reports/carrier/contract visibility, and user access/Audit Trail.
+- Pricing describes the intended £99/month subscription after a 14-day card-required trial, £0 initially, cancellation before the end to avoid recurrence, and no minimum term. It clearly says enrolment/Checkout are disabled. Six native HTML details/summary FAQs work without JavaScript.
+- About uses verified company/product positioning only. No invented founder biography, team size, customers, measured outcomes, business address, certifications or new service claims.
+- Narrow-screen navigation uses a two-row layout. Observed 320px Guide-arrow wrapping was corrected by shortening its visible label to “Guide ↗” while retaining accessible name “User Guide PDF”.
+- Existing approved article body, product screenshots/video/guide, production root/form/functions/trial and SEO source remain preserved.
+
+### OBSERVED verification
+- Rebuilt seven HTML pages with node scripts/build-staged-site.cjs.
+- python scripts/check-staged-site.py: PASS, seven pages, 113 internal relative links/anchors resolve, unique ids and one h1 per page, staging noindex/nofollow/noarchive, no forms/canonical.
+- Actual CUA browser navigation from Features to Pricing and Pricing to About succeeded.
+- Keyboard Enter opened each of the six pricing FAQ summaries; readback showed all six expanded.
+- Seven pages at 320x900, 768x900 and 1440x900: 21 DOM layout observations, each one h1 with no document or main/header/footer-element horizontal overflow.
+- Desktop Features/Pricing and mobile Pricing/About screenshots visually inspected. After the compact Guide correction, actual 320px readback showed “Guide ↗”, 83px wide and 44px high, one line.
+- Browser output retained locally as work/expanded-layout-results.json; screenshots in local outputs/. No hosted deployment, paid CI or provider tests.
+
+### Limits and next work
+This remains a staged design review, not publication or full browser/accessibility acceptance. Full WCAG/screen-reader, text enlargement, Firefox/Safari, production SEO, legal, signup/payment and provider acceptance NOT RUN in this step.
+Next meaningful work: Courier & Delivery use-case page and an evidence-based contact/trust content inventory before any release plan. Contact channels, legal entity/registration details, privacy/terms and cancellation controls must be verified rather than fabricated.
+Same isolated design branch, no main merge/publication/deployment. N2 FAIL_HOLD, G05–G12 HOLD and live paid Checkout/public CTA OFF unchanged. App repos/data/backups/sessions untouched.
+
+## Earlier milestone — initial four-page foundation
 ## Owner scope and boundary
 Owner reviewed the previous article work, then explicitly instructed: “Yes, I've looked at the GitHub repo on what you said, and it's fine. Yeah, continue. Let's start building this site the way we want it.”
 This authorizes the next isolated staged website build. The original instruction still prohibits unapproved merge, publication and deployment. It does not establish buyer demand or authorize new services, paid CTA, app changes or production migration. No Sites project or new hosting was provisioned.

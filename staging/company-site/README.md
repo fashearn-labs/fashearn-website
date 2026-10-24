@@ -1,6 +1,6 @@
 # Company website — isolated design preview
 
-This folder contains the first staged company homepage, product page, Resources index and approved article. It is not a deployed website or release approval.
+This folder contains seven staged pages: Home, Product, Features, Pricing, Resources, About and the approved article. It is not a deployed website or release approval.
 
 Rebuild HTML from shared templates with `node scripts/build-staged-site.cjs` at repository root. Run `python scripts/check-staged-site.py` to check navigation and staging protections.
 
