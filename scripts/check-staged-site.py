@@ -11,6 +11,7 @@ class Page(HTMLParser):
         super().__init__()
         self.links, self.ids, self.robots = [], set(), None
         self.h1 = self.forms = self.canonicals = 0
+        self.headings = []
         self.feed(text)
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -19,6 +20,7 @@ class Page(HTMLParser):
             self.ids.add(a['id'])
         if tag == 'a': self.links.append(a.get('href', ''))
         if tag == 'h1': self.h1 += 1
+        if re.fullmatch(r'h[1-6]', tag): self.headings.append(int(tag[1]))
         if tag == 'form': self.forms += 1
         if tag == 'meta' and a.get('name') == 'robots': self.robots = a['content']
         if tag == 'link' and a.get('rel') == 'canonical': self.canonicals += 1
@@ -27,6 +29,10 @@ pages = {p: Page(p.read_text(encoding='utf-8')) for p in ROOT.rglob('*.html')}
 links = 0
 for path, page in pages.items():
     assert page.h1 == 1, (path, 'h1 count')
+    previous_level = 0
+    for level in page.headings:
+        assert level <= previous_level + 1, (path, 'Skipped heading level')
+        previous_level = level
     assert page.robots == 'noindex,nofollow,noarchive', path
     assert not page.forms and not page.canonicals, path
     for href in page.links:

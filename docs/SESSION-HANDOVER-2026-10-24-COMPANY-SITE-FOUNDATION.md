@@ -1,4 +1,19 @@
 # Staged company site — 24 October 2026
+## Current checkpoint — technical polish and owner editorial feedback (24 October 2026)
+Supersedes earlier next-step wording where applicable.
+- OBSERVED before correction: standalone review Skip to content left keyboard focus on the link. Corrected review wrapper to focus the anchor target after scrolling. Actual Enter readback now MAIN#main-content.
+- Resources previously had h1 -> h3 -> h2. Resource-card helper now allows h2 on Resources and keeps h3 under the homepage h2; typography preserved through resource-title class.
+- python scripts/check-staged-site.py now also rejects skipped heading levels. Ten pages / 194 internal links and existing staging protections PASS.
+- Actual local review checks for Home and Resources at 320/768/1440: six observations with no horizontal overflow. Card font sizes unchanged: 24px mobile, 27.2px tablet/desktop. Resources title h2; Home title h3.
+- Approved article body retained exactly. No production/app/provider/merge/deployment changes.
+
+### Owner clarification received during this pass
+Owner noticed generic “product” wording, repeated “£0/pay nothing upfront” copy, and company-level About messaging restricted to couriers. Owner clarified that Fashearn Labs improves businesses' workflows generally; this particular Dashboard is courier-focused. They asked for review/thoughts before editorial changes.
+These editorial changes have NOT been made in this technical checkpoint.
+Recommended next editorial pass: company-level workflow/software positioning on Home/About; identify the current flagship as Fashearn Labs Route Operations Dashboard v1.1; use its name in identifying headings/cards/CTAs rather than vague “product”; retain concise navigation where needed; concentrate £0-at-start explanation in detailed pricing/trial terms rather than repeating throughout the site. Do not invent additional services, customer results or a generic agency offer.
+Next: respond to owner's three observations and agree the editorial direction, then apply the wording as one coherent pass. Keep live Checkout/public paid CTA OFF, all app HOLD protections and publication approval requirements.
+
+## Earlier checkpoint — core pages and review
 ## Current milestone — complete core page set (24 October 2026)
 This section supersedes the earlier next-step paragraphs below. Owner requested continuing the complete build before a single consolidated review; their noticed design/editorial items are intentionally deferred for that review.
 
