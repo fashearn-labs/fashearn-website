@@ -1,4 +1,13 @@
 # Staged company site — 24 October 2026
+## Current privacy evidence — Make settings verified from owner screenshots (24 October 2026)
+- OBSERVED owner dashboard screenshot/statement: Free plan. Scenario diagram: custom Webhook -> Microsoft 365 Email (Outlook), Send an Email.
+- OBSERVED attached scenario settings screenshot codex-clipboard-409b3cc8-0354-485b-bca8-7a84b8e65078.png: Keep data confidential = No; Store incomplete executions = No. Owner was told to close with Cancel, not save/run/toggle. No provider changes performed by agent.
+- Official Make scenario documentation supports that processed data can be retained in execution logs when confidentiality is off; incomplete-execution recovery storage is disabled by the second setting. No actual data/logs opened; no new run or email.
+- OBSERVED current public Make pricing in rendered browser: row Execution log storage (days) under Free/Core/Pro/Teams/Enterprise = 7/30/30/30/60. Plain web extraction omitted the dynamic table, so the actual rendered comparison was read. Source https://www.make.com/pricing .
+- Updated privacy draft to state 7-day detailed log availability separately from the owner's 12-month non-customer email policy. No unsupported claim that every provider copy/queue/backup is erased after 7 days.
+Next: finish remaining lawful-basis/transfer/cookie evidence and retention operating practice before publishing privacy notice. No new test needed for docs-only update. Ten-page staged preview and app/provider settings unchanged.
+
+## Earlier staged video checkpoint
 ## Current checkpoint — staged video privacy control (24 October 2026)
 - Same approved 44-second YouTube video retained. Staged Dashboard now presents an explanation and Load YouTube video button before creating the external player; Watch on YouTube fallback remains.
 - Added staged assets/site.js: no video iframe on initial page, visitor-triggered creation only, no autoplay request, no stored consent preference. Remove control destroys the player and restores the choice with keyboard focus. It does not erase already received third-party data.

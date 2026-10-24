@@ -26,7 +26,9 @@ The website uses external services for hosting, enquiry security and content. So
 
 We use **Microsoft 365** to store enquiry emails in the **info@fashearn.io** inbox. The website source also identifies **Cloudflare Pages** for hosting, **Cloudflare Turnstile** for spam protection, and a **Make webhook** for enquiry routing.
 
-**[FINALISE THE RECIPIENT LIST AGAINST THE ACTIVE MAKE SCENARIO AND SERVICE ARRANGEMENTS; do not assume there are no additional automation copies, forwarding destinations or other recipients.]**
+The owner-provided scenario diagram shows a custom webhook connected directly to Microsoft 365 Email (Outlook), using Send an Email.
+
+**[Confirm service/transfer arrangements and any mailbox forwarding or other copies before treating this as a complete recipient inventory. The screenshot shows the flow, not the underlying email-field mappings.]**
 
 Spam protection can process technical signals such as IP address and browser information to distinguish legitimate visitors from automated traffic.
 
@@ -38,7 +40,9 @@ Spam protection can process technical signals such as IP address and browser inf
 ### How long we keep information
 For enquiries that do not become customers, our retention policy is **12 months after the last contact**.
 
-**[BEFORE PUBLICATION: apply this policy to the existing inbox and relevant copies; document the review/deletion process. Customer records, any justified legal holds, automation history and provider backup/security-log retention need separate treatment. No automatic deletion has been configured.]**
+Make can temporarily retain enquiry information in detailed execution logs. On our current Free plan, those detailed logs are available for **7 days**.
+
+**[BEFORE PUBLICATION: apply the 12-month policy to the existing inbox and relevant copies; document the review/deletion process. The 7-day figure is Make's detailed execution-log availability, not proof of complete erasure from all provider systems, webhook queues or backups. Customer records, any justified legal holds and other provider log/backup retention need separate treatment. No automatic email deletion has been configured.]**
 
 ### Cookies and embedded content
 For the revised staged website, the YouTube player is not created until you choose **Load YouTube video**. The choice is not saved in a preference cookie or browser storage. You can remove the player from the page; this does not erase information already received by YouTube.
@@ -60,7 +64,8 @@ Contact **info@fashearn.io** to ask about your information or exercise your righ
 | --- | --- |
 | Website form payload | functions/api/trial.js blob 15790e097ffb92f97c4461cae412186ec4b85297: name/company/email/drivers/carriers |
 | Security | Same source verifies cf-turnstile-response and explicitly supplies CF-Connecting-IP as remoteip. Secret values were not read. |
-| Forwarding | Same source posts payload to MAKE_WEBHOOK_URL. Make documentation says execution logs may retain payloads unless Keep data confidential is enabled; incomplete runs may also retain data. Owner does not know actual settings. Environment value, scenario settings, active data and logs were not accessed or changed. |
+| Forwarding | API posts payload to MAKE_WEBHOOK_URL. Owner screenshot shows webhook -> Microsoft 365 Send an Email. Settings screenshot codex-clipboard-409b3cc8-0354-485b-bca8-7a84b8e65078.png shows Keep data confidential = No and Store incomplete executions = No. Thus processed data may be available in execution logs; incomplete-execution recovery storage is disabled. No actual payload/log contents inspected, settings saved or runs triggered. |
+| Make plan/log period | Owner and dashboard screenshot confirm Free. On 24 October 2026, actual rendered official https://www.make.com/pricing comparison row Execution log storage (days) showed Free 7, Core/Pro/Teams 30, Enterprise 60. This concerns detailed log availability, not all provider copies. |
 | Existing contact candidate | assets/trial-form.js blob b21737c3f7127de941cb95050fd173fefdce9744 displays info@fashearn.io on failure. Owner has confirmed info@fashearn.io as the privacy contact and enquiry inbox. |
 | Existing form UI | Root index form01; /api/trial; external Turnstile script; no submission performed. |
 | Video/images | Revised staging uses explicit load/remove controls for the same approved privacy-enhanced YouTube video. Actual DOM 0 -> 1 -> 0 iframe checks passed in direct and standalone review. No full network/cookie audit or playback acceptance claimed. GitHub images retained. |
@@ -78,6 +83,7 @@ Contact **info@fashearn.io** to ask about your information or exercise your righ
 - ICO, Cookies: https://ico.org.uk/Global/cookies
 - Make scenario settings (payload confidentiality and incomplete executions): https://help.make.com/scenario-settings
 - Make scenario history (retention depends on plan): https://help.make.com/scenario-history
+- Make official pricing (rendered plan comparison checked; Free execution logs 7 days): https://www.make.com/pricing
 - YouTube privacy-enhanced embedding: https://support.google.com/youtube/answer/171780?hl=en
 - Microsoft DPA (current index lists May 2026; actual tenant geography/settings not inspected): https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA
 - Cloudflare Turnstile privacy notice: https://www.cloudflare.com/turnstile-privacy-policy/
