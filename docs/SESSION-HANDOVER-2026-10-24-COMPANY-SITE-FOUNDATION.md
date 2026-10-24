@@ -1,4 +1,31 @@
 # Staged company site — 24 October 2026
+## Current milestone — complete core page set (24 October 2026)
+This section supersedes the earlier next-step paragraphs below. Owner requested continuing the complete build before a single consolidated review; their noticed design/editorial items are intentionally deferred for that review.
+
+### Implemented
+- Ten staged pages: Home, Product, Features, Pricing, Courier & Delivery, Resources, About, Contact, Trial information and approved checklist.
+- Added Courier & Delivery with established operational review flow, real product imagery and links to features, video/guide and article. No invented case studies, customer outcomes or unimplemented service claims.
+- Added Contact using only the existing current website enquiry route and company LinkedIn link, both verified in root source. New preview collects no enquiry information; no backend copied or modified.
+- Added information-only Trial page explaining planned verified-email/card/activation flow and intended 14-day/£99 offer. No enrolment or Checkout action enabled.
+- Added scripts/build-review-preview.cjs, producing outputs/Fashearn-Website-Review.html: all ten pages and shared CSS embedded in one review file, with a page selector and normal internal navigation. Public screenshots, video and guide still require internet.
+- Home now links the courier use case. All pages share a grouped Product/Explore/Company footer including Contact and Trial information.
+- Added docs/WEBSITE-RELEASE-INVENTORY-2026-10-24.md for confirmed contact/trial facts and the unresolved legal, privacy, consent, migration and release evidence. No fake policy pages.
+- Root live #trial enquiry link is an interim staged contact route; it MUST be preserved/remapped before replacing root homepage. This is explicitly recorded as a release dependency.
+
+### OBSERVED verification
+- node scripts/build-staged-site.cjs generated ten staged pages.
+- python scripts/check-staged-site.py: PASS, ten pages and 194 internal relative links/anchors; unique ids, one h1 each, staging robots, no forms/canonical.
+- CUA local browser: all ten pages at 320x900, 768x900, 1440x900, 30 observations with no document/main/header/footer-element horizontal overflow and one h1 each. Source output retained locally as work/complete-layout-results.json.
+- Desktop/mobile Courier, Contact and Trial screenshots and grouped mobile footer visually inspected. Actual footer Contact -> Trial information navigation verified.
+- Existing approved article body preserved exactly against the earlier GitHub source. Product guide/video/screenshots retained.
+- Standalone review tested via local HTTP: normal Home -> Features navigation updated the selected page; all ten page-selector options rendered the expected h1. A first overly broad heading selector was corrected to h1 before the successful complete ten-page check. Direct file-URL execution was not separately tested.
+- No live form submission, provider test, paid CI, app change, merge or deployment performed.
+
+### Current next step
+Core design draft is ready for ONE consolidated owner review, including the items the owner already noticed. Resolve that list as a coherent polish pass. Before any public release, complete the source-based legal/contact/privacy and enquiry migration dependencies in the release inventory and separately approve release. No claim of complete WCAG/screen-reader/cross-browser, hosted signup/payment, legal, SEO migration or release acceptance.
+N2 FAIL_HOLD, G05–G12 HOLD, live paid Checkout/public CTA OFF and all app/customer/session/Audit/Pay Run/backup protections unchanged.
+
+## Earlier milestone — Features, Pricing and About
 ## Current milestone — Features, Pricing and About (24 October 2026)
 This section supersedes the foundation's earlier next-step paragraph below. Owner accepted the foundation and replied “okay” to the proposed next three pages.
 

@@ -38,5 +38,5 @@ for path, page in pages.items():
         if url.fragment:
             assert url.fragment in pages[target].ids, (path, href)
         links += 1
-assert len(pages) == 7
+assert len(pages) == 10
 print(f'PASS: {len(pages)} pages, {links} internal links/anchors resolve; unique ids, one h1, staging robots, no forms/canonical on each.')
