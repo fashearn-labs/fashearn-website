@@ -1,4 +1,14 @@
 # Staged company site — 24 October 2026
+## Current privacy checkpoint — readable notice and proposed basis assessment (24 October 2026)
+- Owner confirmed website enquiry details are used only for enquiries and requested follow-up, not newsletters/general marketing lists.
+- Reworked the existing privacy working draft into readable visitor-facing wording, separated from internal publication checks and source evidence. User-facing local copy: outputs/Privacy-Notice-Review.md.
+- Recorded proposed ordinary legitimate interests for the narrowly confirmed enquiry purpose and necessary security, with purpose/necessity/balancing reasoning. Controller review remains; not a claim that a legal compliance review or a new processing basis was formally completed/adopted.
+- Reviewed current public Cloudflare DPA (6.4, April 2026), Make DPA linked from current terms (May 2024 text; UK addendum provisions), Microsoft's current DPA index and official controller guidance, and GitHub privacy information. No actual account agreement acceptance, tenant geography or all onward transfers independently attested.
+- Reader copy retains sole-trader identity, confirmed email, named service functions, 12-month non-customer enquiry policy, Make seven-day detailed log availability, optional staged video choice and information rights.
+- No public privacy page/footer/form integration yet; website source/review unchanged in this docs step. No tests needed for prose-only changes; no CI, mail/provider/app/customer state change, merge or deployment.
+Next: owner review of the readable draft; settle final publication checks, including actual retention operating practice and appropriate provider/cookie disclosures, before integrating final notice. Preserve all app HOLD, release approval and live Checkout/public CTA OFF boundaries.
+
+## Earlier Make evidence checkpoint
 ## Current privacy evidence — Make settings verified from owner screenshots (24 October 2026)
 - OBSERVED owner dashboard screenshot/statement: Free plan. Scenario diagram: custom Webhook -> Microsoft 365 Email (Outlook), Send an Email.
 - OBSERVED attached scenario settings screenshot codex-clipboard-409b3cc8-0354-485b-bca8-7a84b8e65078.png: Keep data confidential = No; Store incomplete executions = No. Owner was told to close with Cancel, not save/run/toggle. No provider changes performed by agent.

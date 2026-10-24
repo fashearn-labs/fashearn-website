@@ -2,62 +2,95 @@
 **Prepared 24 October 2026. NOT APPROVED FOR PUBLICATION.**
 This internal draft is for website visitors and product enquiries. It does not establish the separate data-protection arrangements for customer/driver data inside the Route Operations Dashboard.
 
-Bracketed items are unresolved facts or decisions. Do not publish them or turn them into assumed promises.
+The reader-facing wording is separated from the internal assessment and publication checks below. Proposed lawful bases and provider arrangements require final review; this is not a published policy.
 
-## Draft notice
-### Who we are
+## Draft notice — proposed wording for review
+
+### Who is responsible
 Fashearn Labs is the trading name of **Harminder Singh Sekhon**, a sole trader responsible for the personal information described in this notice.
 
-For questions about how Fashearn Labs uses personal information, contact **info@fashearn.io**.
+For privacy questions or requests, email **info@fashearn.io**.
 
-### Information you provide
-When you use our website enquiry form, we ask for your name, company, email address, approximate number of drivers and the carriers your operation uses.
+This notice covers our website and enquiries. Separate information and arrangements are needed for personal data that customers put into Fashearn Labs Route Operations Dashboard v1.1.
 
-Website enquiries arrive in the **info@fashearn.io** email inbox. If you contact us directly, we receive the information you include in that communication.
+### Information we receive
+Our website enquiry form asks for your name, company, email address, approximate number of drivers and the carriers your operation uses. If you email us, we also receive the information you choose to include.
 
-### Why we use your information
-We use enquiry information to understand your request and respond to you about Fashearn Labs Route Operations Dashboard v1.1.
-**[CONFIRM OTHER ACTUAL USES, IF ANY; DO NOT ASSUME MARKETING SUBSCRIPTION.]**
+Website hosting and security services can handle technical information such as your IP address and browser details when serving and protecting the website.
 
-Our lawful basis for each use is **[CONFIRM BASIS AND EXPLANATION BEFORE PUBLICATION]**.
+### Why we use it
+We use enquiry details to answer your questions, understand your operation and provide the Dashboard follow-up or access arrangements you request. Submitting an enquiry does not add you to a newsletter or general marketing list.
 
-### Website operation and service providers
-The website uses external services for hosting, enquiry security and content. Some pages include an embedded YouTube video and images hosted through GitHub.
+Our proposed lawful basis for this enquiry handling is **legitimate interests**: responding to people who have asked to hear from us about our business and Dashboard. We limit that use to the enquiry and requested follow-up. You can ask us to stop following up by emailing **info@fashearn.io**.
 
-We use **Microsoft 365** to store enquiry emails in the **info@fashearn.io** inbox. The website source also identifies **Cloudflare Pages** for hosting, **Cloudflare Turnstile** for spam protection, and a **Make webhook** for enquiry routing.
+We also use hosting and spam-protection services to operate the website and protect it from automated misuse. The proposed basis for necessary security processing is our legitimate interest in protecting the website and its visitors.
 
-The owner-provided scenario diagram shows a custom webhook connected directly to Microsoft 365 Email (Outlook), using Send an Email.
+Optional YouTube content is loaded only when you choose it, as explained below.
 
-**[Confirm service/transfer arrangements and any mailbox forwarding or other copies before treating this as a complete recipient inventory. The screenshot shows the flow, not the underlying email-field mappings.]**
+### Services involved
+We use the following services for the purposes described:
 
-Spam protection can process technical signals such as IP address and browser information to distinguish legitimate visitors from automated traffic.
+| Service | What it does |
+| --- | --- |
+| Cloudflare Pages | Hosts and serves the website. |
+| Cloudflare Turnstile | Checks the enquiry form for automated misuse; this can involve IP address and browser-related signals. |
+| Make | Routes website enquiries to email and can retain details in execution logs. |
+| Microsoft 365 | Stores enquiry emails in **info@fashearn.io**. |
+| GitHub-hosted images | Supplies application images shown on the website; requesting an image connects your browser to GitHub's service. |
+| YouTube / Google | Supplies the optional overview video after you choose to load its player. |
 
-**[CONFIRM OTHER ACTUAL HOSTING/SECURITY LOG HANDLING. The API explicitly sends the visitor IP address for Turnstile verification; the provider's Turnstile notice describes additional technical signals.]**
+Following links to LinkedIn, YouTube or another external website takes you to a service with its own privacy arrangements.
+
+### How long we keep enquiry information
+Our retention policy for enquiries that do not become customers is **12 months after the last contact**.
+
+Make's Free plan makes detailed execution logs available for **7 days**. This is separate from the email retention period; it is not a promise that every provider system, queue or backup deletes all information after seven days.
+
+If an enquiry becomes a customer relationship, relevant records need to be handled under the applicable customer-record arrangements rather than treated as an unsuccessful enquiry.
+
+### Video choices and cookies
+The revised website does not create the YouTube player until you choose **Load YouTube video**. Loading it connects your browser to YouTube, which may use cookies or similar technologies and receive device information. The page provides a link to Google's privacy information before loading.
+
+The video choice is not saved in a preference cookie or browser storage. You can remove the player from the page, but that does not erase information already received by YouTube. You can also choose to watch the video on YouTube's own website.
 
 ### International handling
-**[CONFIRM RELEVANT DATA LOCATIONS, ANY INTERNATIONAL TRANSFERS AND APPLICABLE SAFEGUARDS. DO NOT CLAIM UK-ONLY STORAGE.]**
+The service providers listed above operate internationally, so information may be handled outside the UK. Their published data-processing terms describe international-transfer safeguards, including contractual protections and UK-specific provisions where applicable.
 
-### How long we keep information
-For enquiries that do not become customers, our retention policy is **12 months after the last contact**.
+You can ask **info@fashearn.io** for information about the safeguards relevant to the handling of your information.
 
-Make can temporarily retain enquiry information in detailed execution logs. On our current Free plan, those detailed logs are available for **7 days**.
+Relevant provider information:
+- [Cloudflare data-processing terms](https://www.cloudflare.com/cloudflare-customer-dpa/) and [Turnstile privacy information](https://www.cloudflare.com/turnstile-privacy-policy/).
+- [Make data-processing agreement](https://www.make.com/data-processing-agreement.pdf).
+- [Microsoft data-processing terms](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA).
+- [GitHub privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+- [Google privacy information](https://policies.google.com/privacy).
 
-**[BEFORE PUBLICATION: apply the 12-month policy to the existing inbox and relevant copies; document the review/deletion process. The 7-day figure is Make's detailed execution-log availability, not proof of complete erasure from all provider systems, webhook queues or backups. Customer records, any justified legal holds and other provider log/backup retention need separate treatment. No automatic email deletion has been configured.]**
+### Your rights and concerns
+Depending on the circumstances and the relevant lawful basis, you may have rights to access your information, correct it, request deletion, restrict or object to its use, and receive certain information in a portable form. Where processing relies on consent, you can withdraw it.
 
-### Cookies and embedded content
-For the revised staged website, the YouTube player is not created until you choose **Load YouTube video**. The choice is not saved in a preference cookie or browser storage. You can remove the player from the page; this does not erase information already received by YouTube.
+Email **info@fashearn.io** to ask about your information or raise a concern. You can also complain to the [Information Commissioner's Office](https://ico.org.uk/make-a-complaint/).
 
-**[THE LIVE WEBSITE HAS NOT BEEN UPDATED. Complete the remaining cookie/storage inventory and final consent/legal wording before publication. This targeted control is not a whole-site cookie-compliance certification.]**
+### Changes to this notice
+We will review this notice when the way we handle information changes and make the updated notice available on the website. Where appropriate, we will also draw material changes to affected people's attention.
 
-### Your information rights
-Depending on the circumstances and our lawful basis, you may have rights to access your personal information, ask for correction or deletion, restrict or object to its use, and obtain certain information in a portable form. Where we rely on consent, you can withdraw it.
+## Internal assessment and publication checks — not website copy
 
-Contact **info@fashearn.io** to ask about your information or exercise your rights. You can also raise a concern with the Information Commissioner's Office at https://ico.org.uk/make-a-complaint/ .
+### Enquiry handling: proposed legitimate-interests assessment
+- **Purpose:** answer an inbound enquiry and arrange the Dashboard follow-up requested by the person; owner expressly confirmed no newsletter/general marketing-list use.
+- **Necessity:** contact details enable a reply. Business context supports a relevant response or trial discussion. Before release, review whether driver/carrier fields must be mandatory for every enquiry; do not collect unnecessary detail merely because the old form did.
+- **Balance:** a person voluntarily asking for a response can reasonably expect this limited business use. Keep the use within their request, provide a clear notice and objection channel, and follow the adopted retention policy.
+- **Conclusion for draft:** ordinary legitimate interests is a supportable proposed basis for this narrow use, subject to the controller's final review and actual practice. This is not blanket authority for advertising, list-building, profiling, other uses or unnecessary data collection.
 
-**[RECHECK FINAL RIGHTS/COMPLAINT WORDING AGAINST THE SELECTED BASES AND CURRENT GUIDANCE.]**
+### Website security: proposed basis
+The source shows Turnstile verification before forwarding an enquiry, including the visitor IP. Protecting the form from automated misuse is a legitimate purpose; the security processing must still be necessary and proportionate. The provider's technical-signal description is not an independent audit of this site's configuration. Complete the cookie/security inventory and review this proposed basis against actual behaviour.
 
-### Changes
-**[INSERT FINAL EFFECTIVE DATE AND CONFIRM HOW MATERIAL CHANGES WILL BE COMMUNICATED.]**
+### Publication conditions
+1. Controller reviews the proposed lawful bases and wording. This document records a draft assessment, not a completed legal/compliance certification.
+2. Check the actual applicable provider agreements, contracting/processing arrangements and transfer safeguards. Public Cloudflare/Make DPA text and Microsoft's published contract/guidance sources were reviewed; actual tenant geography, account-specific terms and onward transfers were not independently verified. Do not publish an unsupported UK-only storage or complete-transfer-assurance claim.
+3. Put the adopted 12-month non-customer enquiry policy into practice. Review existing relevant inbox/copies and document a deletion/review procedure before promising operational compliance. No messages or provider retention settings have been changed.
+4. Complete the remaining cookie/storage and technical-log inventory. Revised staged video controls are verified; live root source is unchanged. Do not present the old live site as already using those controls.
+5. Assign an effective date and integrate the final notice at /privacy/ and beside data collection. Preserve the existing enquiry/security infrastructure. Footer-only availability is not enough at collection.
+6. Customer/driver application data and customer-record retention require their own appropriate arrangements; this website-only notice does not settle them.
 
 ## Evidence and decisions for the editor
 | Item | Observed source / remaining decision |
@@ -72,11 +105,16 @@ Contact **info@fashearn.io** to ask about your information or exercise your righ
 | Legal identity | Owner confirmed Harminder Singh Sekhon, sole trader trading as Fashearn Labs, on 24 October 2026. No limited-company or company-number claim. |
 | Enquiry destination | Owner confirmed Microsoft 365 stores emails in info@fashearn.io. Additional forwarding, automation copies/history and access are not independently audited. |
 | Retention | Owner initially had no period, then expressly adopted 12 months after last contact for enquiries that do not become customers. This is an approved policy decision; no mailbox deletion/retention configuration has been implemented. |
-| Lawful basis | Must be selected from the actual purposes and relationships; draft does not declare consent/contract/legitimate interests as an established fact. |
-| Marketing | No unsupported promise of opt-in, no marketing, no sharing/sale or no analytics added. Confirm actual practice. |
+| Lawful basis | Proposed ordinary legitimate interests for narrow enquiry handling and necessary website security, with an internal purpose/necessity/balancing assessment above. Controller review and actual-practice checks remain required. |
+| Marketing | Owner expressly confirmed: only enquiries and requested follow-up; no newsletters/general marketing lists. No broader no-sharing/sale/analytics promise inferred. |
 | Customer app data | Outside this website-only draft. No app source/runtime/data changed. |
 
 ## Guidance consulted on 24 October 2026
+- ICO legitimate-interests guidance: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/a-guide-to-lawful-basis/legitimate-interests/
+- Cloudflare current DPA (6.4, 3 April 2026, UK-transfer provisions): https://www.cloudflare.com/cloudflare-customer-dpa/
+- Make current DPA linked by its current terms page (3 May 2024), including UK transfer addendum provisions: https://www.make.com/data-processing-agreement.pdf
+- Microsoft controller guidance on transfers: https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-dpia-office365
+- GitHub privacy statement: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement
 - ICO, Right to be informed: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-be-informed/
 - ICO, How to write a privacy notice: https://ico.org.uk/for-organisations/advice-for-small-organisations/privacy-notices-and-cookies/how-to-write-a-privacy-notice-and-what-goes-in-it/
 - ICO, Create your own privacy notice (sector tools updated July 2026): https://ico.org.uk/create-your-own-privacy-notice
