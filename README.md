@@ -1,38 +1,31 @@
-# Fashearn Labs Website
+# Fashearn Labs website
 
-## 18 October 2026 — content preparation resumed during technical debugging
+The owner-approved informational company website is live at https://fashearn.io/ (24 October 2026). It presents Fashearn Labs as a business-workflow software company, with **Fashearn Labs Route Operations Dashboard v1.1** as its current courier/delivery product.
 
-The existing live website/product assets remain unchanged. **One publication-ready factual website resource draft** is now staged at [docs/MARKETING-CONTENT-STAGING-2026-10-18.md](docs/MARKETING-CONTENT-STAGING-2026-10-18.md): “Five checks before approving a courier driver pay run.” It is **NOT a live/indexable article** and no `index.html`, site navigation, trial enquiry function, Cloudflare settings, Checkout, price, DNS or SEO files were altered. Public redesign remains subject to real demand and explicit owner approval. Daily marketing tasks/posts are in the private company operating plan `DAILY-MARKETING-RHYTHM.md`, not verified social publications. Preserve product name, 27-page guide, video and Audit Trail. G05–G12 HOLD; live £99 recurring Stripe Checkout/public paid CTA OFF.
+**Dashboard enrolment and paid Checkout remain closed.** Website publication does not change the separate app release HOLD.
 
+## Source and build
 
-Official Fashearn Labs website for the **Route Operations Dashboard v1.1**.
+Cloudflare Pages project: `fashearn-website`; production branch: `main`.
 
-- Live site: https://fashearn.io
-- Product: Fashearn Labs Route Operations Dashboard v1.1
-- Current commercial model: £99/month, 14-day free trial, no minimum term
-- Hosting: Cloudflare Pages
-- Public user guide: `assets/Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf`
+Build: `node scripts/prepare-informational-release.cjs --require-business-details`
 
-## Public presentation baseline — 29 September 2026
+Public output: `dist-release`. Keep project-root `functions/` and current production environment variables. Do not deploy the whole repository or `staging/` as the static output.
 
-The website now uses the professionally rebuilt square-format web guide as the public downloadable User Guide.
+The release builder produces 13 pages from the reviewed staging source, adds the approved legal/contact details and notices, retains original assets and checks protected source against `release/baseline-manifest.json`. The original root `index.html` is retained as a baseline input; it is no longer the production output.
 
-Public naming is **Fashearn Labs Route Operations Dashboard v1.1**. Do not introduce new public-facing `RouteOps` wording. Legacy internal IDs, anchors, asset names and historical Git records may remain where changing them adds risk without customer benefit.
+Checks: `python scripts/check-informational-release.py` and `node scripts/check-protected-handlers.cjs`.
 
-The current guide preserves the detailed product baseline and includes the Audit Trail. Future guide revisions should start from this version and improve it rather than replacing it with a reduced document.
+[Published release handover and verification](docs/INFORMATIONAL-RELEASE-HANDOVER-2026-10-24.md)
 
-## Company-level operating authority
+## Product presentation
 
-Daily Fashearn Labs priority is coordinated in the private repository:
+Preserve the full product name, approved 27-page User Guide, overview video and Audit Trail. The public guide is `assets/Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf`; keep the legacy PDF URL available.
 
-`fashearn-labs/fashearn-labs-operating-plan`
+The Privacy notice and enquiry-form notice describe requested enquiry follow-up only, Make and Microsoft 365, and the adopted 12-month retention policy for enquiries that do not become customers. Do not add visitors to general marketing lists without separately approved arrangements.
 
-Read its `README.md`, `CURRENT-PRIORITIES.md` and `WEBSITE-ROADMAP.md` before
-substantial website redevelopment. This website repository remains authoritative for
-the actual live site baseline/source.
+## Operating authority
 
-## Project records
+The private `fashearn-labs/fashearn-labs-operating-plan` repository coordinates company priorities and the separate application release controls. Read its current handover, priorities and WEBSITE-ROADMAP before substantial further changes, together with direct owner instructions.
 
-- [RouteOps Commercialisation & Continuation Log](docs/ROUTEOPS-COMMERCIAL-HANDOVER.md)
-
-This repository is maintained as an ongoing project record. Significant website, product-presentation, commercial and media changes should be committed as the project develops.
+Earlier docs record historical preparation and holds; the published release handover above is the current website status.
