@@ -1,0 +1,18 @@
+{
+  "commit": "066b14eed5001289cd9b4e56095f761811cebfd2",
+  "files": {
+    "assets/Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf": "30ec3a5303cf4fe44eab76edada8f75920338ce42a20aa70f51d02ff090afee6",
+    "assets/RouteOps-Core-v1.1-User-Guide.pdf": "16405629aaceab9ae6357cab9587333a662fd328b6bda52c38eea647f26a058f",
+    "assets/images/apple-touch-icon.png": "fea4b07c11f4810ff56e8134f64d0adb12821597435a4de5bee7f34ba2772dc7",
+    "assets/images/favicon.png": "6c37c57e9805efc72e9e8b6e23a96ab7b6a36240be4b2cc841a15d85b818353c",
+    "assets/images/share.jpg": "8310f261f55029a542b7c8fe3ff0502cb98be4cf77dcc8656ffaac3e99439089",
+    "assets/main.css": "8e388124e3073bbd320c894573f2b3cec3b5d38cac38f0514fcecc978930b0d7",
+    "assets/main.js": "f1031e01146547f15b7f1fd0c19629bea2d7b85079bcbb2592d119c4900e8d80",
+    "assets/routeops-dashboard-v1.1.png": "20d5370d2bcd9625aff8e0639160eaa271b2ec70dbedb6fdef20d15bdd010fc0",
+    "assets/trial-form.js": "a68ece20c2c0e57af91fa694f63aab4f33585986b4c8fbaa9bb580f2c22eceef",
+    "functions/api/trial.js": "255420d37d9dd7b11f77b878348897e2b9605ea3c1ebebc359f48ad0aed0f20f",
+    "functions/verify.js": "d96b49767e91576ed3e33d32edbb05004fda531613acbb7539eda468d2711183",
+    "index.html": "0a4a5fef28898e2669d6d36cea578f559b0cbb72b9b24ea6224e755e892037bf",
+    "trial/success.html": "6a4c47691e43ef590dd93b3cf7157cadb053fba944bda8767fceda924473a3a4"
+  }
+}
