@@ -29,5 +29,8 @@ RSMCR **has not been shown to use Fashearn Labs Route Operations Dashboard v1.1*
 - **NOT RUN:** full production Node release builder, Python website-check scripts, local browser/mobile visual comparison, Cloudflare Preview/production deployment or public SEO checks. The staged source is ready for **owner review**, not accepted for publication.
 - `[skip ci]` included on every branch commit to retain prior no-auto-release staging convention; no CI or provider deployment was initiated by the assistant. Do not infer a Cloudflare preview exists.
 
+## Owner review — 27 October 2026
+Owner opened and inspected a browser-rendered standalone review preview of the staged RSMCR client-story page (desktop and mobile screenshots were supplied). Owner's exact response: **"Im happy with that. Its honest and looks good"**. Record this as **OWNER COPY AND VISUAL REVIEW APPROVED** for the existing staging page, **NOT publication authorisation**, external RSMCR consent, permission to use RSMCR imagery, any direct testimonial quote, client signoff or a live-website change. Preserve present accurate wording and current multi-page design. **Next owner/client dependency:** request RSMCR's authorised approval to feature company by name (and separately any logo, screenshot or approved verbatim testimonial). Keep branch isolated until that consent plus express publication approval. No new tests/CI/deploy/production change were requested or run as part of recording approval.
+
 ## Next single action
 Owner visual/text review of the RSMCR client story and permission to use RSMCR name/images/quotation. Then separately decide whether to publish; no automatic public merge.
