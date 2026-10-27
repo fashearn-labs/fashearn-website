@@ -20,5 +20,14 @@ The `noindex,nofollow,noarchive` staging markup and a draft review note remain u
 ## App/payment boundary
 RSMCR **has not been shown to use Fashearn Labs Route Operations Dashboard v1.1**. No signup, paid Checkout, app source, Render disk, database, CI, Cloudflare project settings, Functions or provider content was changed. N2 FAIL_HOLD, G05–G12 HOLD and the disabled live paid CTA remain unaffected.
 
+## Verification — 27 October
+- Retrieved the **exact committed branch builder**, compiled it successfully with the V8 JavaScript parser (no execution of user site service).
+- Executed the builder in a disposable **in-memory mock FS**, permitting only fake `node:fs` and `node:path` calls, with NO filesystem/provider/network writes; produced exactly **11 staged pages**, including the new client-story route. No exception.
+- New page checks PASSED: exactly one H1, existing staging `noindex,nofollow,noarchive`, expected depth-two CSS/JS paths, no form, no Sean quotation, explicit denial of implied Dashboard adoption.
+- Generated homepage and About both link to `/client-stories/rsmcr-logistics/` using proper relative paths. Generated page bytes **exactly match** committed `staging/company-site/client-stories/rsmcr-logistics/index.html` (6,490 characters).
+- GitHub compare: five website-only changed paths (builder, staged page, two page-count check scripts and this note), ahead of baseline main by six commits, behind zero; main remains untouched.
+- **NOT RUN:** full production Node release builder, Python website-check scripts, local browser/mobile visual comparison, Cloudflare Preview/production deployment or public SEO checks. The staged source is ready for **owner review**, not accepted for publication.
+- `[skip ci]` included on every branch commit to retain prior no-auto-release staging convention; no CI or provider deployment was initiated by the assistant. Do not infer a Cloudflare preview exists.
+
 ## Next single action
 Owner visual/text review of the RSMCR client story and permission to use RSMCR name/images/quotation. Then separately decide whether to publish; no automatic public merge.
