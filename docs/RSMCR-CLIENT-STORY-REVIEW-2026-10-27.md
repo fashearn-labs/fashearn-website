@@ -37,3 +37,7 @@ Following owner approval of the RSMCR client-story page, the assistant identifie
 
 ## Next single action
 Owner copy/design review PASSED; client permission to be named/featured OWNER-REPORTED as already granted. Owner release/publication decision remains; no automatic public merge. Any logo, screenshot, or verbatim quotation requires its own specific approval.
+
+## Publication authorisation — 27 October 2026
+The owner explicitly approved publishing the previously visually reviewed, accurate RSMCR page in the existing company website, in response to the direct question “Shall I publish the RSMCR client story on fashearn.io now?” with **“yes please”**. Prior owner-confirmed RSMCR permission to be featured remains applicable. Publication authorisation covers ONLY the described factual client story, related Home/About links, necessary release build checks and GitHub/Cloudflare website rollout. **It does not authorise a direct testimonial quotation, unreviewed logo/images, an additional blog post, a Dashboard endorsement, app/Render/Stripe changes or enabling trial enrolment.** Merge is deliberately through a named pull request and the pre-existing Pages builder with its protected baseline checks; confirm public HTTP and record the outcome after merge.
+
