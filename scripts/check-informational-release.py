@@ -21,7 +21,7 @@ class Page(HTMLParser):
             if key in a: self.links.append(a[key])
 
 pages={route:Page((site/file).read_text(encoding='utf-8')) for route,file in zip(manifest['routes'],manifest['files'])}
-assert len(pages)==13
+assert len(pages)==14
 links=0
 for route,p in pages.items():
     assert len(p.ids)==len(set(p.ids)), ('duplicate id',route)
@@ -47,6 +47,6 @@ for file,expected in manifest['preserved'].items():
     actual=(root/file).read_bytes() if file.startswith('functions/') else (site/file).read_bytes()
     assert hashlib.sha256(actual).hexdigest()==expected, ('preserved file changed',file)
 assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify']
-assert (site/'sitemap.xml').read_text().count('<loc>')==13
+assert (site/'sitemap.xml').read_text().count('<loc>')==14
 assert 'noindex,nofollow' in (site/'trial/success.html').read_text()
 print(json.dumps({'result':'PASS','pages':len(pages),'local_links_and_assets':links,'preserved_files':len(manifest['preserved']),'business_details_complete':manifest['businessDetailsComplete']}))

@@ -44,7 +44,7 @@ for path, page in pages.items():
         if url.fragment:
             assert url.fragment in pages[target].ids, (path, href)
         links += 1
-assert len(pages) == 10
+assert len(pages) == 11
 dashboard = (ROOT / 'route-operations-dashboard/index.html').read_text(encoding='utf-8')
 assert '<iframe' not in dashboard, 'YouTube iframe must not load in initial HTML'
 assert 'data-load-video' in dashboard and 'data-remove-video' in dashboard
