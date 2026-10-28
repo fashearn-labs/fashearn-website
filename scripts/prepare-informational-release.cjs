@@ -69,7 +69,17 @@ for(let [route,html]of Object.entries(pages)){
   const file=route==='/'?'index.html':route.slice(1)+'index.html';write(file,html);manifest.files.push(file);
 }
 write('robots.txt','User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /verify\nDisallow: /trial/success\nSitemap: https://fashearn.io/sitemap.xml\n');
-write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+Object.keys(pages).map(p=>'  <url><loc>https://fashearn.io'+p+'</loc><lastmod>2026-10-24</lastmod></url>').join('\n')+'\n</urlset>\n');
+// Keep sitemap dates tied to meaningful page edits, never the build clock.
+// Update these values when a changed page is approved for publication.
+const pageLastModified={
+  '/':'2026-10-28',
+  '/route-operations-dashboard/':'2026-10-28',
+  '/courier-delivery-operations/':'2026-10-28',
+  '/client-stories/rsmcr-logistics/':'2026-10-28',
+  '/about/':'2026-10-27',
+};
+const defaultPageLastModified='2026-10-24';
+write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+Object.keys(pages).map(p=>'  <url><loc>https://fashearn.io'+p+'</loc><lastmod>'+(pageLastModified[p]||defaultPageLastModified)+'</lastmod></url>').join('\n')+'\n</urlset>\n');
 write('_routes.json',JSON.stringify({version:1,include:['/api/trial','/verify'],exclude:[]},null,2)+'\n');
 write('_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/trial/success\n  X-Robots-Tag: noindex, nofollow\n/trial/success.html\n  X-Robots-Tag: noindex, nofollow\n');
 fs.mkdirSync(path.join(repo,'work'),{recursive:true});fs.writeFileSync(path.join(repo,'work/release-manifest.json'),JSON.stringify(manifest,null,2));
