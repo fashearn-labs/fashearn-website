@@ -17,7 +17,7 @@ let checks = 0;
 async function run(overrides = {}) {
   const values = {
     name: 'Sample Person', company: 'Sample Ltd', email: 'sample@example.invalid',
-    phone: '+44 7700 900000', message: 'Please quote for a simple website.',
+    project_type: 'one-page', project_details: 'Please quote for a simple website.',
     'cf-turnstile-response': 'offline-fake-turnstile-token',
     ...overrides.fields
   };
@@ -59,12 +59,13 @@ async function expectStatus(code, overrides = {}, callsExpected) {
 }
 
 (async () => {
-  for (const field of ['name', 'company', 'email', 'message']) {
+  for (const field of ['name', 'company', 'email', 'project_type', 'project_details']) {
     await expectStatus(400, { fields: { [field]: null } }, 0);
   }
   await expectStatus(400, { fields: { email: 'invalid-address' } }, 0);
   await expectStatus(400, { fields: { name: 'X'.repeat(121) } }, 0);
-  await expectStatus(400, { fields: { message: 'X'.repeat(4001) } }, 0);
+  await expectStatus(400, { fields: { project_details: 'X'.repeat(1801) } }, 0);
+  await expectStatus(400, { fields: { project_type: 'a-random-project' } }, 0);
   await expectStatus(400, { fields: { 'cf-turnstile-response': null } }, 0);
   await expectStatus(413, { headers: { 'content-length': '20000' } }, 0);
   await expectStatus(415, { request: new Request('https://fashearn.io/api/website-enquiry', {
@@ -84,7 +85,7 @@ async function expectStatus(code, overrides = {}, callsExpected) {
   await expectStatus(500, { throwVerify: true }, 1);
   await expectStatus(502, { makeStatus: 403 }, 2);
   await expectStatus(500, { throwMake: true }, 2);
-  const success = await expectStatus(200, { fields: { company: 'Test\nCompany', phone: null } }, 2);
+  const success = await expectStatus(200, { fields: { company: 'Test\nCompany', project_type: 'multi-page' } }, 2);
   assert.equal(success.calls[0].url, 'https://challenges.cloudflare.com/turnstile/v0/siteverify');
   assert.equal(success.calls[0].options.redirect, 'manual');
   assert.equal(success.calls[1].url, env.WEBSITE_ENQUIRY_MAKE_WEBHOOK_URL);
@@ -92,7 +93,7 @@ async function expectStatus(code, overrides = {}, callsExpected) {
   assert.equal(success.calls[1].options.redirect, 'manual');
   assert.deepEqual(JSON.parse(success.calls[1].options.body), {
     name: 'Sample Person', company: 'TestCompany', email: 'sample@example.invalid',
-    phone: '', message: 'Please quote for a simple website.'
+    phone: '', message: 'Website request: Multi-page business website\n\nProject details:\nPlease quote for a simple website.'
   });
   const body = success.calls[1].options.body;
   assert.ok(!body.includes(env.WEBSITE_ENQUIRY_MAKE_API_KEY));
