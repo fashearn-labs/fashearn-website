@@ -21,7 +21,7 @@ class Page(HTMLParser):
             if key in a: self.links.append(a[key])
 
 pages={route:Page((site/file).read_text(encoding='utf-8')) for route,file in zip(manifest['routes'],manifest['files'])}
-assert len(pages)==17
+assert len(pages)==19
 links=0
 for route,p in pages.items():
     assert len(p.ids)==len(set(p.ids)), ('duplicate id',route)
@@ -36,14 +36,18 @@ for route,p in pages.items():
     nav_links = re.findall(r'<a\b[^>]*href="([^"]+)"', nav.group(1))
     assert not set(nav_links) & {'/privacy/', '/cookies/', '/terms/'}, ('legal links in main navigation', route)
     footer = text.split('</main>', 1)[-1]
+    assert text.count('src="/assets/images/fashearn-arrow.svg"')==2, ('header/footer arrow mark missing',route)
+    assert '<span class="mark">↗</span>' not in text, ('old framed arrow remains',route)
+    assert 'FASHEARN LABS<small>INTELLIGENT SYSTEMS</small>' in text, ('brand text missing',route)
     assert all('href="' + path + '"' in footer for path in ('/privacy/', '/cookies/', '/terms/')), ('legal footer links missing', route)
-    if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/'):
-        assert nav_links == ['/', '/services/', '/#systems', '/#work', '/private-pilot/', '/contact/'], ('commercial navigation drift', route, nav_links)
-    if route in ('/','/services/','/website-enquiry/','/private-pilot/'):
+    if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/', '/custom-systems/', '/our-work/'):
+        assert nav_links == ['/', '/services/', '/custom-systems/', '/our-work/', '/private-pilot/', '/contact/'], ('commercial navigation drift', route, nav_links)
+    if route in ('/','/services/','/website-enquiry/','/private-pilot/','/custom-systems/','/our-work/'):
         assert 'Websites' in text and 'RouteOps Pilot' in text and 'Custom Systems' in text and 'Our Work' in text, ('approved navigation missing',route)
         assert '/assets/approved-commercial.css' in text, ('approved theme missing',route)
     else:
         assert '<nav aria-label="Main navigation"><a href="/services/">Services</a>' in text, ('services navigation missing',route)
+        assert '/custom-systems/' in nav_links and '/our-work/' in nav_links, ('new page navigation missing',route)
     for href in p.links:
         u=urlsplit(href)
         if u.scheme or u.netloc: continue
@@ -79,6 +83,13 @@ assert '/assets/website-enquiry-form.js' in services_html
 assert '/api/trial' not in services_html
 assert (site/'assets/website-enquiry-form.js').is_file()
 assert (site/'assets/approved-commercial.css').is_file()
+assert (site/'assets/images/fashearn-arrow.svg').is_file()
+systems_html=(site/'custom-systems/index.html').read_text(encoding='utf-8')
+work_html=(site/'our-work/index.html').read_text(encoding='utf-8')
+assert 'Business software.' in systems_html and 'Operational dashboards' in systems_html
+assert 'RSMCR Logistics' in work_html and 'Route Operations Dashboard v1.1' in work_html
+assert 'not a Route Operations Dashboard deployment' in work_html
+assert 'href="/custom-systems/"' in home_html
 assert '£249' in (site/'services/index.html').read_text(encoding='utf-8')
 pilot_html=(site/'private-pilot/index.html').read_text(encoding='utf-8')
 assert 'PRIVATE PILOT' in pilot_html
@@ -92,6 +103,6 @@ for file,expected in manifest['preserved'].items():
     actual=(root/file).read_bytes() if file.startswith('functions/') else (site/file).read_bytes()
     assert hashlib.sha256(actual).hexdigest()==expected, ('preserved file changed',file)
 assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify','/api/website-enquiry']  # Owner-authorised Website Enquiries release
-assert (site/'sitemap.xml').read_text().count('<loc>')==17
+assert (site/'sitemap.xml').read_text().count('<loc>')==19
 assert 'noindex,nofollow' in (site/'trial/success.html').read_text()
 print(json.dumps({'result':'PASS','pages':len(pages),'local_links_and_assets':links,'preserved_files':len(manifest['preserved']),'business_details_complete':manifest['businessDetailsComplete']}))
