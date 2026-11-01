@@ -1,0 +1,25 @@
+<!-- Exact approved preview section. Reference only; do not deploy directly. -->
+<section class="screen" id="pilot-enquiry">
+<div class="hero hero-form"><div class="shell"><p class="eyebrow">Route Operations Dashboard v1.1 · Private Pilot</p>
+<h1>Apply for<br/><span class="gradient-blue">pilot access.</span></h1>
+<p class="lead">For UK courier and delivery subcontractors. Tell us about your operation so we can assess whether a private pilot is suitable.</p>
+<a class="text-back" data-go="pilot" href="#pilot">← Back to the private pilot</a></div></div>
+<section class="section"><div class="shell enquiry-layout">
+<div class="enquiry-panel"><p class="eyebrow">Route Operations private pilot enquiry</p><h2>Tell us about your operation.</h2>
+<form action="#" class="preview-enquiry" data-intended-endpoint="/api/trial" id="pilot-enquiry-form" method="post">
+<input name="enquiry_type" type="hidden" value="routeops-private-pilot"/>
+<div class="field-grid">
+<div class="field"><label for="pilot-name">Your name <span aria-hidden="true">*</span></label><input autocomplete="name" id="pilot-name" maxlength="120" name="name" placeholder="Your full name" required=""/></div>
+<div class="field"><label for="pilot-email">Email address <span aria-hidden="true">*</span></label><input autocomplete="email" id="pilot-email" maxlength="200" name="email" placeholder="you@company.co.uk" required="" type="email"/></div>
+</div>
+<div class="field"><label for="pilot-company">Company name <span aria-hidden="true">*</span></label><input id="pilot-company" maxlength="150" name="company" placeholder="Your delivery company" required=""/></div>
+<div class="field-grid">
+<div class="field"><label for="pilot-drivers">Approximate number of drivers <span aria-hidden="true">*</span></label><input id="pilot-drivers" max="99999" min="1" name="drivers" placeholder="e.g. 25" required="" step="1" type="number"/></div>
+<div class="field"><label for="pilot-carriers">Carriers you work with <span aria-hidden="true">*</span></label><input id="pilot-carriers" maxlength="220" name="carriers" placeholder="e.g. DX, DHL, Amazon" required=""/></div>
+</div>
+<p class="form-privacy">Submitting an enquiry does not start a trial, create an account or collect payment. We only use your details to assess and respond to your request. See our <a href="https://fashearn.io/privacy/" rel="noopener noreferrer" target="_blank">Privacy Notice</a>.</p>
+<button class="button primary" type="submit">Send private pilot enquiry →</button>
+<p aria-live="polite" class="form-status" role="status"></p>
+</form></div>
+<aside class="enquiry-aside"><p class="eyebrow">Pilot access is manual</p><h3>Enquiry → Review → Approval.</h3><p>If a pilot place is available and readiness checks are complete, we'll email browser access details and a unique setup key.</p><p><strong>Delivery inbox:</strong><br/>info@fashearn.io</p><div class="rule"></div><p class="note">No installer is needed. This is a browser-based application. The website's payment gateway and self-service checkout remain closed.</p></aside>
+</div></section></section>
