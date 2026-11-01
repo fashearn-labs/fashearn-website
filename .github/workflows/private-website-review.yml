@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - content/services-routeops-pilot-review-20261101
+      - release/approved-layout-20261101
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - name: Check out private review branch only
+      - name: Check out owner-approved release candidate
         uses: actions/checkout@v4
         with:
           persist-credentials: false
@@ -53,5 +54,5 @@ jobs:
           assert Path("dist-release/website-enquiry/index.html").is_file()
           assert Path("dist-release/private-pilot/index.html").is_file()
           assert Path("dist-release/services/index.html").is_file()
-          print("PRIVATE_REVIEW_BUILD_GATE_PASS; no new form endpoint enabled")
+          print("RELEASE_CANDIDATE_OFFLINE_GATE_PASS; both enquiry routes retained")
           PY

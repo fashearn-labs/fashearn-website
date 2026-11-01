@@ -32,7 +32,7 @@ for route,p in pages.items():
     assert 'noindex' not in text and '<iframe' not in text, route
     assert 'href="/privacy/"' in text and 'href="/cookies/"' in text and 'href="/terms/"' in text, route
     if route in ('/','/services/','/website-enquiry/','/private-pilot/'):
-        assert 'Website Services' in text and 'RouteOps Pilot' in text, ('approved navigation missing',route)
+        assert 'Websites' in text and 'RouteOps Pilot' in text and 'Custom Systems' in text and 'Our Work' in text, ('approved navigation missing',route)
         assert '/assets/approved-commercial.css' in text, ('approved theme missing',route)
     else:
         assert '<nav aria-label="Main navigation"><a href="/services/">Services</a>' in text, ('services navigation missing',route)
@@ -59,7 +59,7 @@ assert 'One practical approach' not in home_html
 assert 'Two different offers' not in home_html
 assert 'mailto:info@fashearn.io?subject=Custom%20Business%20System%20Enquiry' in home_html
 assert '£249 one-off' in home_html and '£49/month' in home_html
-assert 'Website and operational spreadsheet support for RSMCR Logistics' in home_html
+assert 'RSMCR Logistics' in home_html and 'rsmcr-logo.png' in home_html and 'not a claim that RSMCR is a current Dashboard customer' in home_html
 assert 'RSMCR uses the Dashboard' not in home_html
 assert 'Shopify' not in home_html
 services_html=(site/'website-enquiry/index.html').read_text(encoding='utf-8')
@@ -72,7 +72,13 @@ assert '/api/trial' not in services_html
 assert (site/'assets/website-enquiry-form.js').is_file()
 assert (site/'assets/approved-commercial.css').is_file()
 assert '£249' in (site/'services/index.html').read_text(encoding='utf-8')
-assert 'PRIVATE PILOT' in (site/'private-pilot/index.html').read_text(encoding='utf-8')
+pilot_html=(site/'private-pilot/index.html').read_text(encoding='utf-8')
+assert 'PRIVATE PILOT' in pilot_html
+assert 'routeops-dashboard-v1.1.png' in pilot_html and 'full-dash' in pilot_html
+assert 'routeops-pay-run-v1.1.webp' in pilot_html and 'routeops-exception-centre-v1.1.webp' in pilot_html and 'routeops-reports-exports-v1.1.webp' in pilot_html
+assert 'Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf' in pilot_html
+assert '/assets/pilot-video.js' in pilot_html and '4FONAL7q9os' in pilot_html
+assert (site/'assets/pilot-video.js').is_file()
 assert (root/'functions/api/website-enquiry.js').is_file()
 for file,expected in manifest['preserved'].items():
     actual=(root/file).read_bytes() if file.startswith('functions/') else (site/file).read_bytes()

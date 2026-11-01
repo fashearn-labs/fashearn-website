@@ -24,6 +24,7 @@ formJS=formJS.replace('status.id = "trial-form-status";','status.id = "trial-for
 formJS=formJS.replace("Thanks - your RouteOps trial request has been received. We'll contact you to arrange your private 14-day setup.","Thanks - your enquiry has been received. We will reply to the email address you provided.");
 write('assets/trial-form.js',formJS);delete preserved['assets/trial-form.js'];
 write('assets/website-enquiry-form.js',fs.readFileSync(path.join(repo,'assets/website-enquiry-form.js')));
+write('assets/pilot-video.js',fs.readFileSync(path.join(repo,'assets/pilot-video.js')));
 let siteJS=fs.readFileSync(path.join(out,'assets/site.js'),'utf8');
 siteJS+='\n// Preserve existing public homepage anchors after the page split.\nif(location.pathname===\'/\'||location.pathname===\'/index.html\'){const old={\'#trial\':\'/contact/#enquiry\',\'#routeops\':\'/route-operations-dashboard/\',\'#routeops-proof\':\'/route-operations-dashboard/#overview\'};if(old[location.hash])location.replace(old[location.hash]);}\n';
 write('assets/site.js',siteJS);
@@ -144,7 +145,7 @@ function approvedVisualPage(title,description,name){
     '</footer>';
   const scripts=name==='website-enquiry'
     ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/website-enquiry-form.js" defer></script>'
-    : '';
+    : name==='pilot' ? '<script src="/assets/pilot-video.js" defer></script>' : '';
   return '<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
     '<meta name="color-scheme" content="dark"><title>'+escape(title)+' | Fashearn Labs</title>'+
     '<meta name="description" content="'+escape(description)+'">'+
