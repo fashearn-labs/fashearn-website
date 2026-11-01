@@ -40,9 +40,13 @@ for route,p in pages.items():
     assert '<span class="mark">↗</span>' not in text, ('old framed arrow remains',route)
     assert 'FASHEARN LABS<small>INTELLIGENT SYSTEMS</small>' in text, ('brand text missing',route)
     assert all('href="' + path + '"' in footer for path in ('/privacy/', '/cookies/', '/terms/')), ('legal footer links missing', route)
-    if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/', '/custom-systems/', '/our-work/'):
-        assert nav_links == ['/', '/services/', '/custom-systems/', '/our-work/', '/private-pilot/', '/contact/'], ('commercial navigation drift', route, nav_links)
-    if route in ('/','/services/','/website-enquiry/','/private-pilot/','/custom-systems/','/our-work/'):
+    assert 'footer-business-line' in footer and '<address>' not in footer, ('compact legal line missing',route)
+    assert 'href="/contact/"' not in text and 'href="/contact/#enquiry"' not in text, ('retired contact link',route)
+    assert 'href="/assets/approved-commercial.css?v=pilot-footer-20261101"' in text or 'href="/assets/site.css?v=pilot-footer-20261101"' in text
+
+    if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/', '/custom-systems/', '/our-work/', '/pilot-enquiry/'):
+        assert nav_links == ['/', '/services/', '/custom-systems/', '/our-work/', '/private-pilot/'], ('commercial navigation drift', route, nav_links)
+    if route in ('/','/services/','/website-enquiry/','/private-pilot/','/custom-systems/','/our-work/','/pilot-enquiry/'):
         assert 'Websites' in text and 'RouteOps Pilot' in text and 'Custom Systems' in text and 'Our Work' in text, ('approved navigation missing',route)
         assert '/assets/approved-commercial.css' in text, ('approved theme missing',route)
     else:
@@ -58,11 +62,19 @@ for route,p in pages.items():
         assert file.is_file(), ('missing target',route,href)
         if u.fragment and target in pages: assert unquote(u.fragment) in pages[target].ids, ('missing anchor',route,href)
         links+=1
-    assert len(p.forms)==(1 if route in ('/contact/','/website-enquiry/') else 0), route
-assert pages['/contact/'].forms[0]['action']=='/api/trial'
+    assert len(p.forms)==(1 if route in ('/pilot-enquiry/','/website-enquiry/') else 0), route
+assert pages['/pilot-enquiry/'].forms[0]['action']=='/api/trial'
 assert pages['/website-enquiry/'].forms[0]['action']=='/api/website-enquiry'
-assert pages['/contact/'].forms[0]['id']=='form01'
+assert pages['/pilot-enquiry/'].forms[0]['id']=='form01'
 assert pages['/website-enquiry/'].forms[0]['id']=='website-enquiry-form'
+assert '/contact/' not in pages, 'Retired contact page must not be generated'
+assert '/pilot-enquiry/' in pages
+assert 'id="enquiry"' in (site/'pilot-enquiry/index.html').read_text(encoding='utf-8')
+assert 'name="drivers"' in (site/'pilot-enquiry/index.html').read_text(encoding='utf-8')
+assert 'cf-turnstile' in (site/'pilot-enquiry/index.html').read_text(encoding='utf-8')
+assert '/assets/trial-form.js' in (site/'pilot-enquiry/index.html').read_text(encoding='utf-8')
+assert (site/'_redirects').read_text() == '/contact /pilot-enquiry/ 301\n/contact/ /pilot-enquiry/ 301\n'
+
 home_html=(site/'index.html').read_text(encoding='utf-8')
 assert 'Fashearn Labs · Websites and custom business systems' in home_html
 assert 'Custom business systems' in home_html
@@ -78,7 +90,7 @@ assert hashlib.sha256((site/'assets/images/rsmcr-homepage-full.avif').read_bytes
 assert home_html.count('class="work-card home-work-card"')==2, 'Home work panels not paired'
 assert home_html.count('class="work-media home-work-media')==2, 'Home media areas not paired'
 assert 'class="commercial-grid home-work-grid"' in home_html
-assert 'href="/assets/approved-commercial.css?v=home-work-panels-20261101"' in home_html, 'Home CSS refresh missing'
+assert 'href="/assets/approved-commercial.css?v=pilot-footer-20261101"' in home_html, 'Home CSS refresh missing'
 assert 'FASHEARN LABS · IN-HOUSE SOFTWARE' in home_html and 'RSMCR LOGISTICS · BUSINESS WEBSITE' in home_html
 assert 'object-fit:contain' in (site/'assets/approved-commercial.css').read_text() and '#home #work .home-work-card' in (site/'assets/approved-commercial.css').read_text()
 
@@ -100,7 +112,7 @@ assert 'Business software.' in systems_html and 'Operational dashboards' in syst
 assert 'class="showcase systems-dashboard-showcase"' in systems_html, 'Custom Systems image panel missing'
 assert 'class="systems-dashboard-image" src="/assets/routeops-dashboard-v1.1.png"' in systems_html, 'Custom Systems genuine asset missing'
 assert 'width="1283" height="918"' in systems_html, 'Native screenshot dimensions changed'
-assert 'href="/assets/approved-commercial.css?v=custom-systems-screenshot-20261101"' in systems_html, 'New screenshot CSS not cache-busted'
+assert 'href="/assets/approved-commercial.css?v=pilot-footer-20261101"' in systems_html, 'New screenshot CSS not cache-busted'
 custom_css=(site/'assets/approved-commercial.css').read_text(encoding='utf-8')
 assert '#custom-systems #software-example img.systems-dashboard-image{' in custom_css, 'Scoped image rule missing'
 assert 'height:auto;' in custom_css.split('#custom-systems #software-example img.systems-dashboard-image{')[1].split('}')[0], 'Correct image aspect ratio rule missing'
