@@ -107,8 +107,8 @@ const tax=business.vatRegistered===false?'No VAT is charged.':business.vatRegist
 const manifest={baseline,sourceBranch:'release/informational-website-20261024',prepared:'2026-10-24',businessDetailsComplete:detailsReady,trialEnrolment:false,paidCheckout:false,preserved,files:[],routes:Object.keys(pages),limits:['No provider submission or hosted deployment tested.','Mailbox retention policy recorded; no email deletion configured.']};
 for(let [route,html]of Object.entries(pages)){
   // Include Services navigation on both generated pages and legacy staged pages.
-  html=html.replace(/(<nav aria-label="Main navigation">)(?!<a href="\\/services\\/">)/,'$1<a href="/services/">Services</a>');
-  html=html.replace(/(<p>Company<\\/p>)(?!<a href="\\/services\\/">)/,'$1<a href="/services/">Website services</a>');
+  if (!html.includes('<nav aria-label="Main navigation"><a href="/services/">Services</a>')) html=html.replace('<nav aria-label="Main navigation">','<nav aria-label="Main navigation"><a href="/services/">Services</a>');
+  if (!html.includes('<p>Company</p><a href="/services/">Website services</a>')) html=html.replace('<p>Company</p>','<p>Company</p><a href="/services/">Website services</a>');
   html=html.replace(/<meta name="robots" content="noindex,nofollow,noarchive">/g,'');
   html=html.replace(/<p class="review-state">[\s\S]*?<\/p>/g,'').replace(/<p class="note">This first resource[\s\S]*?<\/p>/,'');
   html=html.replace(/<p class="preview-note">[\s\S]*?<\/p>/,'<p class="preview-note">Dashboard enrolment is not currently open.</p>');
