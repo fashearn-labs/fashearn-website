@@ -166,7 +166,8 @@ function approvedVisualPage(title,description,name){
     '<meta name="description" content="'+escape(description)+'">'+
     '<link rel="icon" href="/assets/images/favicon.png"><link rel="stylesheet" href="/assets/approved-commercial.css">'+
     scripts+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+
-    '<div class="topnote">Fashearn Labs · Websites and custom business systems · RouteOps is a separate product</div>'+
+    // The navigation header now begins directly after the skip link.
+
     nav+'<main id="main-content">'+section+'</main>'+footer+'</body></html>';
 }
 pages['/']=approvedVisualPage(
