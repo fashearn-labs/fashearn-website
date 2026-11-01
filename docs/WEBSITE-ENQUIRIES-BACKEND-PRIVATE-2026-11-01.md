@@ -85,6 +85,23 @@ from `_routes.json`. The preview source was syntax-checked, but a
 full clean build, visual checks and Make delivery tests are still pending.
 **No release, merge or deployment is authorised.**
 
+## 1 November follow-up source inspection
+
+- A local execution of `node scripts/check-website-enquiry-handler.cjs`
+  returned **PASS (31 offline checks; zero external requests)**.
+- Checked the generated Website Services page expression in isolation:
+  **one** form, `/api/website-enquiry` action, required fields,
+  separate Dashboard pilot link, and balanced `section`, `div`,
+  `form`, `aside`, `h1`, `h2`, and `textarea` tags.
+- Inspected staged stylesheet selectors for all 15 principal classes
+  used by the new services layout, including mobile breakpoint rules.
+- Confirmed the prepared release handler allowlist remains limited to
+  `/api/trial` and `/verify`. New Make secrets have not been
+  configured in Cloudflare and no email has been sent.
+- **Not yet passed:** an actual clean full site build and browser
+  comparison against the separately owner-approved private preview.
+  Do not claim visual equivalence or publication readiness.
+
 ## Release gates — all still pending
 
 1. Visually review the staged `/services/` page against the separately
