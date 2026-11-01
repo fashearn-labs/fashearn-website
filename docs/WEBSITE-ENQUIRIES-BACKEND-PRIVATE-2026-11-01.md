@@ -137,6 +137,47 @@ coverage. Source syntax was checked after correcting a navigation-rule typo.
 A full clean build and exact visual comparison of **generated release output**
 remain pending.
 
+## 1 November — approved design integration milestone
+
+Private GitHub review branch now retains **exact source sections** from the
+owner-approved standalone preview:
+
+- `staging/company-site/assets/approved-commercial.css` (approved styling)
+- `staging/company-site/approved-reference/` (original header, Home,
+  Services, Pilot, Website Enquiry and Pilot Enquiry visual sections)
+- Release builder prepares `/services/`, `/website-enquiry/` and
+  `/private-pilot/` using the approved styling, copy, sections and header,
+  with ordinary same-site links instead of prototype-only screen switching.
+- Website Enquiry source has the approved fields `name`, `email`,
+  `company`, `project_type` and `project_details`. The **server**
+  validates the category and transforms it into the existing Make
+  `message` field, preserving the five-field Outlook mapping with
+  `phone=""`; no API keys or webhook URLs are exposed in browser code.
+- Browser-side form feedback uses the existing approved in-form status area.
+  The original Route Operations enquiry stays at `/contact/#enquiry`,
+  using its unchanged protected handler `/api/trial`.
+- The Cloudflare release route allowlist STILL excludes
+  `/api/website-enquiry`; the new form is not available for live submissions.
+
+**Checks completed (offline only):**
+- 18 request-level checks against the actual website-enquiry handler,
+  using mocked Turnstile and Make responses, zero external requests
+- 44 generated commercial-page builder checks with read-only mock
+  filesystem data: HTML, links, field names, Turnstile, approved CSS and
+  balanced key tags
+- Local adaptation of the original reference tested with Chromium at
+  1440px and 390px for Services, Website Enquiry and Private Pilot:
+  **6/6 viewport checks**, no horizontal overflow. These are focused
+  visual checks, **not a complete clean build or production-hosted test**.
+
+**Pending:** full generated-site clean build; protected-handler, sitemap,
+navigation and all-legacy-page checks; review of the other existing pages
+against the approved homepage/navigation; privacy/terms review; secure
+Cloudflare server secret configuration; independent synthetic delivery
+tests after owner approval; and separate publication approval.
+Do not claim the entire website matches the standalone approved preview
+yet, or merge this branch into `main`.
+
 ## Release gates — all still pending
 
 1. Visually review the staged `/services/` page against the separately
