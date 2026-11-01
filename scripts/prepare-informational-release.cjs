@@ -29,7 +29,7 @@ siteJS+='\n// Preserve existing public homepage anchors after the page split.\ni
 write('assets/site.js',siteJS);
 const extraCSS=`\n.legal-copy{max-width:900px}.legal-copy h2{font-size:1.6rem;margin-top:38px}.legal-copy h3{font-size:1.1rem}.legal-copy table{width:100%;border-collapse:collapse;margin:24px 0}.legal-copy th,.legal-copy td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.legal-copy th{color:var(--text)}.legal-copy td{color:var(--muted)}.legal-copy a{color:var(--green);overflow-wrap:anywhere}.legal-copy li{color:var(--muted);margin:10px 0}.enquiry-form{margin-top:28px}.enquiry-form .inner{display:grid;gap:18px}.enquiry-form label{display:block;color:var(--text);font-weight:650;font-size:.9rem;margin-bottom:6px}.enquiry-form input:not([type=hidden]){width:100%;min-height:48px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit}.enquiry-form input:focus{outline:2px solid var(--green);outline-offset:2px}.form-privacy{font-size:.85rem;margin:18px 0;color:var(--muted)}.form-privacy a{color:var(--green)}.business-details{margin-top:18px;font-size:.8rem;color:var(--muted)}.business-details a{color:var(--green)}.business-details address{font-style:normal;margin-top:6px}.candidate-notice{border:1px solid #5bf0b44d;padding:18px;border-radius:10px}.legal-copy .review-date{font-size:.85rem}@media(max-width:700px){.legal-copy th,.legal-copy td{padding:9px 6px;font-size:.85rem}.cf-turnstile{max-width:100%;overflow:auto}}\n`;
 const privacyCSS='\n.privacy-section{padding:40px 0 56px}.privacy-copy{max-width:760px;font-size:.9375rem;line-height:1.75}.privacy-copy h1{font-size:2rem;line-height:1.2;letter-spacing:-.025em;margin:0 0 8px}.privacy-copy .review-date{font-size:.78rem;color:var(--muted);padding-bottom:22px;margin-bottom:26px;border-bottom:1px solid var(--line)}.privacy-copy h2{font-size:1.125rem;line-height:1.4;letter-spacing:-.01em;margin:26px 0 10px}.privacy-copy p{margin-bottom:14px}.privacy-copy table{margin:16px 0;font-size:.875rem}.privacy-copy th,.privacy-copy td{padding:10px 12px}.privacy-copy a{color:#b5cfca;text-underline-offset:3px}.privacy-copy a:hover{color:var(--green)}.privacy-copy li{margin:6px 0}@media(max-width:700px){.privacy-section{padding:28px 0 40px}.privacy-copy h1{font-size:1.65rem}.privacy-copy th,.privacy-copy td{padding:8px 6px}}\n';
-const websiteCSS='\n.enquiry-form textarea{width:100%;min-height:150px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit;resize:vertical}.enquiry-form textarea:focus{outline:2px solid var(--green);outline-offset:2px}\n';
+const websiteCSS='\n.enquiry-form select{width:100%;min-height:48px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit}.enquiry-form select:focus{outline:2px solid var(--green);outline-offset:2px}.enquiry-form textarea{width:100%;min-height:150px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit;resize:vertical}.enquiry-form textarea:focus{outline:2px solid var(--green);outline-offset:2px}\n';
 write('assets/site.css',fs.readFileSync(path.join(out,'assets/site.css'),'utf8')+extraCSS+privacyCSS+websiteCSS);
 const pageFiles=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))pageFiles.push(path.relative(stage,p).replaceAll('\\','/'));}}walk(stage);
 const pages=Object.fromEntries(pageFiles.map(p=>['/'+p.replace(/index\.html$/,''),fs.readFileSync(path.join(stage,p),'utf8')]));
@@ -50,13 +50,19 @@ const form='<form enctype="multipart/form-data" id="form01" method="post" action
 
 const websiteFields=[
   ['name','Your name','text',120,'autocomplete="name" required'],
-  ['company','Business / company name','text',160,'autocomplete="organization" required'],
-  ['email','Email address','email',254,'autocomplete="email" required'],
-  ['phone','Phone (optional)','tel',60,'autocomplete="tel"']
+  ['email','Email address','email',200,'autocomplete="email" required'],
+  ['company','Business name','text',150,'autocomplete="organization" required']
 ];
 const websiteForm='<form enctype="multipart/form-data" id="website-enquiry-form" method="post" action="/api/website-enquiry" class="enquiry-form"><div class="inner">'+
   websiteFields.map(([name,label,type,max,options])=>'<div class="field"><label for="website-'+name+'">'+label+'</label><input id="website-'+name+'" name="'+name+'" type="'+type+'" maxlength="'+max+'" '+options+'></div>').join('')+
-  '<div class="field"><label for="website-message">Tell us about the website you need</label><textarea id="website-message" name="message" maxlength="4000" rows="6" required></textarea></div>'+
+  '<div class="field"><label for="website-type">What website do you need?</label>'+
+  '<select id="website-type" name="project_type" required><option value="">Select an option</option>'+
+  '<option value="one-page">One-page Starter Website — from £249</option>'+
+  '<option value="multi-page">Multi-page business website</option>'+
+  '<option value="existing-site">Update an existing website</option>'+
+  '<option value="unsure">Not sure yet</option></select></div>'+
+  '<div class="field"><label for="website-details">Tell us a little about your project</label>'+
+  '<textarea id="website-details" name="project_details" maxlength="1800" rows="5" required></textarea></div>'+
   '<p class="form-privacy">We use your details to respond to your website enquiry, not to add you to a marketing list. See our <a href="/privacy/">privacy notice</a>.</p>'+
   '<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+
   '<div class="actions"><button class="button primary" type="submit">Send website enquiry</button></div></div></form>';
