@@ -62,11 +62,34 @@ Make failure and successful fictional-field mapping.
 Result at preparation: **PASS, 31 offline checks, 0 real external requests**.
 No live submission, webhook test or Outlook delivery test was performed.
 
+## Private form integration — prepared, not live
+
+The existing static release builder now includes a separate `/services/` route,
+with Website Services copy, the £249 starter offer and optional £49/month
+care package. The new page keeps the approved Fashearn Labs theme and
+links to the existing RSMCR client story. It has its **own** five-field
+HTML enquiry form and Cloudflare Turnstile widget, with form action
+`POST /api/website-enquiry`; `assets/website-enquiry-form.js` provides
+accessible submission feedback without exposing Make secrets.
+
+The existing Route Operations form remains on `/contact/#enquiry`,
+targeting `POST /api/trial`. Header/footer navigation links to
+`/services/` were prepared; the original homepage layout and RouteOps
+dashboard imagery are otherwise preserved. This is a source-level
+integration, not an import of the separate approved visual preview.
+
+`scripts/check-informational-release.py` now expects **15** generated
+pages and checks that each form routes to a distinct endpoint, includes
+the correct fields, and that the new Pages Function remains **excluded**
+from `_routes.json`. The preview source was syntax-checked, but a
+full clean build, visual checks and Make delivery tests are still pending.
+**No release, merge or deployment is authorised.**
+
 ## Release gates — all still pending
 
-1. Preserve the approved site design, and separately integrate the two
-   **visually distinct** forms into the existing production builder on
-   this private branch.
+1. Visually review the staged `/services/` page against the separately
+   owner-approved design preview. Incorporate that exact design only after
+   confirming that its protected assets and forms remain separate.
 2. Review Website Services enquiry privacy/terms and consent wording,
    and verify the new form's Turnstile widget is appropriate.
 3. Configure the new webhook URL and Make API key only through Cloudflare's
