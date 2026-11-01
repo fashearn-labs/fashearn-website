@@ -17,6 +17,8 @@ const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 const originalFiles=Object.keys(baselineFiles.files);
 const preserved={};
 for(const p of originalFiles.filter(p=>p.startsWith('assets/')||p==='trial/success.html')){const b=original(p);write(p,b);preserved[p]=hash(b);}
+// The homepage-only arrow mark is a new transparent asset, not a protected baseline replacement.
+write('assets/images/fashearn-arrow.svg',fs.readFileSync(path.join(repo,'assets/images/fashearn-arrow.svg')));
 for(const p of ['functions/api/trial.js','functions/verify.js']){const expected=original(p);if(!fs.readFileSync(path.join(repo,p)).equals(expected))throw new Error('Protected function differs from baseline: '+p);preserved[p]=hash(expected);}
 for(const p of ['site.css','site.js'])write('assets/'+p,fs.readFileSync(path.join(stage,'assets',p)));
 let formJS=original('assets/trial-form.js').toString('utf8');
@@ -139,12 +141,12 @@ function approvedVisualPage(title,description,name){
     section=section.replace(button,'<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+button);
   }
   let nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
-  // Approved homepage-only brand correction: use the original logo image directly,
-  // without wrapping it in the old CSS-drawn arrow box.
+  // Homepage-only logo: preserve the header text and use a transparent arrow,
+  // with no square border, background, or CSS-drawn box.
   if(name==='home'){
     const textMark='<span class="mark">↗</span>';
     if(!nav.includes(textMark))throw new Error('Expected homepage header arrow missing');
-    nav=nav.replace(textMark,'<img src="/assets/images/apple-touch-icon.png" width="32" height="32" alt="" decoding="async" style="width:32px;height:32px;display:block;object-fit:contain">');
+    nav=nav.replace(textMark,'<img src="/assets/images/fashearn-arrow.svg" width="32" height="32" alt="" decoding="async" style="width:32px;height:32px;display:block;object-fit:contain">');
   }
   const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
     '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
