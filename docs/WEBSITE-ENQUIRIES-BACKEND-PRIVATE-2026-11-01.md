@@ -102,6 +102,41 @@ full clean build, visual checks and Make delivery tests are still pending.
   comparison against the separately owner-approved private preview.
   Do not claim visual equivalence or publication readiness.
 
+## Approved visual source recovered — design parity gate
+
+The exact owner-approved standalone preview is available in the user's
+personal Library as `Fashearn_Labs_Private_Website_Preview_Two_Enquiry_Forms.html`
+(1 November 2026). It was recovered and reviewed **locally** without making
+network submissions or changing the live website.
+
+Browser checks of that exact artifact: Website Services, Website Enquiry,
+Route Operations Pilot, and Pilot Enquiry screens render at **1440px desktop
+and 390px mobile**; no horizontal overflow was observed at either width.
+These checks confirm the original preview, NOT the new repository release.
+
+**IMPORTANT: design mismatch remains.** The draft `/services/` page built
+from the existing release builder is **not an exact copy** of the approved
+preview. Do not describe it as visually approved or release-ready.
+Preserve the approved preview's distinctive dark/mint styling, header,
+spacing, cards, and service/pilot separation when integrating the actual
+release pages. Final comparison and owner sign-off remain mandatory.
+
+**Website form contract difference to reconcile:** The approved preview
+has `name`, `email`, `company`, `project_type` (one-page, multi-page,
+existing-site, unsure) and `project_details`; the new Make/Cloudflare
+draft currently expects `name`, `company`, `email`, `phone`, `message`.
+Preserve the approved visual form and securely transform validated
+`project_type` and `project_details` into the Make `message` field,
+with `phone` optional/blank, rather than silently changing the layout.
+The original pilot form uses `name`, `email`, `company`, `drivers`,
+`carriers` and remains on the protected `/api/trial` route.
+
+The private builder now also includes a Website Services homepage panel
+and site-wide navigation link on all staged routes, with offline assertion
+coverage. Source syntax was checked after correcting a navigation-rule typo.
+A full clean build and exact visual comparison of **generated release output**
+remain pending.
+
 ## Release gates — all still pending
 
 1. Visually review the staged `/services/` page against the separately
