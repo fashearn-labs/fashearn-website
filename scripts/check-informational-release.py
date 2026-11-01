@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
-import json, hashlib
+import json, hashlib, re
 
 root = Path(__file__).resolve().parents[1]
 site = root / 'dist-release'
@@ -31,6 +31,14 @@ for route,p in pages.items():
     text=(site/('index.html' if route=='/' else route.strip('/')+'/index.html')).read_text(encoding='utf-8')
     assert 'noindex' not in text and '<iframe' not in text, route
     assert 'href="/privacy/"' in text and 'href="/cookies/"' in text and 'href="/terms/"' in text, route
+    nav = re.search(r'<nav\b[^>]*>([\s\S]*?)</nav>', text)
+    assert nav, ('navigation missing', route)
+    nav_links = re.findall(r'<a\b[^>]*href="([^"]+)"', nav.group(1))
+    assert not set(nav_links) & {'/privacy/', '/cookies/', '/terms/'}, ('legal links in main navigation', route)
+    footer = text.split('</main>', 1)[-1]
+    assert all('href="' + path + '"' in footer for path in ('/privacy/', '/cookies/', '/terms/')), ('legal footer links missing', route)
+    if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/'):
+        assert nav_links == ['/', '/services/', '/#systems', '/#work', '/private-pilot/', '/contact/'], ('commercial navigation drift', route, nav_links)
     if route in ('/','/services/','/website-enquiry/','/private-pilot/'):
         assert 'Websites' in text and 'RouteOps Pilot' in text and 'Custom Systems' in text and 'Our Work' in text, ('approved navigation missing',route)
         assert '/assets/approved-commercial.css' in text, ('approved theme missing',route)
