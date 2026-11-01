@@ -109,6 +109,65 @@ pages['/contact/']=pages['/contact/'].replace('</head>','<script src="https://ch
 pages['/']=pages['/'].replace('</main>','<section class="section" id="website-services"><div class="shell split"><div><p class="eyebrow">Website Services · Small businesses</p><h2>Professional websites.<br><span>Clear, practical results.</span></h2></div><div><p>A modern, mobile-friendly website that helps customers understand what you do and get in touch. Small Business Starter Website from <strong>£249 one-off</strong>. Optional Website Care at <strong>£49/month</strong>. Extra pages quoted separately.</p><a class="button primary" href="/services/">Ask about a website →</a></div></div></section><section class="section" id="trial"><div class="shell"><p class="eyebrow">Dashboard enquiries</p><h2>Have a question about<br><span>your operation?</span></h2><p>Enrolment is not currently open. You can explore the Dashboard or send an enquiry.</p><a class="button primary" href="/contact/#enquiry">Contact Fashearn Labs →</a></div></section></main>');
 const address=business.businessAddress?'<address>'+escape(business.businessAddress).replaceAll('\n','<br>')+'</address>':'';
 const legal='<div class="business-details">'+escape(business.legalName)+' trading as '+escape(business.tradingName)+' · <a href="mailto:'+escape(business.email)+'">'+escape(business.email)+'</a>'+address+'</div>';
+
+// Approved visual design is applied only to new commercial review pages.
+// Preserve legacy company/product pages and the protected /contact/ pilot handler.
+write('assets/approved-commercial.css',fs.readFileSync(path.join(stage,'assets/approved-commercial.css')));
+const visualSource=path.join(stage,'approved-reference');
+const approvedNav=fs.readFileSync(path.join(visualSource,'header.html'),'utf8')
+  .replace(/<!--[\s\S]*?-->/,'').trim();
+const approvedPaths={
+  home:'/',services:'/services/',pilot:'/private-pilot/',
+  pricing:'/pricing/',about:'/about/',contact:'/contact/',
+  'website-enquiry':'/website-enquiry/','pilot-enquiry':'/contact/#enquiry'
+};
+function approvedVisualPage(title,description,name){
+  let section=fs.readFileSync(path.join(visualSource,name+'.html'),'utf8')
+    .replace(/<!--[\s\S]*?-->/,'').trim()
+    .replace('<section class="screen"','<section class="screen active"');
+  // Preview's data-go anchors become ordinary static, browser-accessible routes.
+  const linkRoute=(html)=>html.replace(/data-go="([^"]+)"\s+href="#[^"]+"/g,(m,target)=>{
+    if(!Object.hasOwn(approvedPaths,target))throw new Error('Unknown approved preview link '+target);
+    return 'href="'+approvedPaths[target]+'"';
+  });
+  section=linkRoute(section);
+  if(name==='website-enquiry'){
+    section=section.replace('action="#" class="preview-enquiry" data-intended-endpoint="/api/website-enquiry"','action="/api/website-enquiry" enctype="multipart/form-data" class="preview-enquiry"');
+    const button='<button class="button primary" type="submit">Send website enquiry →</button>';
+    if(!section.includes(button))throw new Error('Approved Website Enquiry submit button missing');
+    section=section.replace(button,'<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+button);
+  }
+  const nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
+  const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
+    '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
+    '<a href="mailto:info@fashearn.io">info@fashearn.io</a></div></div>'+
+    '<div class="shell">'+legal+'</div></footer>';
+  const scripts=name==='website-enquiry'
+    ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/website-enquiry-form.js" defer></script>'
+    : '';
+  return '<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
+    '<meta name="color-scheme" content="dark"><title>'+escape(title)+' | Fashearn Labs</title>'+
+    '<meta name="description" content="'+escape(description)+'">'+
+    '<link rel="icon" href="/assets/images/favicon.png"><link rel="stylesheet" href="/assets/approved-commercial.css">'+
+    scripts+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+
+    '<div class="topnote">Fashearn Labs · Website Services and Route Operations are separate</div>'+
+    nav+'<main id="main-content">'+section+'</main>'+footer+'</body></html>';
+}
+pages['/services/']=approvedVisualPage(
+  'Professional websites for small businesses',
+  'Fashearn Labs builds modern small business websites from £249. Optional care £49/month; extra pages quoted separately.',
+  'services'
+);
+pages['/website-enquiry/']=approvedVisualPage(
+  'Website Services enquiry',
+  'Tell Fashearn Labs about your website requirements. Website enquiry only; no checkout or payment.',
+  'website-enquiry'
+);
+pages['/private-pilot/']=approvedVisualPage(
+  'Route Operations Dashboard v1.1 — Private Pilot',
+  'Apply for a manually arranged Route Operations Dashboard v1.1 private pilot. No instant signup or payments.',
+  'pilot'
+);
 const tax=business.vatRegistered===false?'No VAT is charged.':business.vatRegistered===true?(business.priceIncludesVat?'Prices include VAT.':'Prices are exclusive of VAT.'):'VAT treatment awaiting owner confirmation in this release candidate.';
 const manifest={baseline,sourceBranch:'release/informational-website-20261024',prepared:'2026-10-24',businessDetailsComplete:detailsReady,trialEnrolment:false,paidCheckout:false,preserved,files:[],routes:Object.keys(pages),limits:['No provider submission or hosted deployment tested.','Mailbox retention policy recorded; no email deletion configured.']};
 for(let [route,html]of Object.entries(pages)){
