@@ -141,7 +141,7 @@ function approvedVisualPage(title,description,name){
   const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
     '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
     '<a href="mailto:info@fashearn.io">info@fashearn.io</a></div></div>'+
-    '<div class="shell">'+legal+'</div></footer>';
+    '</footer>';
   const scripts=name==='website-enquiry'
     ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/website-enquiry-form.js" defer></script>'
     : '';
