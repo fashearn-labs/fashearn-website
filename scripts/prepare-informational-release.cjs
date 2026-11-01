@@ -21,6 +21,8 @@ for(const p of originalFiles.filter(p=>p.startsWith('assets/')||p==='trial/succe
 write('assets/images/fashearn-arrow.svg',fs.readFileSync(path.join(repo,'assets/images/fashearn-arrow.svg')));
 // Self-hosted, owner-supplied image for the Home page client-website panel.
 write('assets/images/rsmcr-homepage-card.avif',fs.readFileSync(path.join(repo,'assets/images/rsmcr-homepage-card.avif')));
+// The complete customer-supplied RSMCR website capture for the two-card Home layout.
+write('assets/images/rsmcr-homepage-full.avif',fs.readFileSync(path.join(repo,'assets/images/rsmcr-homepage-full.avif')));
 for(const p of ['functions/api/trial.js','functions/verify.js']){const expected=original(p);if(!fs.readFileSync(path.join(repo,p)).equals(expected))throw new Error('Protected function differs from baseline: '+p);preserved[p]=hash(expected);}
 for(const p of ['site.css','site.js'])write('assets/'+p,fs.readFileSync(path.join(stage,'assets',p)));
 let formJS=original('assets/trial-form.js').toString('utf8');
@@ -163,6 +165,9 @@ pages['/']=approvedVisualPage(
   'Fashearn Labs designs professional websites and builds bespoke dashboards, reporting tools and business systems. Route Operations Dashboard v1.1 is an example, with a separate private pilot.',
   'home'
 );
+// Version the homepage CSS URL so existing visitors do not mix the new card markup
+// with a previously cached stylesheet; all other pages retain their approved CSS link.
+pages['/']=pages['/'].replace('href="/assets/approved-commercial.css"','href="/assets/approved-commercial.css?v=home-work-panels-20261101"');
 // Keep existing homepage anchor journeys and approved resource routes working.
 // Legacy trial/#routeops anchors redirect to their established destinations.
 pages['/']=pages['/'].replace('</head>',
