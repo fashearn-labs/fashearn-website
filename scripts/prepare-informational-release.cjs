@@ -150,9 +150,20 @@ function approvedVisualPage(title,description,name){
     '<meta name="description" content="'+escape(description)+'">'+
     '<link rel="icon" href="/assets/images/favicon.png"><link rel="stylesheet" href="/assets/approved-commercial.css">'+
     scripts+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+
-    '<div class="topnote">Fashearn Labs · Website Services and Route Operations are separate</div>'+
+    '<div class="topnote">Fashearn Labs · Websites and custom business systems · RouteOps is a separate product</div>'+
     nav+'<main id="main-content">'+section+'</main>'+footer+'</body></html>';
 }
+pages['/']=approvedVisualPage(
+  'Fashearn Labs — Websites and custom business systems',
+  'Fashearn Labs designs professional websites and builds bespoke dashboards, reporting tools and business systems. Route Operations Dashboard v1.1 is an example, with a separate private pilot.',
+  'home'
+);
+// Keep existing homepage anchor journeys and approved resource routes working.
+// Legacy trial/#routeops anchors redirect to their established destinations.
+pages['/']=pages['/'].replace('</head>',
+  '<script>if(location.hash==="#trial")location.replace("/contact/#enquiry");'+
+  'else if(location.hash==="#routeops")location.replace("/route-operations-dashboard/");'+
+  'else if(location.hash==="#routeops-proof")location.replace("/route-operations-dashboard/#overview");</script></head>');
 pages['/services/']=approvedVisualPage(
   'Professional websites for small businesses',
   'Fashearn Labs builds modern small business websites from £249. Optional care £49/month; extra pages quoted separately.',
