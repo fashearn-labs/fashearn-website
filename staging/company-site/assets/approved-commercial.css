@@ -172,3 +172,49 @@
   #home #work .home-work-media.client-media{padding:12px 12px 13px}
   #home #work .home-work-card .work-copy{padding:22px}
 }
+
+
+/* Custom Systems only: display the genuine Dashboard asset at its natural proportions.
+   The image's HTML dimensions must not stretch its height when CSS sets width:100%. */
+#custom-systems #software-example .split > *{min-width:0}
+#custom-systems #software-example .systems-dashboard-showcase{
+  display:block;
+  align-self:start;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  margin:0;
+  padding:14px;
+  overflow:hidden;
+  border:1px solid rgba(108,215,189,.28);
+  border-radius:14px;
+  background:linear-gradient(155deg,rgba(14,40,41,.82),rgba(7,17,27,.89));
+  box-shadow:0 16px 36px rgba(0,0,0,.15);
+}
+#custom-systems #software-example .systems-dashboard-showcase .showcase-head{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  align-items:center;
+  justify-content:space-between;
+  margin:0;
+  padding:2px 2px 12px;
+  line-height:1.45;
+}
+#custom-systems #software-example img.systems-dashboard-image{
+  display:block;
+  position:static;
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  height:auto;
+  min-height:0;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center top;
+  margin:0;
+  border:1px solid rgba(137,216,195,.21);
+  border-radius:8px;
+  background:#08121b;
+}
