@@ -191,7 +191,11 @@ for(let [route,html]of Object.entries(pages)){
   html=html.replace(/<p class="preview-note">[\s\S]*?<\/p>/,'<p class="preview-note">Dashboard enrolment is not currently open.</p>');
   html=html.replaceAll('Trial enrolment is not enabled in this preview.','Trial enrolment is not currently open.').replaceAll('Trial enrolment and Checkout are not enabled in this preview.','Trial enrolment and paid Checkout are not currently open.').replaceAll('This preview does not enable trial enrolment.','Trial enrolment is not currently open.').replaceAll('This preview does not accept signups or payments.','This website does not accept signups or payments.').replaceAll('This design preview does not create an account, collect card details or start a subscription.','This website does not create an account, collect card details or start a subscription.').replaceAll('Trial enrolment and Checkout are not enabled in this design preview.','Trial enrolment and Checkout are not currently open.');
   html=html.replace(/href="https:\/\/fashearn\.io\/#trial"/g,'href="/contact/#enquiry"').replaceAll('existing website enquiry route','website enquiry route').replaceAll('Enrolment is<br><span>not enabled here.</span>','Enrolment is<br><span>not currently open.</span>');
-  html=html.replace(/(<a href="[^\"]*contact\/">Contact<\/a>)/g,'$1<a href="/privacy/">Privacy</a><a href="/cookies/">Cookies &amp; video</a><a href="/terms/">Website terms</a>');
+  // Legal links belong in the legacy footer's Company group, never the main navigation.
+  if (html.includes('<div class="footer-links">')) html=html.replace(
+    /(<div class="footer-group"><p>Company<\/p>[\s\S]*?<a href="\/contact\/">Contact<\/a>)/,
+    '$1<a href="/privacy/">Privacy</a><a href="/cookies/">Cookies &amp; video</a><a href="/terms/">Website terms</a>'
+  );
   html=html.replace('</footer>','<div class="shell">'+legal+'</div></footer>');
   html=html.replace(/\b(href|src)="([^"]+)"/g,(all,attr,value)=>{if(/^(https?:)?\/\//.test(value)){if(value.startsWith('https://fashearn.io/assets/'))return attr+'="'+new URL(value).pathname+'"';if(value===shot)return attr+'="/assets/routeops-dashboard-v1.1.png"';return all;}if(value.startsWith('#')||/^[a-z]+:/i.test(value)||value.startsWith('/'))return all;return attr+'="'+new URL(value,'https://fashearn.io'+route).pathname+'"';});
   const canonical='https://fashearn.io'+route,title=html.match(/<title>([^<]+)<\/title>/)[1],description=html.match(/<meta name="description" content="([^"]*)"/)[1];
