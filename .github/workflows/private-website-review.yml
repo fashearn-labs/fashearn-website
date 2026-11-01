@@ -34,6 +34,7 @@ jobs:
         with:
           name: commercial-review-pages
           path: |
+            dist-release/index.html
             dist-release/services/index.html
             dist-release/website-enquiry/index.html
             dist-release/private-pilot/index.html
