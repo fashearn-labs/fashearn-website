@@ -71,9 +71,17 @@ assert 'One practical approach' not in home_html
 assert 'Two different offers' not in home_html
 assert 'mailto:info@fashearn.io?subject=Custom%20Business%20System%20Enquiry' in home_html
 assert '£249 one-off' in home_html and '£49/month' in home_html
-assert 'RSMCR Logistics' in home_html and '/assets/images/rsmcr-homepage-card.avif' in home_html and 'not a claim that RSMCR is a current Dashboard customer' in home_html
+assert 'RSMCR Logistics' in home_html and '/assets/images/rsmcr-homepage-full.avif' in home_html and 'not a claim that RSMCR is a current Dashboard customer' in home_html
 assert 'raw.githubusercontent.com/fashearn-labs/rsmcr-website' not in home_html, 'private RSMCR asset on homepage'
 assert hashlib.sha256((site/'assets/images/rsmcr-homepage-card.avif').read_bytes()).hexdigest()=='827905e8ef929f2df1931db0754fc38cf5e6b4c4a8fa92751e10d52caa4024bc', 'supplied screenshot missing or changed'
+assert hashlib.sha256((site/'assets/images/rsmcr-homepage-full.avif').read_bytes()).hexdigest()=='f913ca6837c13d87f2839b21d8b0aa26d52bad488b28b30656c4c776b72e9af9', 'complete RSMCR screenshot missing or changed'
+assert home_html.count('class="work-card home-work-card"')==2, 'Home work panels not paired'
+assert home_html.count('class="work-media home-work-media')==2, 'Home media areas not paired'
+assert 'class="commercial-grid home-work-grid"' in home_html
+assert 'href="/assets/approved-commercial.css?v=home-work-panels-20261101"' in home_html, 'Home CSS refresh missing'
+assert 'FASHEARN LABS · IN-HOUSE SOFTWARE' in home_html and 'RSMCR LOGISTICS · BUSINESS WEBSITE' in home_html
+assert 'object-fit:contain' in (site/'assets/approved-commercial.css').read_text() and '#home #work .home-work-card' in (site/'assets/approved-commercial.css').read_text()
+
 assert 'RSMCR uses the Dashboard' not in home_html
 assert 'Shopify' not in home_html
 services_html=(site/'website-enquiry/index.html').read_text(encoding='utf-8')
