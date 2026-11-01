@@ -106,6 +106,11 @@ assert '#custom-systems #software-example img.systems-dashboard-image{' in custo
 assert 'height:auto;' in custom_css.split('#custom-systems #software-example img.systems-dashboard-image{')[1].split('}')[0], 'Correct image aspect ratio rule missing'
 assert (site/'assets/routeops-dashboard-v1.1.png').is_file(), 'Original dashboard screenshot missing'
 assert 'RSMCR Logistics' in work_html and 'Route Operations Dashboard v1.1' in work_html
+assert 'src="/assets/images/rsmcr-homepage-full.avif"' in work_html, 'Our Work RSMCR screenshot missing'
+assert 'raw.githubusercontent.com/fashearn-labs/rsmcr-website' not in work_html, 'Our Work private image URL must not be used'
+assert work_html.count('class="work-media"')==2, 'Our Work media panels should share the same treatment'
+assert 'class="work-media client-media"' not in work_html, 'Our Work legacy small-logo panel remains'
+assert 'width="680" height="490"' in work_html, 'Full RSMCR screenshot dimensions missing'
 assert 'not a Route Operations Dashboard deployment' in work_html
 assert 'href="/custom-systems/"' in home_html
 assert '£249' in (site/'services/index.html').read_text(encoding='utf-8')
