@@ -194,6 +194,12 @@ pages['/custom-systems/']=approvedVisualPage(
   'Fashearn Labs develops tailored business dashboards, internal tools, reporting and practical automation. Scope and quote agreed individually.',
   'systems'
 );
+// Only the Custom Systems page gets a versioned CSS link for the corrected image
+// presentation, so visitors cannot see new markup with an old cached stylesheet.
+pages['/custom-systems/']=pages['/custom-systems/'].replace(
+  'href="/assets/approved-commercial.css"',
+  'href="/assets/approved-commercial.css?v=custom-systems-screenshot-20261101"'
+);
 pages['/our-work/']=approvedVisualPage(
   'Our Work — Websites and In-house Software',
   'See Fashearn Labs client website work for RSMCR Logistics and our separate Route Operations Dashboard v1.1 product.',
