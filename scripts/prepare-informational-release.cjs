@@ -47,6 +47,57 @@ pages['/terms/']=page('Website terms','Terms for using the Fashearn Labs informa
 const sitekey=original('index.html').toString('utf8').match(/data-sitekey="([^"]+)"/)[1];
 const fields=[['name','Name','text','256'],['company','Company','text','256'],['email','Email','email','128'],['drivers','Approximate number of drivers','number','128'],['carriers','Carriers used','text','256']];
 const form='<form enctype="multipart/form-data" id="form01" method="post" action="/api/trial" class="enquiry-form"><div class="inner">'+fields.map(([name,label,type,max])=>'<div class="field"><label for="form01-'+name+'">'+label+'</label><input type="'+type+'" name="'+name+'" id="form01-'+name+'" maxlength="'+max+'" required'+(type==='email'?' autocomplete="email"':'')+'></div>').join('')+'<p class="form-privacy">We use these details to answer your enquiry and provide the follow-up you request. You are not added to a general marketing list. Read our <a href="/privacy/">privacy notice</a>.</p><div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div><div class="actions"><button class="button primary" type="submit">Send enquiry</button></div></div><input type="hidden" name="id" value="form01"></form>';
+
+const websiteFields=[
+  ['name','Your name','text',120,'autocomplete="name" required'],
+  ['company','Business / company name','text',160,'autocomplete="organization" required'],
+  ['email','Email address','email',254,'autocomplete="email" required'],
+  ['phone','Phone (optional)','tel',60,'autocomplete="tel"']
+];
+const websiteForm='<form enctype="multipart/form-data" id="website-enquiry-form" method="post" action="/api/website-enquiry" class="enquiry-form"><div class="inner">'+
+  websiteFields.map(([name,label,type,max,options])=>'<div class="field"><label for="website-'+name+'">'+label+'</label><input id="website-'+name+'" name="'+name+'" type="'+type+'" maxlength="'+max+'" '+options+'></div>').join('')+
+  '<div class="field"><label for="website-message">Tell us about the website you need</label><textarea id="website-message" name="message" maxlength="4000" rows="6" required></textarea></div>'+
+  '<p class="form-privacy">We use your details to respond to your website enquiry, not to add you to a marketing list. See our <a href="/privacy/">privacy notice</a>.</p>'+
+  '<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+
+  '<div class="actions"><button class="button primary" type="submit">Send website enquiry</button></div></div></form>';
+pages['/services/']=page('Small Business Website Design & Development',
+  'Responsive small business websites from £249 by Fashearn Labs. Optional website care at £49/month; larger projects quoted separately.',
+  [
+    '<section class="hero"><div class="shell pricing-grid"><div>',
+    '<p class="eyebrow">Fashearn Labs · Website services</p>',
+    '<h1>Professional websites<br><span class="gradient">for small businesses.</span></h1>',
+    '<p class="lead">Modern, mobile-friendly websites that help customers understand what you do and how to contact you.</p>',
+    '<p>Clear scope, straightforward communication and a practical handover. This is separate from our Route Operations Dashboard product.</p>',
+    '<div class="actions"><a class="button primary" href="#website-enquiry">Ask about a website →</a><a class="button" href="/client-stories/rsmcr-logistics/">See our client work →</a></div>',
+    '</div><aside class="offer"><p class="eyebrow">Small Business Starter Website</p>',
+    '<h2>£249 <span>one-off.</span></h2>',
+    '<p>One responsive page with up to five sections, using your approved text and images.</p>',
+    '<p>Additional pages and complex features are quoted separately.</p>',
+    '<p>Optional Website Care: <strong>£49/month</strong>.</p></aside></div></section>',
+    '<section class="section"><div class="shell grid">',
+    '<div class="card"><p class="eyebrow">Included</p><h2>A clear place<br><span>to start.</span></h2>',
+    '<p>One-page responsive design, up to five sections, supplied text and images, basic search metadata, contact links, one revision round and a basic handover.</p></div>',
+    '<div class="card"><p class="eyebrow">Larger projects</p><h2>Quoted to<br><span>your requirements.</span></h2>',
+    '<p>Extra pages, online shops, bookings, custom forms or backends and CMS features are not included. We confirm scope and price in writing.</p></div>',
+    '<div class="card"><p class="eyebrow">Optional Website Care</p><h2>£49<br><span>per month.</span></h2>',
+    '<p>Monthly checks and up to 30 minutes of minor updates to existing pages using materials you provide. No 24/7 coverage or guaranteed uptime.</p></div>',
+    '</div></section>',
+    '<section class="section alt"><div class="shell contact-grid">',
+    '<div class="card" id="website-enquiry"><p class="eyebrow">Website Services enquiries</p>',
+    '<h2>Tell us about<br><span>your website.</span></h2>',
+    '<p>This form is for website projects, not Dashboard private pilot applications. No payment or checkout is required to enquire.</p>',
+    websiteForm,
+    '</div><div>',
+    '<div class="contact-detail"><p class="eyebrow">How we work</p>',
+    '<h2>Simple steps.<br><span>Clear expectations.</span></h2>',
+    '<p>Tell us what you need, agree the written quote, supply approved text and images, review the preview, agree one revision and arrange handover.</p>',
+    '<p>Target around seven working days after complete agreed inputs, subject to an agreed schedule.</p></div>',
+    '<div class="contact-detail"><p class="eyebrow">Route Operations private pilot</p>',
+    '<p>Want to enquire about Fashearn Labs Route Operations Dashboard v1.1 instead?</p>',
+    '<a class="text-link" href="/contact/#enquiry">Use the separate private pilot enquiry form →</a></div>',
+    '</div></div></section>'
+  ].join(''));
+pages['/services/']=pages['/services/'].replace('</head>','<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/website-enquiry-form.js" defer></script></head>');
 pages['/contact/']=page('Contact Fashearn Labs','Enquire about Fashearn Labs Route Operations Dashboard v1.1 or contact info@fashearn.io.','<section class="hero"><div class="shell"><p class="eyebrow">Contact Fashearn Labs</p><h1>Tell us about<br><span class="gradient">your operation.</span></h1><p class="lead">For general Fashearn Labs questions, email <a class="text-link" href="mailto:info@fashearn.io">info@fashearn.io</a>.</p><p>Use the form below for enquiries about Fashearn Labs Route Operations Dashboard v1.1. It does not create an account or start a trial.</p></div></section><section class="section"><div class="shell contact-grid"><div class="card" id="enquiry"><p class="eyebrow">Dashboard enquiries</p><h2>Send your <span>enquiry.</span></h2>'+form+'</div><div><div class="contact-detail"><p class="eyebrow">Explore first</p><h2>See the <span>Dashboard.</span></h2><p>Watch the overview, view the application screens or open the approved 27-page User Guide.</p><div class="actions"><a class="button" href="/route-operations-dashboard/">Explore the Dashboard →</a><a class="text-link" href="/assets/Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf">Open the guide ↗</a></div></div><div class="contact-detail"><p class="eyebrow">Company channel</p><p><a class="text-link" href="https://www.linkedin.com/company/fashearn-labs/">Fashearn Labs on LinkedIn ↗</a></p></div></div></div></section>');
 pages['/contact/']=pages['/contact/'].replace('</head>','<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/trial-form.js" defer></script></head>');
 pages['/']=pages['/'].replace('</main>','<section class="section" id="trial"><div class="shell"><p class="eyebrow">Dashboard enquiries</p><h2>Have a question about<br><span>your operation?</span></h2><p>Enrolment is not currently open. You can explore the Dashboard or send an enquiry.</p><a class="button primary" href="/contact/#enquiry">Contact Fashearn Labs →</a></div></section></main>');
