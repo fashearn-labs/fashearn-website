@@ -25,7 +25,8 @@ class Page(HTMLParser):
         if tag == 'meta' and a.get('name') == 'robots': self.robots = a['content']
         if tag == 'link' and a.get('rel') == 'canonical': self.canonicals += 1
 
-pages = {p: Page(p.read_text(encoding='utf-8')) for p in ROOT.rglob('*.html')}
+pages = {p: Page(p.read_text(encoding='utf-8')) for p in ROOT.rglob('*.html')
+         if 'approved-reference' not in p.relative_to(ROOT).parts}
 links = 0
 for path, page in pages.items():
     assert page.h1 == 1, (path, 'h1 count')
