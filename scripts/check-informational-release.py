@@ -42,6 +42,8 @@ for route,p in pages.items():
     assert all('href="' + path + '"' in footer for path in ('/privacy/', '/cookies/', '/terms/')), ('legal footer links missing', route)
     assert 'footer-business-line' in footer and '<address>' not in footer, ('compact legal line missing',route)
     assert 'href="/contact/"' not in text and 'href="/contact/#enquiry"' not in text, ('retired contact link',route)
+    assert 'class="topnote"' not in text, ('obsolete top banner remains',route)
+    assert 'Fashearn Labs · Websites and custom business systems · RouteOps is a separate product' not in text, ('obsolete banner copy remains',route)
     assert 'href="/assets/approved-commercial.css?v=pilot-footer-20261101"' in text or 'href="/assets/site.css?v=pilot-footer-20261101"' in text
 
     if route in ('/', '/services/', '/website-enquiry/', '/private-pilot/', '/custom-systems/', '/our-work/', '/pilot-enquiry/'):
@@ -76,7 +78,7 @@ assert '/assets/trial-form.js' in (site/'pilot-enquiry/index.html').read_text(en
 assert (site/'_redirects').read_text() == '/contact /pilot-enquiry/ 301\n/contact/ /pilot-enquiry/ 301\n'
 
 home_html=(site/'index.html').read_text(encoding='utf-8')
-assert 'Fashearn Labs · Websites and custom business systems' in home_html
+assert 'Fashearn Labs — Websites and custom business systems' in home_html, 'Homepage title missing'
 assert 'Custom business systems' in home_html
 assert 'Route Operations Dashboard v1.1' in home_html
 assert 'One practical approach' not in home_html
