@@ -140,14 +140,7 @@ function approvedVisualPage(title,description,name){
     if(!section.includes(button))throw new Error('Approved Website Enquiry submit button missing');
     section=section.replace(button,'<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+button);
   }
-  let nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
-  // Homepage-only logo: preserve the header text and use a transparent arrow,
-  // with no square border, background, or CSS-drawn box.
-  if(name==='home'){
-    const textMark='<span class="mark">↗</span>';
-    if(!nav.includes(textMark))throw new Error('Expected homepage header arrow missing');
-    nav=nav.replace(textMark,'<img src="/assets/images/fashearn-arrow.svg" width="32" height="32" alt="" decoding="async" style="width:32px;height:32px;display:block;object-fit:contain">');
-  }
+  const nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
   const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
     '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
     '<a href="mailto:info@fashearn.io">info@fashearn.io</a></div></div>'+
@@ -189,12 +182,36 @@ pages['/private-pilot/']=approvedVisualPage(
   'Apply for a manually arranged Route Operations Dashboard v1.1 private pilot. No instant signup or payments.',
   'pilot'
 );
+pages['/custom-systems/']=approvedVisualPage(
+  'Custom Business Systems, Dashboards & Automation',
+  'Fashearn Labs develops tailored business dashboards, internal tools, reporting and practical automation. Scope and quote agreed individually.',
+  'systems'
+);
+pages['/our-work/']=approvedVisualPage(
+  'Our Work — Websites and In-house Software',
+  'See Fashearn Labs client website work for RSMCR Logistics and our separate Route Operations Dashboard v1.1 product.',
+  'work'
+);
 const tax=business.vatRegistered===false?'No VAT is charged.':business.vatRegistered===true?(business.priceIncludesVat?'Prices include VAT.':'Prices are exclusive of VAT.'):'VAT treatment awaiting owner confirmation in this release candidate.';
 const manifest={baseline,sourceBranch:'release/informational-website-20261024',prepared:'2026-10-24',businessDetailsComplete:detailsReady,trialEnrolment:false,paidCheckout:false,preserved,files:[],routes:Object.keys(pages),limits:['No provider submission or hosted deployment tested.','Mailbox retention policy recorded; no email deletion configured.']};
 for(let [route,html]of Object.entries(pages)){
   // Include Services navigation on both generated pages and legacy staged pages.
   if (!html.includes('<nav aria-label="Main navigation"><a href="/services/">Services</a>')) html=html.replace('<nav aria-label="Main navigation">','<nav aria-label="Main navigation"><a href="/services/">Services</a>');
   if (!html.includes('<p>Company</p><a href="/services/">Website services</a>')) html=html.replace('<p>Company</p>','<p>Company</p><a href="/services/">Website services</a>');
+  // Keep legacy company pages connected to both new individual pages.
+  const navigation=html.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/);
+  if (!navigation)throw new Error('Main navigation missing: '+route);
+  if (!navigation[1].includes('href="/custom-systems/"')) {
+    const serviceNav='<nav aria-label="Main navigation"><a href="/services/">Services</a>';
+    if(!html.includes(serviceNav))throw new Error('Expected legacy Services link missing: '+route);
+    html=html.replace(serviceNav,serviceNav+'<a href="/custom-systems/">Custom Systems</a><a href="/our-work/">Our Work</a>');
+  }
+  // Header and footer on every page use the same transparent arrow-only brand asset.
+  // Replace only the brand mark; the FASHEARN LABS / INTELLIGENT SYSTEMS text stays intact.
+  const arrow='<img src="/assets/images/fashearn-arrow.svg" width="32" height="32" alt="" decoding="async" style="width:32px;height:32px;display:block;flex:none;object-fit:contain">';
+  let marks=0;
+  html=html.replace(/(<a\b[^>]*\bclass="brand"[^>]*>)\s*<span class="mark"(?:\s+aria-hidden="true")?>↗<\/span>/g,(_,opening)=>{marks++;return opening+arrow;});
+  if(marks!==2)throw new Error('Expected header and footer brand marks on '+route+'; got '+marks);
   html=html.replace(/<meta name="robots" content="noindex,nofollow,noarchive">/g,'');
   html=html.replace(/<p class="review-state">[\s\S]*?<\/p>/g,'').replace(/<p class="note">This first resource[\s\S]*?<\/p>/,'');
   html=html.replace(/<p class="preview-note">[\s\S]*?<\/p>/,'<p class="preview-note">Dashboard enrolment is not currently open.</p>');
@@ -218,7 +235,9 @@ write('robots.txt','User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /verify\
 // Keep sitemap dates tied to meaningful page edits, never the build clock.
 // Update these values when a changed page is approved for publication.
 const pageLastModified={
-  '/':'2026-10-28',
+  '/':'2026-11-01',
+  '/custom-systems/':'2026-11-01',
+  '/our-work/':'2026-11-01',
   '/route-operations-dashboard/':'2026-10-28',
   '/courier-delivery-operations/':'2026-10-28',
   '/client-stories/rsmcr-logistics/':'2026-10-28',
