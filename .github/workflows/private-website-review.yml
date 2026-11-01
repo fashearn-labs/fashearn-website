@@ -29,6 +29,18 @@ jobs:
         run: python3 scripts/check-informational-release.py
       - name: Validate staged site
         run: python3 scripts/check-staged-site.py
+      - name: Package approved commercial pages for visual review only
+        uses: actions/upload-artifact@v4
+        with:
+          name: commercial-review-pages
+          path: |
+            dist-release/services/index.html
+            dist-release/website-enquiry/index.html
+            dist-release/private-pilot/index.html
+            dist-release/assets/approved-commercial.css
+            dist-release/assets/website-enquiry-form.js
+          retention-days: 1
+          if-no-files-found: error
       - name: Check no deployment / active website-enquiry route
         run: |
           python3 - <<'PY'
