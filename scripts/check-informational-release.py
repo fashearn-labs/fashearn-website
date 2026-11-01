@@ -51,9 +51,9 @@ home_html=(site/'index.html').read_text(encoding='utf-8')
 assert 'id="website-services"' in home_html
 assert '£249 one-off' in home_html and '£49/month' in home_html
 services_html=(site/'services/index.html').read_text(encoding='utf-8')
-for field in ('name','company','email','phone','message'):
+for field in ('name','company','email','project_type','project_details'):
     assert 'name="'+field+'"' in services_html, ('website field missing',field)
-assert 'name="drivers"' not in services_html
+assert 'name="drivers"' not in services_html and 'name="phone"' not in services_html
 assert 'cf-turnstile' in services_html
 assert '/assets/website-enquiry-form.js' in services_html
 assert '/api/trial' not in services_html
