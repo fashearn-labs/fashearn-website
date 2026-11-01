@@ -77,7 +77,7 @@ assert (root/'functions/api/website-enquiry.js').is_file()
 for file,expected in manifest['preserved'].items():
     actual=(root/file).read_bytes() if file.startswith('functions/') else (site/file).read_bytes()
     assert hashlib.sha256(actual).hexdigest()==expected, ('preserved file changed',file)
-assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify']  # New handler deliberately inactive
+assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify','/api/website-enquiry']  # Owner-authorised Website Enquiries release
 assert (site/'sitemap.xml').read_text().count('<loc>')==17
 assert 'noindex,nofollow' in (site/'trial/success.html').read_text()
 print(json.dumps({'result':'PASS','pages':len(pages),'local_links_and_assets':links,'preserved_files':len(manifest['preserved']),'business_details_complete':manifest['businessDetailsComplete']}))
