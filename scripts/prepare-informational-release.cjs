@@ -138,7 +138,14 @@ function approvedVisualPage(title,description,name){
     if(!section.includes(button))throw new Error('Approved Website Enquiry submit button missing');
     section=section.replace(button,'<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+button);
   }
-  const nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
+  let nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
+  // Approved homepage-only brand correction: use the original logo image directly,
+  // without wrapping it in the old CSS-drawn arrow box.
+  if(name==='home'){
+    const textMark='<span class="mark">↗</span>';
+    if(!nav.includes(textMark))throw new Error('Expected homepage header arrow missing');
+    nav=nav.replace(textMark,'<img src="/assets/images/apple-touch-icon.png" width="32" height="32" alt="" decoding="async" style="width:32px;height:32px;display:block;object-fit:contain">');
+  }
   const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
     '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
     '<a href="mailto:info@fashearn.io">info@fashearn.io</a></div></div>'+
