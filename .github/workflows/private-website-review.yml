@@ -5,6 +5,7 @@ on:
     branches:
       - content/services-routeops-pilot-review-20261101
       - release/approved-layout-20261101
+      - fix/footer-legal-links-20261101
   workflow_dispatch:
 
 permissions:
