@@ -21,7 +21,7 @@ class Page(HTMLParser):
             if key in a: self.links.append(a[key])
 
 pages={route:Page((site/file).read_text(encoding='utf-8')) for route,file in zip(manifest['routes'],manifest['files'])}
-assert len(pages)==14
+assert len(pages)==15
 links=0
 for route,p in pages.items():
     assert len(p.ids)==len(set(p.ids)), ('duplicate id',route)
@@ -41,12 +41,24 @@ for route,p in pages.items():
         assert file.is_file(), ('missing target',route,href)
         if u.fragment and target in pages: assert unquote(u.fragment) in pages[target].ids, ('missing anchor',route,href)
         links+=1
-    assert len(p.forms)==(1 if route=='/contact/' else 0), route
+    assert len(p.forms)==(1 if route in ('/contact/','/services/') else 0), route
 assert pages['/contact/'].forms[0]['action']=='/api/trial'
+assert pages['/services/'].forms[0]['action']=='/api/website-enquiry'
+assert pages['/contact/'].forms[0]['id']=='form01'
+assert pages['/services/'].forms[0]['id']=='website-enquiry-form'
+services_html=(site/'services/index.html').read_text(encoding='utf-8')
+for field in ('name','company','email','phone','message'):
+    assert 'name="'+field+'"' in services_html, ('website field missing',field)
+assert 'name="drivers"' not in services_html
+assert 'cf-turnstile' in services_html
+assert '/assets/website-enquiry-form.js' in services_html
+assert '/api/trial' not in services_html
+assert (site/'assets/website-enquiry-form.js').is_file()
+assert (root/'functions/api/website-enquiry.js').is_file()
 for file,expected in manifest['preserved'].items():
     actual=(root/file).read_bytes() if file.startswith('functions/') else (site/file).read_bytes()
     assert hashlib.sha256(actual).hexdigest()==expected, ('preserved file changed',file)
-assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify']
-assert (site/'sitemap.xml').read_text().count('<loc>')==14
+assert json.loads((site/'_routes.json').read_text())['include']==['/api/trial','/verify']  # New handler deliberately inactive
+assert (site/'sitemap.xml').read_text().count('<loc>')==15
 assert 'noindex,nofollow' in (site/'trial/success.html').read_text()
 print(json.dumps({'result':'PASS','pages':len(pages),'local_links_and_assets':links,'preserved_files':len(manifest['preserved']),'business_details_complete':manifest['businessDetailsComplete']}))
