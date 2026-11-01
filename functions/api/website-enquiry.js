@@ -5,10 +5,15 @@
 const MAX_REQUEST_BYTES = 16384;
 const MAX_LENGTH = Object.freeze({
   name: 120,
-  company: 160,
-  email: 254,
-  phone: 60,
-  message: 4000
+  company: 150,
+  email: 200,
+  project_details: 1800
+});
+const PROJECT_TYPES = Object.freeze({
+  "one-page": "One-page Starter Website",
+  "multi-page": "Multi-page business website",
+  "existing-site": "Update an existing website",
+  "unsure": "Not sure yet"
 });
 
 function reply(message, status) {
@@ -58,15 +63,28 @@ export async function onRequestPost(context) {
     }
 
     const form = await request.formData();
-    const payload = {};
+    const submitted = {};
     for (const field of Object.keys(MAX_LENGTH)) {
-      payload[field] = textField(form, field);
-      if (payload[field] === null) return reply("Please check the enquiry fields.", 400);
+      submitted[field] = textField(form, field);
+      if (submitted[field] === null) return reply("Please check the enquiry fields.", 400);
     }
-    if (!payload.name || !payload.company || !payload.email || !payload.message ||
-        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
+    const projectType = form.get("project_type");
+    if (!submitted.name || !submitted.company || !submitted.email ||
+        !submitted.project_details ||
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(submitted.email) ||
+        typeof projectType !== "string" ||
+        !Object.hasOwn(PROJECT_TYPES, projectType)) {
       return reply("Please complete all required fields.", 400);
     }
+    const category = PROJECT_TYPES[projectType];
+    const payload = {
+      name: submitted.name,
+      company: submitted.company,
+      email: submitted.email,
+      phone: "",
+      message: "Website request: " + category +
+        "\n\nProject details:\n" + submitted.project_details
+    };
     const token = form.get("cf-turnstile-response");
     if (typeof token !== "string" || !token.trim() || token.length > 2048) {
       return reply("Please complete the security check.", 400);
