@@ -212,7 +212,7 @@ const pageLastModified={
 };
 const defaultPageLastModified='2026-10-24';
 write('sitemap.xml','<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+Object.keys(pages).map(p=>'  <url><loc>https://fashearn.io'+p+'</loc><lastmod>'+(pageLastModified[p]||defaultPageLastModified)+'</lastmod></url>').join('\n')+'\n</urlset>\n');
-write('_routes.json',JSON.stringify({version:1,include:['/api/trial','/verify'],exclude:[]},null,2)+'\n');
+write('_routes.json',JSON.stringify({version:1,include:['/api/trial','/verify','/api/website-enquiry'],exclude:[]},null,2)+'\n');
 write('_headers','/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n/trial/success\n  X-Robots-Tag: noindex, nofollow\n/trial/success.html\n  X-Robots-Tag: noindex, nofollow\n');
 fs.mkdirSync(path.join(repo,'work'),{recursive:true});fs.writeFileSync(path.join(repo,'work/release-manifest.json'),JSON.stringify(manifest,null,2));
 console.log(JSON.stringify({releaseDirectory:out,pages:Object.keys(pages).length,businessDetailsComplete:detailsReady,protectedFunctions:'unchanged',paidCheckout:false},null,2));
