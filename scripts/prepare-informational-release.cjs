@@ -199,7 +199,7 @@ for(let [route,html]of Object.entries(pages)){
   if (!html.includes('<nav aria-label="Main navigation"><a href="/services/">Services</a>')) html=html.replace('<nav aria-label="Main navigation">','<nav aria-label="Main navigation"><a href="/services/">Services</a>');
   if (!html.includes('<p>Company</p><a href="/services/">Website services</a>')) html=html.replace('<p>Company</p>','<p>Company</p><a href="/services/">Website services</a>');
   // Keep legacy company pages connected to both new individual pages.
-  const navigation=html.match(/<nav aria-label="Main navigation">([\s\S]*?)<\/nav>/);
+  const navigation=html.match(/<nav\b[^>]*aria-label="Main navigation"[^>]*>([\s\S]*?)<\/nav>/);
   if (!navigation)throw new Error('Main navigation missing: '+route);
   if (!navigation[1].includes('href="/custom-systems/"')) {
     const serviceNav='<nav aria-label="Main navigation"><a href="/services/">Services</a>';
