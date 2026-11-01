@@ -1,31 +1,27 @@
 # Fashearn Labs website
 
-The owner-approved informational company website is live at https://fashearn.io/ (24 October 2026). It presents Fashearn Labs as a business-workflow software company, with **Fashearn Labs Route Operations Dashboard v1.1** as its current courier/delivery product.
+**CURRENT OWNER-APPROVED LIVE BASELINE — 1 November 2026**
 
-**Dashboard enrolment and paid Checkout remain closed.** Website publication does not change the separate app release HOLD.
+- Production site: https://fashearn.io/
+- GitHub source: `fashearn-labs/fashearn-website`, default branch `main`.
+- Last owner-approved website functional/visual commit: **`953602077968c56af03a228c748f75b54a23d826`**. Cloudflare Pages reported **Deployed successfully** for that commit on 1 November 2026.
+- **19 generated pages**. Home, Website Services, Custom Systems, Our Work, RouteOps Pilot, and both enquiry journeys were reviewed by the owner. No Contact menu item, no obsolete announcement strip, compact legal footer; header/footer share the transparent arrow-only brand mark.
+- **Website enquiries:** `/website-enquiry/` → `POST /api/website-enquiry` (Turnstile + independent Make/Outlook path).
+- **Dashboard pilot enquiries:** `/pilot-enquiry/` → `POST /api/trial` (original protected Turnstile + Make path). Old `/contact/` redirects here.
+- **General enquiries and custom-system project discussions:** `info@fashearn.io` by email; do not use the Dashboard form for these.
+- **Dashboard enrolment, paid Checkout and live billing remain OFF.** Website publication does not lift application safety/recovery/tenant HOLDs.
 
-## Source and build
+## Mandatory read-first references
 
-Cloudflare Pages project: `fashearn-website`; production branch: `main`.
+1. **[Final owner-approved website handover, forms, assets and verification](docs/LIVE-WEBSITE-OWNER-APPROVAL-2026-11-01.md)** — authoritative current site state and asset-first policy.
+2. [Project baseline / preservation rules](PROJECT-BASELINE.md).
+3. Private `fashearn-labs/fashearn-labs-operating-plan/WEBSITE-ROADMAP.md` — cross-project priority and commercial follow-up.
+4. Older [24 October published handover](docs/INFORMATIONAL-RELEASE-HANDOVER-2026-10-24.md), [commercial review](docs/COMMERCIAL-SERVICES-AND-PILOT-REVIEW-2026-11-01.md), and [early enquiry prep](docs/WEBSITE-ENQUIRIES-BACKEND-PRIVATE-2026-11-01.md) are **historical evidence**, not current release blockers or routes.
 
-Build: `node scripts/prepare-informational-release.cjs --require-business-details`
+## Build / protections
 
-Public output: `dist-release`. Keep project-root `functions/` and current production environment variables. Do not deploy the whole repository or `staging/` as the static output.
+Cloudflare Pages project `fashearn-website`: build command `node scripts/prepare-informational-release.cjs --require-business-details`; output directory **`dist-release`**. Keep project-root `functions/`, Cloudflare secrets, `release/baseline-manifest.json`, approved staging references and assets intact. Do not deploy root `index.html` or `staging/` directly.
 
-The release builder produces 13 pages from the reviewed staging source, adds the approved legal/contact details and notices, retains original assets and checks protected source against `release/baseline-manifest.json`. The original root `index.html` is retained as a baseline input; it is no longer the production output.
+Offline validation: `python scripts/check-informational-release.py` and `node scripts/check-protected-handlers.cjs` (plus website form checker when changing it). Existing validated screenshots are in `assets/` or `assets/images/` and must be reused/self-hosted. Upload owner-provided pictures to the repo, verify actual image paths and correct proportions; never rely on links to private image repositories. Preserve the 27-page guide, actual Route Operations Dashboard v1.1 images, and correct two-form routing.
 
-Checks: `python scripts/check-informational-release.py` and `node scripts/check-protected-handlers.cjs`.
-
-[Published release handover and verification](docs/INFORMATIONAL-RELEASE-HANDOVER-2026-10-24.md)
-
-## Product presentation
-
-Preserve the full product name, approved 27-page User Guide, overview video and Audit Trail. The public guide is `assets/Fashearn_Labs_Route_Operations_Dashboard_v1.1_Web_Square_Guide.pdf`; keep the legacy PDF URL available.
-
-The Privacy notice and enquiry-form notice describe requested enquiry follow-up only, Make and Microsoft 365, and the adopted 12-month retention policy for enquiries that do not become customers. Do not add visitors to general marketing lists without separately approved arrangements.
-
-## Operating authority
-
-The private `fashearn-labs/fashearn-labs-operating-plan` repository coordinates company priorities and the separate application release controls. Read its current handover, priorities and WEBSITE-ROADMAP before substantial further changes, together with direct owner instructions.
-
-Earlier docs record historical preparation and holds; the published release handover above is the current website status.
+**Preserve the fully approved website; new changes require a clear owner instruction.** Historical docs may describe the prior 13/14/15-page stage, but are superseded by the current handover.

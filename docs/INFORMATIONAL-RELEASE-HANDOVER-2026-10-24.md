@@ -1,3 +1,5 @@
+> **HISTORICAL RELEASE RECORD (24 October):** This was accurate at the time, but the owner-approved live website changed on 1 November 2026. For the current 19-page layout, navigation, separate forms, asset paths and release checks, read [the authoritative final handover](LIVE-WEBSITE-OWNER-APPROVAL-2026-11-01.md). The earlier 13-page and Contact-path claims below are not the current website status.
+
 # Published informational website — 24 October 2026
 
 The owner explicitly approved publication of the reviewed website, including the displayed business address, with Dashboard enrolment and paid Checkout kept closed.

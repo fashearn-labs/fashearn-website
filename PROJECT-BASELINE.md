@@ -1,3 +1,5 @@
+> **CURRENT WEBSITE OVERRIDE — 1 November 2026:** All five main pages and enquiry journeys on fashearn.io have now been owner-approved and deployed, and the owner requires existing images to be reused/self-hosted before any new gallery edits. Read [the final website handover](docs/LIVE-WEBSITE-OWNER-APPROVAL-2026-11-01.md) for the authoritative 19-page site, form routes, assets and freeze. Older website/Checkout intentions below are historical and do not authorise billing, site redesign or RouteOps app release.
+
 # Fashearn Labs — Project Baseline
 
 ## 18 October — parallel marketing: staged useful resource, protected public website

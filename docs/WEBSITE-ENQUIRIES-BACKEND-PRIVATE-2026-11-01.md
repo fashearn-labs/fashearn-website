@@ -1,3 +1,5 @@
+> **HISTORICAL PREPARATION ONLY:** The newer owner-approved site has published the two distinct enquiry journeys. The prior claims below about an inactive unpublished website handler, `/contact/#enquiry`, and a 15-page build have been superseded. See [final live website status, form contracts and route map](LIVE-WEBSITE-OWNER-APPROVAL-2026-11-01.md). Do not mistake these historical release gates for current deployment status.
+
 # Website Services Enquiries — private backend preparation
 **1 November 2026 · Review branch only · NOT AUTHORISED FOR PUBLICATION**
 

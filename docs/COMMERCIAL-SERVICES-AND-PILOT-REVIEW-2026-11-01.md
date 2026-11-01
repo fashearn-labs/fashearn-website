@@ -1,3 +1,5 @@
+> **HISTORICAL COPY REVIEW:** Later on 1 November the owner approved and deployed the final 19-page website and separate forms. Earlier NOT AUTHORISED FOR PUBLICATION statements remain as historical preparation context only. Current source, approved URLs, fees, asset rules, and release evidence: [final owner-approved handover](LIVE-WEBSITE-OWNER-APPROVAL-2026-11-01.md).
+
 # Fashearn Labs — Website services + Route Operations private pilot
 **1 November 2026 | PRIVATE COPY AND IMPLEMENTATION REVIEW | NOT AUTHORISED FOR PUBLICATION**
 
