@@ -38,6 +38,7 @@ jobs:
             dist-release/website-enquiry/index.html
             dist-release/private-pilot/index.html
             dist-release/assets/approved-commercial.css
+            dist-release/assets/routeops-dashboard-v1.1.png
             dist-release/assets/website-enquiry-form.js
           retention-days: 1
           if-no-files-found: error
