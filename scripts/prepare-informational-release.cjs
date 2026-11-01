@@ -193,7 +193,7 @@ for(let [route,html]of Object.entries(pages)){
   html=html.replace(/href="https:\/\/fashearn\.io\/#trial"/g,'href="/contact/#enquiry"').replaceAll('existing website enquiry route','website enquiry route').replaceAll('Enrolment is<br><span>not enabled here.</span>','Enrolment is<br><span>not currently open.</span>');
   // Legal links belong in the legacy footer's Company group, never the main navigation.
   if (html.includes('<div class="footer-links">')) html=html.replace(
-    /(<div class="footer-group"><p>Company<\/p>[\s\S]*?<a href="\/contact\/">Contact<\/a>)/,
+    /(<div class="footer-group"><p>Company<\/p>[\s\S]*?<a href="[^"]*contact\/">Contact<\/a>)/,
     '$1<a href="/privacy/">Privacy</a><a href="/cookies/">Cookies &amp; video</a><a href="/terms/">Website terms</a>'
   );
   html=html.replace('</footer>','<div class="shell">'+legal+'</div></footer>');
