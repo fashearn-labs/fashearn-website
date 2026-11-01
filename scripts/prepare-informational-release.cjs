@@ -32,7 +32,7 @@ write('assets/trial-form.js',formJS);delete preserved['assets/trial-form.js'];
 write('assets/website-enquiry-form.js',fs.readFileSync(path.join(repo,'assets/website-enquiry-form.js')));
 write('assets/pilot-video.js',fs.readFileSync(path.join(repo,'assets/pilot-video.js')));
 let siteJS=fs.readFileSync(path.join(out,'assets/site.js'),'utf8');
-siteJS+='\n// Preserve existing public homepage anchors after the page split.\nif(location.pathname===\'/\'||location.pathname===\'/index.html\'){const old={\'#trial\':\'/contact/#enquiry\',\'#routeops\':\'/route-operations-dashboard/\',\'#routeops-proof\':\'/route-operations-dashboard/#overview\'};if(old[location.hash])location.replace(old[location.hash]);}\n';
+siteJS+='\n// Preserve existing public homepage anchors after the page split.\nif(location.pathname===\'/\'||location.pathname===\'/index.html\'){const old={\'#trial\':\'/pilot-enquiry/#enquiry\',\'#routeops\':\'/route-operations-dashboard/\',\'#routeops-proof\':\'/route-operations-dashboard/#overview\'};if(old[location.hash])location.replace(old[location.hash]);}\n';
 write('assets/site.js',siteJS);
 const extraCSS=`\n.legal-copy{max-width:900px}.legal-copy h2{font-size:1.6rem;margin-top:38px}.legal-copy h3{font-size:1.1rem}.legal-copy table{width:100%;border-collapse:collapse;margin:24px 0}.legal-copy th,.legal-copy td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.legal-copy th{color:var(--text)}.legal-copy td{color:var(--muted)}.legal-copy a{color:var(--green);overflow-wrap:anywhere}.legal-copy li{color:var(--muted);margin:10px 0}.enquiry-form{margin-top:28px}.enquiry-form .inner{display:grid;gap:18px}.enquiry-form label{display:block;color:var(--text);font-weight:650;font-size:.9rem;margin-bottom:6px}.enquiry-form input:not([type=hidden]){width:100%;min-height:48px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit}.enquiry-form input:focus{outline:2px solid var(--green);outline-offset:2px}.form-privacy{font-size:.85rem;margin:18px 0;color:var(--muted)}.form-privacy a{color:var(--green)}.business-details{margin-top:18px;font-size:.8rem;color:var(--muted)}.business-details a{color:var(--green)}.business-details address{font-style:normal;margin-top:6px}.candidate-notice{border:1px solid #5bf0b44d;padding:18px;border-radius:10px}.legal-copy .review-date{font-size:.85rem}@media(max-width:700px){.legal-copy th,.legal-copy td{padding:9px 6px;font-size:.85rem}.cf-turnstile{max-width:100%;overflow:auto}}\n`;
 const privacyCSS='\n.privacy-section{padding:40px 0 56px}.privacy-copy{max-width:760px;font-size:.9375rem;line-height:1.75}.privacy-copy h1{font-size:2rem;line-height:1.2;letter-spacing:-.025em;margin:0 0 8px}.privacy-copy .review-date{font-size:.78rem;color:var(--muted);padding-bottom:22px;margin-bottom:26px;border-bottom:1px solid var(--line)}.privacy-copy h2{font-size:1.125rem;line-height:1.4;letter-spacing:-.01em;margin:26px 0 10px}.privacy-copy p{margin-bottom:14px}.privacy-copy table{margin:16px 0;font-size:.875rem}.privacy-copy th,.privacy-copy td{padding:10px 12px}.privacy-copy a{color:#b5cfca;text-underline-offset:3px}.privacy-copy a:hover{color:var(--green)}.privacy-copy li{margin:6px 0}@media(max-width:700px){.privacy-section{padding:28px 0 40px}.privacy-copy h1{font-size:1.65rem}.privacy-copy th,.privacy-copy td{padding:8px 6px}}\n';
@@ -115,7 +115,7 @@ pages['/contact/']=page('Contact Fashearn Labs','Enquire about Fashearn Labs Rou
 pages['/contact/']=pages['/contact/'].replace('</head>','<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/trial-form.js" defer></script></head>');
 pages['/']=pages['/'].replace('</main>','<section class="section" id="website-services"><div class="shell split"><div><p class="eyebrow">Website Services · Small businesses</p><h2>Professional websites.<br><span>Clear, practical results.</span></h2></div><div><p>A modern, mobile-friendly website that helps customers understand what you do and get in touch. Small Business Starter Website from <strong>£249 one-off</strong>. Optional Website Care at <strong>£49/month</strong>. Extra pages quoted separately.</p><a class="button primary" href="/services/">Ask about a website →</a></div></div></section><section class="section" id="trial"><div class="shell"><p class="eyebrow">Dashboard enquiries</p><h2>Have a question about<br><span>your operation?</span></h2><p>Enrolment is not currently open. You can explore the Dashboard or send an enquiry.</p><a class="button primary" href="/contact/#enquiry">Contact Fashearn Labs →</a></div></section></main>');
 const address=business.businessAddress?'<address>'+escape(business.businessAddress).replaceAll('\n','<br>')+'</address>':'';
-const legal='<div class="business-details">'+escape(business.legalName)+' trading as '+escape(business.tradingName)+' · <a href="mailto:'+escape(business.email)+'">'+escape(business.email)+'</a>'+address+'</div>';
+const legal='<div class="shell footer-business-line">'+escape(business.legalName)+' trading as '+escape(business.tradingName)+(business.businessAddress?' · '+escape(business.businessAddress).replaceAll('\n',', '):'')+' · <a href="mailto:'+escape(business.email)+'">'+escape(business.email)+'</a></div>';
 
 // Approved visual design is applied only to new commercial review pages.
 // Preserve legacy company/product pages and the protected /contact/ pilot handler.
@@ -125,8 +125,8 @@ const approvedNav=fs.readFileSync(path.join(visualSource,'header.html'),'utf8')
   .replace(/<!--[\s\S]*?-->/,'').trim();
 const approvedPaths={
   home:'/',services:'/services/',pilot:'/private-pilot/',
-  pricing:'/pricing/',about:'/about/',contact:'/contact/',
-  'website-enquiry':'/website-enquiry/','pilot-enquiry':'/contact/#enquiry'
+  pricing:'/pricing/',about:'/about/',contact:'/pilot-enquiry/#enquiry',
+  'website-enquiry':'/website-enquiry/','pilot-enquiry':'/pilot-enquiry/#enquiry'
 };
 function approvedVisualPage(title,description,name){
   let section=fs.readFileSync(path.join(visualSource,name+'.html'),'utf8')
@@ -144,6 +144,13 @@ function approvedVisualPage(title,description,name){
     if(!section.includes(button))throw new Error('Approved Website Enquiry submit button missing');
     section=section.replace(button,'<div class="cf-turnstile" data-sitekey="'+sitekey+'" data-theme="dark"></div>'+button);
   }
+  if(name==='pilot-enquiry'){
+    // Reuse the protected RouteOps form and submission handler.
+    if((section.match(/<form\b/g)||[]).length!==1)throw new Error('Expected one pilot preview form');
+    section=section.replace(/<form\b[\s\S]*?<\/form>/,form);
+    section=section.replace('<section class="section"><div class="shell enquiry-layout">','<section class="section" id="enquiry"><div class="shell enquiry-layout">');
+    if(!section.includes('id="form01"')||!section.includes('action="/api/trial"')||!section.includes('id="enquiry"'))throw new Error('Pilot form wiring missing');
+  }
   const nav=linkRoute(approvedNav).replace('Preview navigation','Main navigation');
   const footer='<footer><div class="shell footer"><a class="brand" href="/"><span class="mark">↗</span><span>FASHEARN LABS<small>INTELLIGENT SYSTEMS</small></span></a>'+
     '<div><a href="/privacy/">Privacy</a> · <a href="/cookies/">Cookies</a> · <a href="/terms/">Website terms</a> · '+
@@ -151,7 +158,8 @@ function approvedVisualPage(title,description,name){
     '</footer>';
   const scripts=name==='website-enquiry'
     ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/website-enquiry-form.js" defer></script>'
-    : name==='pilot' ? '<script src="/assets/pilot-video.js" defer></script>' : '';
+    : name==='pilot' ? '<script src="/assets/pilot-video.js" defer></script>'
+    : name==='pilot-enquiry' ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><script src="/assets/trial-form.js" defer></script>' : '';
   return '<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'+
     '<meta name="color-scheme" content="dark"><title>'+escape(title)+' | Fashearn Labs</title>'+
     '<meta name="description" content="'+escape(description)+'">'+
@@ -171,7 +179,7 @@ pages['/']=pages['/'].replace('href="/assets/approved-commercial.css"','href="/a
 // Keep existing homepage anchor journeys and approved resource routes working.
 // Legacy trial/#routeops anchors redirect to their established destinations.
 pages['/']=pages['/'].replace('</head>',
-  '<script>if(location.hash==="#trial")location.replace("/contact/#enquiry");'+
+  '<script>if(location.hash==="#trial")location.replace("/pilot-enquiry/#enquiry");'+
   'else if(location.hash==="#routeops")location.replace("/route-operations-dashboard/");'+
   'else if(location.hash==="#routeops-proof")location.replace("/route-operations-dashboard/#overview");</script></head>');
 pages['/services/']=approvedVisualPage(
@@ -205,6 +213,12 @@ pages['/our-work/']=approvedVisualPage(
   'See Fashearn Labs client website work for RSMCR Logistics and our separate Route Operations Dashboard v1.1 product.',
   'work'
 );
+delete pages['/contact/'];
+pages['/pilot-enquiry/']=approvedVisualPage(
+  'Route Operations Dashboard v1.1 — Pilot Enquiry',
+  'Apply to enquire about a manually arranged Dashboard v1.1 private pilot; no payment or instant signup.',
+  'pilot-enquiry'
+);
 const tax=business.vatRegistered===false?'No VAT is charged.':business.vatRegistered===true?(business.priceIncludesVat?'Prices include VAT.':'Prices are exclusive of VAT.'):'VAT treatment awaiting owner confirmation in this release candidate.';
 const manifest={baseline,sourceBranch:'release/informational-website-20261024',prepared:'2026-10-24',businessDetailsComplete:detailsReady,trialEnrolment:false,paidCheckout:false,preserved,files:[],routes:Object.keys(pages),limits:['No provider submission or hosted deployment tested.','Mailbox retention policy recorded; no email deletion configured.']};
 for(let [route,html]of Object.entries(pages)){
@@ -229,13 +243,13 @@ for(let [route,html]of Object.entries(pages)){
   html=html.replace(/<p class="review-state">[\s\S]*?<\/p>/g,'').replace(/<p class="note">This first resource[\s\S]*?<\/p>/,'');
   html=html.replace(/<p class="preview-note">[\s\S]*?<\/p>/,'<p class="preview-note">Dashboard enrolment is not currently open.</p>');
   html=html.replaceAll('Trial enrolment is not enabled in this preview.','Trial enrolment is not currently open.').replaceAll('Trial enrolment and Checkout are not enabled in this preview.','Trial enrolment and paid Checkout are not currently open.').replaceAll('This preview does not enable trial enrolment.','Trial enrolment is not currently open.').replaceAll('This preview does not accept signups or payments.','This website does not accept signups or payments.').replaceAll('This design preview does not create an account, collect card details or start a subscription.','This website does not create an account, collect card details or start a subscription.').replaceAll('Trial enrolment and Checkout are not enabled in this design preview.','Trial enrolment and Checkout are not currently open.');
-  html=html.replace(/href="https:\/\/fashearn\.io\/#trial"/g,'href="/contact/#enquiry"').replaceAll('existing website enquiry route','website enquiry route').replaceAll('Enrolment is<br><span>not enabled here.</span>','Enrolment is<br><span>not currently open.</span>');
+  html=html.replace(/href="https:\/\/fashearn\.io\/#trial"/g,'href="/pilot-enquiry/#enquiry"').replaceAll('existing website enquiry route','website enquiry route').replaceAll('Enrolment is<br><span>not enabled here.</span>','Enrolment is<br><span>not currently open.</span>');
   // Legal links belong in the legacy footer's Company group, never the main navigation.
   if (html.includes('<div class="footer-links">')) html=html.replace(
     /(<div class="footer-group"><p>Company<\/p>[\s\S]*?<a href="[^"]*contact\/">Contact<\/a>)/,
     '$1<a href="/privacy/">Privacy</a><a href="/cookies/">Cookies &amp; video</a><a href="/terms/">Website terms</a>'
   );
-  html=html.replace('</footer>','<div class="shell">'+legal+'</div></footer>');
+  html=html.replace('</footer>',legal+'</footer>');
   html=html.replace(/\b(href|src)="([^"]+)"/g,(all,attr,value)=>{if(/^(https?:)?\/\//.test(value)){if(value.startsWith('https://fashearn.io/assets/'))return attr+'="'+new URL(value).pathname+'"';if(value===shot)return attr+'="/assets/routeops-dashboard-v1.1.png"';return all;}if(value.startsWith('#')||/^[a-z]+:/i.test(value)||value.startsWith('/'))return all;return attr+'="'+new URL(value,'https://fashearn.io'+route).pathname+'"';});
   const canonical='https://fashearn.io'+route,title=html.match(/<title>([^<]+)<\/title>/)[1],description=html.match(/<meta name="description" content="([^"]*)"/)[1];
   const image='https://fashearn.io/assets/routeops-dashboard-v1.1.png';
