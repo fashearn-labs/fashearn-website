@@ -31,6 +31,7 @@ for route,p in pages.items():
     text=(site/('index.html' if route=='/' else route.strip('/')+'/index.html')).read_text(encoding='utf-8')
     assert 'noindex' not in text and '<iframe' not in text, route
     assert 'href="/privacy/"' in text and 'href="/cookies/"' in text and 'href="/terms/"' in text, route
+    assert '<nav aria-label="Main navigation"><a href="/services/">Services</a>' in text, ('services navigation missing',route)
     for href in p.links:
         u=urlsplit(href)
         if u.scheme or u.netloc: continue
@@ -46,6 +47,9 @@ assert pages['/contact/'].forms[0]['action']=='/api/trial'
 assert pages['/services/'].forms[0]['action']=='/api/website-enquiry'
 assert pages['/contact/'].forms[0]['id']=='form01'
 assert pages['/services/'].forms[0]['id']=='website-enquiry-form'
+home_html=(site/'index.html').read_text(encoding='utf-8')
+assert 'id="website-services"' in home_html
+assert '£249 one-off' in home_html and '£49/month' in home_html
 services_html=(site/'services/index.html').read_text(encoding='utf-8')
 for field in ('name','company','email','phone','message'):
     assert 'name="'+field+'"' in services_html, ('website field missing',field)
