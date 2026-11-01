@@ -37,7 +37,8 @@ write('assets/site.js',siteJS);
 const extraCSS=`\n.legal-copy{max-width:900px}.legal-copy h2{font-size:1.6rem;margin-top:38px}.legal-copy h3{font-size:1.1rem}.legal-copy table{width:100%;border-collapse:collapse;margin:24px 0}.legal-copy th,.legal-copy td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.legal-copy th{color:var(--text)}.legal-copy td{color:var(--muted)}.legal-copy a{color:var(--green);overflow-wrap:anywhere}.legal-copy li{color:var(--muted);margin:10px 0}.enquiry-form{margin-top:28px}.enquiry-form .inner{display:grid;gap:18px}.enquiry-form label{display:block;color:var(--text);font-weight:650;font-size:.9rem;margin-bottom:6px}.enquiry-form input:not([type=hidden]){width:100%;min-height:48px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit}.enquiry-form input:focus{outline:2px solid var(--green);outline-offset:2px}.form-privacy{font-size:.85rem;margin:18px 0;color:var(--muted)}.form-privacy a{color:var(--green)}.business-details{margin-top:18px;font-size:.8rem;color:var(--muted)}.business-details a{color:var(--green)}.business-details address{font-style:normal;margin-top:6px}.candidate-notice{border:1px solid #5bf0b44d;padding:18px;border-radius:10px}.legal-copy .review-date{font-size:.85rem}@media(max-width:700px){.legal-copy th,.legal-copy td{padding:9px 6px;font-size:.85rem}.cf-turnstile{max-width:100%;overflow:auto}}\n`;
 const privacyCSS='\n.privacy-section{padding:40px 0 56px}.privacy-copy{max-width:760px;font-size:.9375rem;line-height:1.75}.privacy-copy h1{font-size:2rem;line-height:1.2;letter-spacing:-.025em;margin:0 0 8px}.privacy-copy .review-date{font-size:.78rem;color:var(--muted);padding-bottom:22px;margin-bottom:26px;border-bottom:1px solid var(--line)}.privacy-copy h2{font-size:1.125rem;line-height:1.4;letter-spacing:-.01em;margin:26px 0 10px}.privacy-copy p{margin-bottom:14px}.privacy-copy table{margin:16px 0;font-size:.875rem}.privacy-copy th,.privacy-copy td{padding:10px 12px}.privacy-copy a{color:#b5cfca;text-underline-offset:3px}.privacy-copy a:hover{color:var(--green)}.privacy-copy li{margin:6px 0}@media(max-width:700px){.privacy-section{padding:28px 0 40px}.privacy-copy h1{font-size:1.65rem}.privacy-copy th,.privacy-copy td{padding:8px 6px}}\n';
 const websiteCSS='\n.enquiry-form select{width:100%;min-height:48px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit}.enquiry-form select:focus{outline:2px solid var(--green);outline-offset:2px}.enquiry-form textarea{width:100%;min-height:150px;padding:12px 14px;border:1px solid #ffffff30;border-radius:8px;background:#060d13;color:var(--text);font:inherit;resize:vertical}.enquiry-form textarea:focus{outline:2px solid var(--green);outline-offset:2px}\n';
-write('assets/site.css',fs.readFileSync(path.join(out,'assets/site.css'),'utf8')+extraCSS+privacyCSS+websiteCSS);
+const footerCSS='\nfooter .footer-business-line{box-sizing:border-box;display:block;width:min(1160px,calc(100% - 46px));margin:5px auto 0;padding:12px 0 4px;border-top:1px solid rgba(131,174,178,.15);color:#8fa3af;font-size:10.5px;line-height:1.65;text-align:center;font-weight:400;letter-spacing:.008em;overflow-wrap:anywhere}footer .footer-business-line a{color:#b0c6cb;text-underline-offset:2px}@media(max-width:650px){footer .footer-business-line{font-size:10px;line-height:1.7}}\n';
+write('assets/site.css',fs.readFileSync(path.join(out,'assets/site.css'),'utf8')+extraCSS+privacyCSS+websiteCSS+footerCSS);
 const pageFiles=[];function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);if(e.isDirectory() && e.name==='approved-reference')continue;else if(e.isDirectory())walk(p);else if(e.name.endsWith('.html'))pageFiles.push(path.relative(stage,p).replaceAll('\\','/'));}}walk(stage);
 const pages=Object.fromEntries(pageFiles.map(p=>['/'+p.replace(/index\.html$/,''),fs.readFileSync(path.join(stage,p),'utf8')]));
 const home=pages['/'];
@@ -251,6 +252,13 @@ for(let [route,html]of Object.entries(pages)){
   );
   html=html.replace('</footer>',legal+'</footer>');
   html=html.replace(/\b(href|src)="([^"]+)"/g,(all,attr,value)=>{if(/^(https?:)?\/\//.test(value)){if(value.startsWith('https://fashearn.io/assets/'))return attr+'="'+new URL(value).pathname+'"';if(value===shot)return attr+'="/assets/routeops-dashboard-v1.1.png"';return all;}if(value.startsWith('#')||/^[a-z]+:/i.test(value)||value.startsWith('/'))return all;return attr+'="'+new URL(value,'https://fashearn.io'+route).pathname+'"';});
+  // The old general Contact destination is retired. Retain discoverable pilot links.
+  html=html.replaceAll('href="/contact/#enquiry"','href="/pilot-enquiry/#enquiry"')
+    .replaceAll('href="/contact/"','href="/pilot-enquiry/#enquiry"')
+    .replaceAll('>Contact</a>','>Pilot enquiry</a>');
+  // Force updated footer styling without disturbing the approved page layouts.
+  html=html.replace(/href="\/assets\/(site|approved-commercial)\.css(?:\?[^"]*)?"/g,
+    (_,name)=>'href="/assets/'+name+'.css?v=pilot-footer-20261101"');
   const canonical='https://fashearn.io'+route,title=html.match(/<title>([^<]+)<\/title>/)[1],description=html.match(/<meta name="description" content="([^"]*)"/)[1];
   const image='https://fashearn.io/assets/routeops-dashboard-v1.1.png';
   html=html.replace('</head>','<link rel="canonical" href="'+canonical+'"><meta property="og:type" content="'+(route.includes('checklist')?'article':'website')+'"><meta property="og:url" content="'+canonical+'"><meta property="og:title" content="'+title+'"><meta property="og:description" content="'+description+'"><meta property="og:image" content="'+image+'"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="'+title+'"><meta name="twitter:description" content="'+description+'"><meta name="twitter:image" content="'+image+'"></head>');
@@ -258,11 +266,13 @@ for(let [route,html]of Object.entries(pages)){
   if(route==='/')html=html.replace('</head>','<script type="application/ld+json">'+JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:business.tradingName,legalName:business.legalName,email:business.email,url:'https://fashearn.io/',...(business.businessAddress?{address:business.businessAddress}:{})})+'</script></head>');
   const file=route==='/'?'index.html':route.slice(1)+'index.html';write(file,html);manifest.files.push(file);
 }
+write('_redirects','/contact /pilot-enquiry/ 301\n/contact/ /pilot-enquiry/ 301\n');
 write('robots.txt','User-agent: *\nAllow: /\nDisallow: /api/\nDisallow: /verify\nDisallow: /trial/success\nSitemap: https://fashearn.io/sitemap.xml\n');
 // Keep sitemap dates tied to meaningful page edits, never the build clock.
 // Update these values when a changed page is approved for publication.
 const pageLastModified={
   '/':'2026-11-01',
+  '/pilot-enquiry/':'2026-11-01',
   '/custom-systems/':'2026-11-01',
   '/our-work/':'2026-11-01',
   '/route-operations-dashboard/':'2026-10-28',
