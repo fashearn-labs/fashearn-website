@@ -31,7 +31,7 @@ for route,p in pages.items():
     text=(site/('index.html' if route=='/' else route.strip('/')+'/index.html')).read_text(encoding='utf-8')
     assert 'noindex' not in text and '<iframe' not in text, route
     assert 'href="/privacy/"' in text and 'href="/cookies/"' in text and 'href="/terms/"' in text, route
-    if route in ('/services/','/website-enquiry/','/private-pilot/'):
+    if route in ('/','/services/','/website-enquiry/','/private-pilot/'):
         assert 'Website Services' in text and 'RouteOps Pilot' in text, ('approved navigation missing',route)
         assert '/assets/approved-commercial.css' in text, ('approved theme missing',route)
     else:
@@ -52,8 +52,16 @@ assert pages['/website-enquiry/'].forms[0]['action']=='/api/website-enquiry'
 assert pages['/contact/'].forms[0]['id']=='form01'
 assert pages['/website-enquiry/'].forms[0]['id']=='website-enquiry-form'
 home_html=(site/'index.html').read_text(encoding='utf-8')
-assert 'id="website-services"' in home_html
+assert 'Fashearn Labs · Websites and custom business systems' in home_html
+assert 'Custom business systems' in home_html
+assert 'Route Operations Dashboard v1.1' in home_html
+assert 'One practical approach' not in home_html
+assert 'Two different offers' not in home_html
+assert 'mailto:info@fashearn.io?subject=Custom%20Business%20System%20Enquiry' in home_html
 assert '£249 one-off' in home_html and '£49/month' in home_html
+assert 'Website and operational spreadsheet support for RSMCR Logistics' in home_html
+assert 'RSMCR uses the Dashboard' not in home_html
+assert 'Shopify' not in home_html
 services_html=(site/'website-enquiry/index.html').read_text(encoding='utf-8')
 for field in ('name','company','email','project_type','project_details'):
     assert 'name="'+field+'"' in services_html, ('website field missing',field)
