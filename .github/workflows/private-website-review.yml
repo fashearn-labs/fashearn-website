@@ -1,0 +1,43 @@
+name: Private website review — offline build checks
+
+on:
+  push:
+    branches:
+      - content/services-routeops-pilot-review-20261101
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-review:
+    name: Build and verify offline (no deployment)
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Check out private review branch only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Check protected legacy handlers with mocked upstreams
+        run: node scripts/check-protected-handlers.cjs
+      - name: Check new website enquiry handler with mocked upstreams
+        run: node scripts/check-website-enquiry-handler.cjs
+      - name: Build release candidate offline (not published)
+        run: node scripts/prepare-informational-release.cjs --require-business-details
+      - name: Validate generated routes, forms, SEO and assets
+        run: python3 scripts/check-informational-release.py
+      - name: Validate staged site
+        run: python3 scripts/check-staged-site.py
+      - name: Check no deployment / active website-enquiry route
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          routes=json.loads(Path("dist-release/_routes.json").read_text())
+          assert routes["include"] == ["/api/trial", "/verify"]
+          assert Path("dist-release/website-enquiry/index.html").is_file()
+          assert Path("dist-release/private-pilot/index.html").is_file()
+          assert Path("dist-release/services/index.html").is_file()
+          print("PRIVATE_REVIEW_BUILD_GATE_PASS; no new form endpoint enabled")
+          PY
