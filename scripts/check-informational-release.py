@@ -97,6 +97,14 @@ assert (site/'assets/images/fashearn-arrow.svg').is_file()
 systems_html=(site/'custom-systems/index.html').read_text(encoding='utf-8')
 work_html=(site/'our-work/index.html').read_text(encoding='utf-8')
 assert 'Business software.' in systems_html and 'Operational dashboards' in systems_html
+assert 'class="showcase systems-dashboard-showcase"' in systems_html, 'Custom Systems image panel missing'
+assert 'class="systems-dashboard-image" src="/assets/routeops-dashboard-v1.1.png"' in systems_html, 'Custom Systems genuine asset missing'
+assert 'width="1283" height="918"' in systems_html, 'Native screenshot dimensions changed'
+assert 'href="/assets/approved-commercial.css?v=custom-systems-screenshot-20261101"' in systems_html, 'New screenshot CSS not cache-busted'
+custom_css=(site/'assets/approved-commercial.css').read_text(encoding='utf-8')
+assert '#custom-systems #software-example img.systems-dashboard-image{' in custom_css, 'Scoped image rule missing'
+assert 'height:auto;' in custom_css.split('#custom-systems #software-example img.systems-dashboard-image{')[1].split('}')[0], 'Correct image aspect ratio rule missing'
+assert (site/'assets/routeops-dashboard-v1.1.png').is_file(), 'Original dashboard screenshot missing'
 assert 'RSMCR Logistics' in work_html and 'Route Operations Dashboard v1.1' in work_html
 assert 'not a Route Operations Dashboard deployment' in work_html
 assert 'href="/custom-systems/"' in home_html
