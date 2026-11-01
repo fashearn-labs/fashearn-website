@@ -4,13 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   const button = form.querySelector('button[type="submit"]');
-  const status = document.createElement("p");
+  // The approved design already includes an inline status element.
+  const status = form.querySelector(".form-status") || document.createElement("p");
   status.id = "website-enquiry-status";
   status.setAttribute("role", "status");
   status.setAttribute("aria-live", "polite");
-  status.style.marginTop = "18px";
-  status.style.lineHeight = "1.6";
-  form.insertAdjacentElement("afterend", status);
+  if (!status.isConnected) {
+    status.className = "form-status";
+    form.appendChild(status);
+  }
 
   form.addEventListener("submit", async event => {
     event.preventDefault();
@@ -42,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.disabled = false;
         button.textContent = originalLabel;
       }
-      // This script runs only on /services/, where there is one Turnstile widget.
+      // This script runs on /website-enquiry/, where there is one Turnstile widget.
       if (window.turnstile) window.turnstile.reset();
     }
   });
