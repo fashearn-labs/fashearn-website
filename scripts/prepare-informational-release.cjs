@@ -165,7 +165,8 @@ function approvedVisualPage(title,description,name){
     '<meta name="color-scheme" content="dark"><title>'+escape(title)+' | Fashearn Labs</title>'+
     '<meta name="description" content="'+escape(description)+'">'+
     '<link rel="icon" href="/assets/images/favicon.png"><link rel="stylesheet" href="/assets/approved-commercial.css">'+
-    scripts+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+
+    // Accessibility: visually hide skip link until keyboard focus (independent of cached CSS).
+    scripts+'<style>.skip{position:fixed;top:12px;left:12px;z-index:10000;padding:10px 14px;border:2px solid #6bf4c0;border-radius:8px;background:#10222b;color:#fff;text-decoration:none;transform:translateY(calc(-100% - 24px))}.skip:focus{transform:none;outline:3px solid #6bf4c0;outline-offset:3px}</style>'+'</head><body><a class="skip" href="#main-content">Skip to content</a>'+
     // The navigation header now begins directly after the skip link.
 
     nav+'<main id="main-content">'+section+'</main>'+footer+'</body></html>';
